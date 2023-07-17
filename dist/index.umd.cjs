@@ -1,0 +1,1 @@
+(function(e,o){typeof exports=="object"&&typeof module!="undefined"?o(exports):typeof define=="function"&&define.amd?define(["exports"],o):(e=typeof globalThis!="undefined"?globalThis:e||self,o(e.AlifUiKitReact={}))})(this,function(e){"use strict";const o=()=>{console.log("Hello")};o(),e.sayHello=o,Object.defineProperty(e,Symbol.toStringTag,{value:"Module"})});
