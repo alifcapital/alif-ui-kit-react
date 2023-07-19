@@ -1,2 +1,70 @@
-$white: #ffffff;
+// Primary
+$primary: #00af66;
+
+// Green palette
+$green100: #009f64;
+$green90: #2cc887;
+$green80: #83e7ba;
+$green70: #b0e3cc;
+$green60: #e8f7eb;
+$green50: #f4fbf9;
+$greenGradient: linear-gradient(to left, #00bf60, #00af66);
+$greenLightGradient: linear-gradient(to left, #16d466, #00bf60);
+$greenDarkGradient: linear-gradient(to left, #00af66, #009f64);
+
+// Monochrome palette
 $black: #000000;
+$black100: #222222;
+$black90: #73787d;
+$black80: #c4c9ce;
+$black70: #ecf0f3;
+$pale: #f7f8f9;
+$white: #ffffff;
+
+// Blue palette
+$blue100: #0041cc;
+$blue90: #0046fd;
+$blue80: #0073fd;
+$blue70: #85b0f3;
+$blue60: #a4c7ff;
+$blue50: #e0eeff;
+
+// Grey palette
+$grey100: #343d52;
+$grey90: #3b4663;
+$grey80: #48587d;
+$grey70: #8395bf;
+$grey60: #dfe6f5;
+$grey50: #f1f6ff;
+
+// Yellow palette
+$yellow100: #f9d800;
+$yellow90: #ffde00;
+$yellow80: #ffe329;
+$yellow70: #fff042;
+$yellow60: #fff795;
+$yellow50: #fffbef;
+
+// Additional colors
+$purple: #fbf4f6;
+$cityLight: #fbf8f4;
+$sky: #f4f8fb;
+$cabbage: #f1fff8;
+$violetmo: #f5f1ff;
+$ice: #f1feff;
+$rose: #fde8e8;
+$sun: #ffebbc;
+$aqua: #dff3f6;
+$verdant: #ecfde8;
+$violet: #f1e8fd;
+$fresh: #e8fdf9;
+
+// Products
+$alifShop: #ffc845;
+$alifShopGradient: linear-gradient(to left, #ffee3f, #fec926);
+
+$academy: #1ecad3;
+$academyGradient: linear-gradient(to left, #72e6ef, #0099b0);
+
+$alifMobi: #00af66;
+$academyGradient: linear-gradient(to left, #16d466, #009f64);
