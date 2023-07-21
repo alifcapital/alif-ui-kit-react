@@ -1,0 +1,103 @@
+@font-face {
+  font-family: AlsHaussRegular;
+  src: url('../fonts/als/ALSHauss-Regular.woff2') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: ALSHaussMedium;
+  src: url('../fonts/als/ALSHauss-Medium.woff2') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: ALSHaussBold;
+  src: url('../fonts/als/ALSHauss-Bold.woff2') format('truetype');
+  font-display: swap;
+}
+
+$weight720: 720;
+$weight400: 400;
+
+// Display
+@mixin display_1 {
+  font-weight: $weight720;
+  font-size: 56px;
+  line-height: 71.68px;
+}
+
+@mixin display_2 {
+  font-weight: $weight720;
+  font-size: 40px;
+  line-height: 51.2px;
+}
+
+// Heading
+@mixin heading_1 {
+  font-weight: $weight720;
+  font-size: 30px;
+  line-height: 38px;
+}
+
+@mixin heading_2 {
+  font-weight: $weight720;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+@mixin heading_3 {
+  font-weight: $weight720;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin heading-regular {
+  font-weight: $weight400;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+@mixin subtitle {
+  font-weight: $weight720;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+// Body
+@mixin body-small {
+  font-weight: $weight400;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@mixin body-normal {
+  font-weight: $weight400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@mixin body-big {
+  font-weight: $weight400;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin body-paragraph {
+  font-weight: $weight400;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+// Caption
+@mixin all-captions {
+  font-weight: $weight400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 7.5%;
+}
+
+@mixin caption {
+  font-weight: $weight400;
+  font-size: 12px;
+  line-height: 16px;
+}

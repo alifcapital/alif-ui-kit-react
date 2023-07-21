@@ -1,0 +1,200 @@
+@import '../../styles/index.scss';
+
+.Button-primary {
+  height: 48px;
+  padding: 14px 24px 14px 24px;
+  border-radius: 8px;
+  background-color: $primary;
+  color: $white;
+  border: none;
+  gap: 4px;
+  @include body-normal;
+  cursor: pointer;
+  @include transition(background-color);
+
+  div {
+    @include flexAligment;
+  }
+  &:hover {
+    background-color: $green90;
+  }
+  &:active {
+    background-color: $green100;
+  }
+}
+
+.Button-primary-disable {
+  @extend .Button-primary;
+  color: $black90;
+  background-color: $black80;
+  &:hover {
+    background-color: $black80;
+  }
+}
+
+.Button-secondary {
+  @extend .Button-primary;
+  background-color: $pale;
+  color: $black100;
+  &:hover {
+    background-color: $black70;
+  }
+  &:active {
+    background-color: $black100;
+    color: $white;
+  }
+}
+
+.Button-secondary-disable {
+  @extend .Button-secondary;
+  color: $black80;
+  background-color: $pale;
+  &:hover {
+    color: $black80;
+    background-color: $pale;
+  }
+}
+
+.Button-green {
+  @extend .Button-primary;
+  background-color: $green50;
+  color: $primary;
+  &:hover {
+    background-color: $green60;
+  }
+  &:active {
+    background-color: $green100;
+    color: $white;
+  }
+}
+
+.Button-green-disable {
+  @extend .Button-secondary;
+  color: $black80;
+  background-color: $pale;
+  &:hover {
+    color: $black80;
+    background-color: $pale;
+  }
+}
+
+.Button-round {
+  @extend .Button-primary;
+  border-radius: 28px;
+}
+
+.Button-large {
+  @extend .Button-primary;
+  @include heading_3;
+  height: 56px;
+  padding: 16px 32px 16px 32px;
+}
+
+.Button-small {
+  @extend .Button-primary;
+  @include body-normal;
+  @include transition(background-color, $duration: 300ms);
+  height: 32px;
+  padding: 6px 16px 6px 16px;
+}
+
+.Button-icon-left {
+  display: flex;
+  svg {
+    margin-right: 12px;
+  }
+}
+
+.Button-icon-right {
+  display: flex;
+  svg {
+    margin-left: 12px;
+  }
+}
+
+.Button-outlined {
+  @extend .Button-primary;
+  background-color: $white;
+  outline: 2px solid $green70;
+  color: $primary;
+  @include transition(color);
+
+  &:hover {
+    background-color: unset;
+    color: $green90;
+  }
+  &:active {
+    outline: 2px solid $green100;
+    color: $green100;
+  }
+}
+
+.Button-outlined-disable {
+  @extend .Button-outlined;
+  color: $black80;
+  outline: 2px solid $black80;
+  &:hover {
+    color: $black80;
+    outline: 2px solid $black80;
+  }
+}
+
+.Button-text {
+  @extend .Button-primary;
+  @include body-normal;
+  @include transition(color);
+  height: 20px;
+  color: $primary;
+  padding: unset;
+  background-color: unset;
+  &:hover {
+    color: $green90;
+    background-color: unset;
+  }
+  &:active {
+    color: $green100;
+  }
+}
+
+.Button-text-disable {
+  @extend .Button-text;
+  color: $black80;
+  &:hover {
+    color: $black80;
+  }
+}
+
+.Button-text-large {
+  @extend .Button-text;
+  @include body-big;
+  height: 24px;
+}
+
+.Button-text-small {
+  @extend .Button-text;
+  @include body-small;
+  @include transition(color, $duration: 300ms);
+  height: 18px;
+}
+
+.Button-only_icon {
+  @extend .Button-primary;
+  min-width: 48px;
+  height: 48px;
+  padding: 12px;
+  gap: 12px;
+}
+
+.Button-only_icon-large {
+  @extend .Button-only_icon;
+  min-width: 56px;
+  height: 56px;
+  padding: 16px;
+}
+
+.Button-only_icon-small {
+  @extend .Button-only_icon;
+  min-width: 32px;
+  height: 32px;
+  padding: 8px;
+}
