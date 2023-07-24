@@ -1,21 +1,3 @@
-@font-face {
-  font-family: AlsHaussRegular;
-  src: url('../fonts/als/ALSHauss-Regular.woff2') format('truetype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: ALSHaussMedium;
-  src: url('../fonts/als/ALSHauss-Medium.woff2') format('truetype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: ALSHaussBold;
-  src: url('../fonts/als/ALSHauss-Bold.woff2') format('truetype');
-  font-display: swap;
-}
-
 // Display
 @mixin display_1 {
   font-weight: $fontWeight720;
