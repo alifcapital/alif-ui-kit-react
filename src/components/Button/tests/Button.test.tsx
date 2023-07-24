@@ -12,7 +12,7 @@ describe('Button', () => {
   );
 
   it('should have primary class by default', () => {
-    render(<Button />);
+    render(<Button ariaLabel="Button" />);
 
     const primaryButton = screen.getByRole('button');
 
@@ -20,7 +20,7 @@ describe('Button', () => {
   });
 
   it('should have secondary class', () => {
-    render(<Button color={ButtonColor.Secondary} />);
+    render(<Button ariaLabel="Button" color={ButtonColor.Secondary} />);
 
     const primaryButton = screen.getByRole('button');
 
@@ -28,7 +28,7 @@ describe('Button', () => {
   });
 
   it('should have green class', () => {
-    render(<Button color={ButtonColor.Green} />);
+    render(<Button ariaLabel="Button" color={ButtonColor.Green} />);
 
     const primaryButton = screen.getByRole('button');
 
@@ -36,7 +36,9 @@ describe('Button', () => {
   });
 
   it('should have outlined class', () => {
-    render(<Button color={ButtonColor.Green} variant={ButtonVariant.Outlined} />);
+    render(
+      <Button ariaLabel="Button" color={ButtonColor.Green} variant={ButtonVariant.Outlined} />,
+    );
 
     const primaryButton = screen.getByRole('button');
 
@@ -44,7 +46,7 @@ describe('Button', () => {
   });
 
   it('should have text class', () => {
-    render(<Button color={ButtonColor.Green} variant={ButtonVariant.Text} />);
+    render(<Button ariaLabel="Button" color={ButtonColor.Green} variant={ButtonVariant.Text} />);
 
     const primaryButton = screen.getByRole('button');
 
@@ -53,7 +55,7 @@ describe('Button', () => {
 
   it('should have text', () => {
     const text = 'Кнопка';
-    const { getByText } = render(<Button>{text}</Button>);
+    const { getByText } = render(<Button ariaLabel="Button">{text}</Button>);
 
     expect(getByText(text).innerHTML).toBe(text);
   });
@@ -61,13 +63,13 @@ describe('Button', () => {
   it('should have pass custom classname', () => {
     const customClassName = 'customClassName';
 
-    const { container } = render(<Button className={customClassName} />);
+    const { container } = render(<Button ariaLabel="Button" className={customClassName} />);
 
     expect(container.getElementsByClassName(customClassName).length).toBe(1);
   });
 
   it('should render a disabled button ', () => {
-    render(<Button disabled />);
+    render(<Button ariaLabel="Button" disabled />);
 
     const button = screen.getByRole('button');
 
@@ -76,7 +78,7 @@ describe('Button', () => {
 
   it('should have round class', () => {
     render(
-      <Button rounded>
+      <Button ariaLabel="Button" rounded>
         <svg></svg>
       </Button>,
     );
@@ -88,7 +90,7 @@ describe('Button', () => {
 
   it('should have icon', () => {
     const { getByRole } = render(
-      <Button withIcon>
+      <Button ariaLabel="Button" withIcon>
         <Icon />
       </Button>,
     );
@@ -97,13 +99,21 @@ describe('Button', () => {
   });
 
   it('should render icon before text ', () => {
-    const { getByRole } = render(<Button startIcon={<Icon />}>Кнопка</Button>);
+    const { getByRole } = render(
+      <Button ariaLabel="Button" startIcon={<Icon />}>
+        Кнопка
+      </Button>,
+    );
 
     expect(getByRole('img', { name: iconName })).toBeInTheDocument();
   });
 
   it('should render icon after text ', () => {
-    const { getByRole } = render(<Button endIcon={<Icon />}>Кнопка</Button>);
+    const { getByRole } = render(
+      <Button ariaLabel="Button" endIcon={<Icon />}>
+        Кнопка
+      </Button>,
+    );
 
     expect(getByRole('img', { name: iconName })).toBeInTheDocument();
   });

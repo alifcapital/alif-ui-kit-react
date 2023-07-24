@@ -7,6 +7,8 @@ import { IButtonProps } from './ButtonTypes';
 
 export const Button = (props: IButtonProps) => {
   const {
+    id,
+    ariaLabel,
     className,
     children,
     disabled,
@@ -21,23 +23,26 @@ export const Button = (props: IButtonProps) => {
 
   return (
     <button
+      aria-label={ariaLabel}
+      id={id}
       disabled={disabled}
       className={clsx({
+        ['Button']: true,
+        ['Button-contained']: variant === ButtonVariant.Contained,
+        ['Button-outlined']: variant === ButtonVariant.Outlined,
+        ['Button-outlined-disable']: !!disabled && variant === ButtonVariant.Outlined,
+        ['Button-text']: variant === ButtonVariant.Text,
+        ['Button-text-small']: size === ButtonSize.Small && variant === ButtonVariant.Text,
+        ['Button-text-large']: size === ButtonSize.large && variant === ButtonVariant.Text,
+        ['Button-text-disable']: !!disabled && variant === ButtonVariant.Text,
         ['Button-primary']: size === ButtonSize.Medium,
-        ['Button-primary-disable']: !!disabled,
+        ['Button-primary-disable']: !!disabled && color === ButtonColor.Primary,
         ['Button-secondary']: color === ButtonColor.Secondary,
         ['Button-secondary-disable']: !!disabled && color === ButtonColor.Secondary,
         ['Button-green']: color === ButtonColor.Green,
         ['Button-green-disable']: !!disabled && color === ButtonColor.Green,
         ['Button-small']: size === ButtonSize.Small,
         ['Button-large']: size === ButtonSize.large,
-        ['Button-contained']: variant === ButtonVariant.Contained,
-        ['Button-outlined']: variant === ButtonVariant.Outlined,
-        ['Button-text']: variant === ButtonVariant.Text,
-        ['Button-text-small']: size === ButtonSize.Small && variant === ButtonVariant.Text,
-        ['Button-text-large']: size === ButtonSize.large && variant === ButtonVariant.Text,
-        ['Button-outlined-disable']: !!disabled && variant === ButtonVariant.Outlined,
-        ['Button-text-disable']: !!disabled && variant === ButtonVariant.Text,
         ['Button-round']: !!rounded,
         ['Button-only_icon']: !!withIcon,
         ['Button-only_icon-small']: !!withIcon && size === ButtonSize.Small,
@@ -45,26 +50,10 @@ export const Button = (props: IButtonProps) => {
         [className || '']: !!className,
       })}
     >
-      <div>
-        {startIcon && (
-          <span
-            className={clsx({
-              ['Button-icon-left']: true,
-            })}
-          >
-            {startIcon}
-          </span>
-        )}
+      <div className="Button-children">
+        {startIcon && <span className="Button-icon-left">{startIcon}</span>}
         {children}
-        {endIcon && (
-          <span
-            className={clsx({
-              ['Button-icon-right']: true,
-            })}
-          >
-            {endIcon}
-          </span>
-        )}
+        {endIcon && <span className="Button-icon-right">{endIcon}</span>}
       </div>
     </button>
   );

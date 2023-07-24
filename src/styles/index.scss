@@ -2,9 +2,4 @@
 @import './display';
 @import './mixin';
 @import './typography';
-
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'AlsHaussRegular', sans-serif;
-}
+@import './variables';

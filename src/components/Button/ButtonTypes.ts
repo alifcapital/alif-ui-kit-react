@@ -16,5 +16,7 @@ export type IButtonProps = {
   startIcon?: IconType;
   endIcon?: IconType;
   withIcon?: boolean;
+  ariaLabel: string;
   color?: Color;
+  id?: string;
 };
