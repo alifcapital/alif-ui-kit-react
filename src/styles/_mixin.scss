@@ -1,0 +1,9 @@
+@mixin transition($name, $curve: ease-out, $duration: 200ms) {
+  transition: $name $curve $duration;
+}
+
+@mixin flexAligment($aligment: center, $justifyContent: center) {
+  display: flex;
+  align-items: $aligment;
+  justify-content: $justifyContent;
+}
