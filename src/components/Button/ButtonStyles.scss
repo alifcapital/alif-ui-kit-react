@@ -3,7 +3,7 @@
 .Button {
   height: 48px;
   padding: ($basePadding + 3) * 2 $basePadding * 6;
-  border-radius: 8px;
+  border-radius: $baseBorderRadius;
   color: $white;
   border: none;
   gap: 4px;
