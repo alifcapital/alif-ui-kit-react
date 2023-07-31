@@ -28,17 +28,18 @@ export const InputApp: React.FC = () => {
           theme={InputTheme.Dark}
           label="Текст сверху"
           name="name"
+          ariaLabel='araiaLabel'
           helperText={<><CheckIcon/>Ошибочка вышла</>}
         />
         <br /><br />
         <Input  
           size={InputSize.Small}
           // startAddon={<HideIcon/>}
-          theme={InputTheme.Dark}
           endAddon={<HideIcon/>}
           type={InputType.Text}
           placeholder='Текст'
           name="phone"
+          ariaLabel='araiaLabel'
           label="Однострочный"
         />
     </div>

@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { InputSize, InputTheme, InputType } from './InputConstants';
 import './InputStyles.scss';
@@ -9,6 +9,7 @@ export const Input = (props: InputProps) => {
   const {
     id,
     value,
+    defaultValue,
     className,
     disabled,
     endAddon,
@@ -20,11 +21,41 @@ export const Input = (props: InputProps) => {
     placeholder,
     label,
     type,
+    name,
+    ariaLabel,
     hasHeading = false,
+    autoComplete = true,
     size = InputSize.Medium,
     theme = InputTheme.Light,
-    name,
+    onBlur,
+    onChange,
+    onFocus,
+    onKeyDown,
+    onKeyUp,
   } = props;
+
+  const [inputValue, setInputValue] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+    onChange && onChange(e);
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    onBlur && onBlur(e);
+  };
+
+  const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+    onFocus && onFocus(e);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    onKeyDown && onKeyDown(e);
+  };
+
+  const handleKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    onKeyUp && onKeyUp(e);
+  };
 
   const HideIcon = (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,8 +107,9 @@ export const Input = (props: InputProps) => {
             <label
               className={clsx({
                 ['InputLabel']: true,
-                ['InputLabel-small']: size === InputSize.Small,
                 ['InputBaseInner-label']: true,
+                ['InputLabel-position-fixed']: inputValue.length > 0,
+                ['InputLabel-small']: size === InputSize.Small,
               })}
               htmlFor={id || 'inputBaseInput'}
             >
@@ -85,6 +117,9 @@ export const Input = (props: InputProps) => {
             </label>
           )}
           <input
+            defaultValue={!value && defaultValue ? defaultValue : undefined}
+            aria-label={ariaLabel}
+            autoComplete={autoComplete ? 'on' : 'off'}
             className={clsx({
               ['InputBase-input']: true,
               ['InputBase-input-dark']: theme === InputTheme.Dark,
@@ -95,7 +130,12 @@ export const Input = (props: InputProps) => {
             type={type}
             id={id || 'inputBaseInput'}
             value={value}
-            placeholder={placeholder}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            onFocus={handleFocus}
+            onKeyDown={handleKeyDown}
+            onKeyUp={handleKeyUp}
+            placeholder={hasHeading ? placeholder : ''}
           />
         </div>
         {type !== InputType.Password && endAddon && (

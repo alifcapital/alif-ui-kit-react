@@ -81,6 +81,10 @@
         -webkit-transition: 0.2s ease all;
       }
     }
+
+    & .InputLabel-position-fixed {
+      top: 0 !important;
+    }
   }
 
   & .InputBase-root-dark {

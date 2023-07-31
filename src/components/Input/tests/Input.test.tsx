@@ -12,7 +12,9 @@ describe('Input', () => {
   );
 
   it('should have text type  by default', () => {
-    render(<Input label="Label" placeholder="placeholder" type={InputType.Text} />);
+    render(
+      <Input ariaLabel="ariaLabel" label="Label" placeholder="placeholder" type={InputType.Text} />,
+    );
 
     const input = screen.getByRole('textbox');
 
@@ -20,7 +22,14 @@ describe('Input', () => {
   });
 
   it('should have number type ', () => {
-    render(<Input label="Label" placeholder="placeholder" type={InputType.Number} />);
+    render(
+      <Input
+        ariaLabel="ariaLabel"
+        label="Label"
+        placeholder="placeholder"
+        type={InputType.Number}
+      />,
+    );
 
     const input = screen.getByLabelText('Label');
 
@@ -28,7 +37,14 @@ describe('Input', () => {
   });
 
   it('should have password type', () => {
-    render(<Input label="Label" placeholder="placeholder" type={InputType.Password} />);
+    render(
+      <Input
+        ariaLabel="ariaLabel"
+        label="Label"
+        placeholder="placeholder"
+        type={InputType.Password}
+      />,
+    );
 
     const input = screen.getByLabelText('Label');
 
@@ -36,23 +52,31 @@ describe('Input', () => {
   });
 
   it('should have id props', () => {
-    render(<Input id="test_id" label="Label" placeholder="placeholder" type={InputType.Text} />);
+    render(
+      <Input
+        ariaLabel="ariaLabel"
+        id="test_id"
+        label="Label"
+        placeholder="placeholder"
+        type={InputType.Text}
+      />,
+    );
 
     const input = screen.getByLabelText('Label');
 
     expect(input).toHaveAttribute('id', 'test_id');
   });
 
-  it('should have placeholder', () => {
-    render(<Input label="Label" placeholder="placeholder" type={InputType.Text} />);
-
-    const input = screen.getByPlaceholderText('placeholder');
-
-    expect(input).toBeInTheDocument();
-  });
-
   it('should have label props', () => {
-    render(<Input name="phone" label="Label" placeholder="placeholder" type={InputType.Text} />);
+    render(
+      <Input
+        ariaLabel="ariaLabel"
+        name="phone"
+        label="Label"
+        placeholder="placeholder"
+        type={InputType.Text}
+      />,
+    );
 
     const input = screen.getByLabelText('Label');
 
@@ -60,7 +84,15 @@ describe('Input', () => {
   });
 
   it('should have  disabled props ', () => {
-    render(<Input label="Label" placeholder="placeholder" type={InputType.Text} disabled />);
+    render(
+      <Input
+        ariaLabel="ariaLabel"
+        label="Label"
+        placeholder="placeholder"
+        type={InputType.Text}
+        disabled
+      />,
+    );
 
     const input = screen.getByRole('textbox');
 
@@ -69,7 +101,13 @@ describe('Input', () => {
 
   it('should have an icon at the beginning', () => {
     const { getByRole } = render(
-      <Input label="Label" placeholder="placeholder" type={InputType.Text} startAddon={<Icon />} />,
+      <Input
+        ariaLabel="ariaLabel"
+        label="Label"
+        placeholder="placeholder"
+        type={InputType.Text}
+        startAddon={<Icon />}
+      />,
     );
 
     expect(getByRole('img', { name: iconName })).toBeInTheDocument();
@@ -77,7 +115,13 @@ describe('Input', () => {
 
   it('should have an icon at the end', () => {
     const { getByRole } = render(
-      <Input label="Label" placeholder="placeholder" type={InputType.Text} endAddon={<Icon />} />,
+      <Input
+        ariaLabel="ariaLabel"
+        label="Label"
+        placeholder="placeholder"
+        type={InputType.Text}
+        endAddon={<Icon />}
+      />,
     );
     expect(getByRole('img', { name: iconName })).toBeInTheDocument();
   });
@@ -85,6 +129,7 @@ describe('Input', () => {
   it('should have helper text', () => {
     const { container } = render(
       <Input
+        ariaLabel="ariaLabel"
         label="Label"
         placeholder="placeholder"
         type={InputType.Text}
@@ -98,6 +143,7 @@ describe('Input', () => {
   it('should have dark mode', () => {
     const { container } = render(
       <Input
+        ariaLabel="ariaLabel"
         label="Label"
         placeholder="placeholder"
         type={InputType.Text}

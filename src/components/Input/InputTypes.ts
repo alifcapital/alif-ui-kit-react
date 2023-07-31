@@ -11,8 +11,10 @@ export interface InputProps {
   label: string;
   placeholder: string;
   value?: string | number;
+  defaultValue?: string | number;
   type: Type;
   disabled?: boolean;
+  ariaLabel: string;
   startAddon?: React.ReactNode;
   endAddon?: React.ReactNode;
   error?: boolean;
@@ -22,4 +24,10 @@ export interface InputProps {
   size?: Size;
   hasHeading?: boolean;
   theme?: Theme;
+  autoComplete?: boolean;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
+  onFocus?: React.FocusEventHandler<HTMLInputElement>;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  onKeyDown?: React.KeyboardEventHandler<HTMLInputElement>;
+  onKeyUp?: React.KeyboardEventHandler<HTMLInputElement>;
 }
