@@ -106,7 +106,7 @@ describe('Input', () => {
         label="Label"
         placeholder="placeholder"
         type={InputType.Text}
-        startAddon={<Icon />}
+        startIcon={<Icon />}
       />,
     );
 
@@ -120,7 +120,7 @@ describe('Input', () => {
         label="Label"
         placeholder="placeholder"
         type={InputType.Text}
-        endAddon={<Icon />}
+        endIcon={<Icon />}
       />,
     );
     expect(getByRole('img', { name: iconName })).toBeInTheDocument();

@@ -4,27 +4,27 @@ type Type = `${InputType}`;
 type Size = `${InputSize}`;
 type Theme = `${InputTheme}`;
 
-export interface InputProps {
+type RestProps = Omit<React.ComponentProps<'input'>, 'size'>;
+export interface InputProps extends RestProps {
   id?: string;
   className?: string;
   name?: string;
-  label: string;
+  label?: string;
   placeholder: string;
   value?: string | number;
   defaultValue?: string | number;
   type: Type;
   disabled?: boolean;
   ariaLabel: string;
-  startAddon?: React.ReactNode;
-  endAddon?: React.ReactNode;
+  startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
   error?: boolean;
   hint?: boolean;
   helperText?: React.ReactNode;
   fullWidth?: boolean;
   size?: Size;
-  hasHeading?: boolean;
   theme?: Theme;
-  autoComplete?: boolean;
+  autoComplete?: string | undefined;
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
   onFocus?: React.FocusEventHandler<HTMLInputElement>;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
