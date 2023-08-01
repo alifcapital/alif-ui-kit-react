@@ -1,0 +1,125 @@
+@import '../../styles/index.scss';
+
+.Input-root {
+  position: relative;
+  gap: unset;
+  color: $black90;
+  @include flexAligment($aligment: flex-start, $flexDirection: column);
+
+  &.Input-without-heading {
+    gap: $baseMargin;
+  }
+
+  & .InputBase-root {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 $basePadding * 5;
+    border-radius: $baseBorderRadius;
+    background-color: $white;
+    @include border($color: $black80);
+    @include body-big;
+    @include flexAligment;
+
+    &:hover {
+      cursor: text;
+      @include border($color: $green70);
+    }
+
+    &:focus-within {
+      outline: none;
+      @include border($color: $green100);
+
+      & .InputBaseInner .InputLabel {
+        top: 0;
+      }
+    }
+
+    & .InputBase-input {
+      position: relative;
+      width: 100%;
+      outline: none;
+      padding: $basePadding * 5.5 0;
+      border: none;
+      background: transparent;
+      @include body-big;
+    }
+
+    & .InputBase-input-dark {
+      color: $white;
+    }
+
+    & .InputBase-input-small {
+      padding: $basePadding * 4.5 0;
+      @include body-normal;
+    }
+
+    & .InputBase-icon-start {
+      cursor: pointer;
+      margin-right: $baseMargin * 4;
+      @include flexAligment;
+    }
+
+    & .InputBase-icon-end {
+      @include flexAligment;
+      cursor: pointer;
+      margin-left: $baseMargin * 4;
+    }
+
+    & .InputBaseInner {
+      position: relative;
+      width: 100%;
+      & .InputLabel {
+        position: absolute;
+        top: $baseMargin * 4.5;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+      }
+    }
+
+    & .InputLabel-position-fixed {
+      top: 0 !important;
+    }
+  }
+
+  & .InputBase-root-dark {
+    background-color: $black100;
+    @include border($color: $lightBlack);
+  }
+
+  & .InputLabel {
+    @include body-normal;
+  }
+
+  & .InputLabel-small {
+    @include body-small;
+  }
+
+  & .InputBase-error {
+    @include border($color: $redWaring !important);
+  }
+
+  & .Input-helper-text {
+    @include caption;
+    @include flexAligment;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+    padding: 0 $basePadding * 5;
+
+    & svg {
+      margin-right: $basePadding + 1;
+    }
+  }
+
+  & .Input-helper-text-dark {
+    color: $white;
+  }
+
+  & .Input-hint-text {
+    color: $primary;
+  }
+
+  & .Input-error-text {
+    color: $redWaring;
+  }
+}

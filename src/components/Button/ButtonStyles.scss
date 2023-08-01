@@ -3,12 +3,13 @@
 .Button {
   height: 48px;
   padding: ($basePadding + 3) * 2 $basePadding * 6;
-  border-radius: 8px;
+  border-radius: $baseBorderRadius;
   color: $white;
   border: none;
   gap: 4px;
-  @include body-normal;
   cursor: pointer;
+  @include flexAligment;
+  @include body-normal;
   @include transition(background-color);
 
   & .Button-children {
@@ -97,6 +98,11 @@
     @include transition(background-color, $duration: 300ms);
     height: 32px;
     padding: $basePadding + 2 $basePadding * 4;
+
+    & .Button-children svg {
+      width: 15px;
+      height: 15px;
+    }
   }
 
   & .Button-icon-left {
