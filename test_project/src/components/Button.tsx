@@ -1,6 +1,7 @@
+import { Search } from 'alif-icon-kit-react';
+
 import { Button, ButtonColor, ButtonSize, ButtonVariant } from '../../../src';
 
-import { Search } from 'alif-icon-kit-react';
 
 export const ButtonApp: React.FC = () => {
   return (
@@ -22,6 +23,9 @@ export const ButtonApp: React.FC = () => {
       <br/><br/>
        Button With Icon right
       <Button  ariaLabel='Button' endIcon={<Search />}>Кнопка</Button>
+      <br/> <br/>
+       Button Small With Icon right
+      <Button  ariaLabel='Button' size={ButtonSize.Small} endIcon={<Search />}>Кнопка</Button>
       <br/> <br/>
       With Icon 
       <Button  ariaLabel='Button'withIcon >

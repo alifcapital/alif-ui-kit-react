@@ -18,10 +18,9 @@ export interface InputProps extends RestProps {
   ariaLabel: string;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
-  error?: boolean;
-  hint?: boolean;
+  isError?: boolean;
+  isHint?: boolean;
   helperText?: React.ReactNode;
-  fullWidth?: boolean;
   size?: Size;
   theme?: Theme;
   autoComplete?: string | undefined;

@@ -3,13 +3,8 @@
 .Input-root {
   position: relative;
   gap: unset;
-  width: 360px;
   color: $black90;
   @include flexAligment($aligment: flex-start, $flexDirection: column);
-
-  &.Input-fullwidth {
-    width: 100%;
-  }
 
   &.Input-without-heading {
     gap: $baseMargin;
@@ -35,7 +30,7 @@
       @include border($color: $green100);
 
       & .InputBaseInner .InputLabel {
-        top: 0 !important;
+        top: 0;
       }
     }
 
@@ -110,10 +105,14 @@
     overflow-wrap: break-word;
     box-sizing: border-box;
     padding: 0 $basePadding * 5;
+
+    & svg {
+      margin-right: $basePadding + 1;
+    }
   }
 
   & .Input-helper-text-dark {
-    color: $white !important;
+    color: $white;
   }
 
   & .Input-hint-text {

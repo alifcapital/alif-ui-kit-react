@@ -1,13 +1,12 @@
 
-import { CheckCircle, EyeOff } from 'alif-icon-kit-react';
+import { CheckCircle } from 'alif-icon-kit-react';
 import { Input, InputSize, InputTheme, InputType } from '../../../src';
-
 
 export const InputApp: React.FC = () =>  {
   return (
     <div>
         <Input  
-          hint 
+          isError
           type={InputType.Text}
           endIcon={<CheckCircle/>}
           placeholder='Однострочный'
@@ -15,13 +14,14 @@ export const InputApp: React.FC = () =>  {
           label="Текст сверху"
           name="name"
           ariaLabel='araiaLabel'
-          helperText={<><CheckCircle />Ошибочка вышла</>}
+          helperText={<><CheckCircle  /> Ошибочка вышла</>}
         />
         <br /><br />
         <Input  
+          defaultValue="default"
           size={InputSize.Small}
-          endIcon={<EyeOff/>}
-          type={InputType.Text}
+          endIcon={<CheckCircle/>}
+          type={InputType.Password}
           placeholder='Текст'
           name="phone"
           ariaLabel='araiaLabel'

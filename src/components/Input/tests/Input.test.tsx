@@ -24,6 +24,7 @@ describe('Input', () => {
   it('should have number type ', () => {
     render(
       <Input
+        id="test_id"
         ariaLabel="ariaLabel"
         label="Label"
         placeholder="placeholder"
@@ -39,6 +40,7 @@ describe('Input', () => {
   it('should have password type', () => {
     render(
       <Input
+        id="test_id"
         ariaLabel="ariaLabel"
         label="Label"
         placeholder="placeholder"
@@ -70,6 +72,7 @@ describe('Input', () => {
   it('should have label props', () => {
     render(
       <Input
+        id="test_id"
         ariaLabel="ariaLabel"
         name="phone"
         label="Label"

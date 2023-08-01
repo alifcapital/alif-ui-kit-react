@@ -1,6 +1,6 @@
-import { EyeOff } from 'alif-icon-kit-react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import clsx from 'clsx';
-import React, { useState } from 'react';
+import { EyeOff, EyeOn } from 'alif-icon-kit-react';
 
 import { InputSize, InputTheme, InputType } from './InputConstants';
 import './InputStyles.scss';
@@ -15,9 +15,8 @@ export const Input = (props: InputProps) => {
     disabled,
     endIcon,
     startIcon,
-    fullWidth,
-    error,
-    hint,
+    isError,
+    isHint,
     helperText,
     placeholder,
     label,
@@ -36,6 +35,8 @@ export const Input = (props: InputProps) => {
   } = props;
 
   const [inputValue, setInputValue] = useState('');
+  const [inputType, setInputType] = useState<`${InputType}`>(type);
+  const [showPassword, setShowPassword] = React.useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -58,11 +59,26 @@ export const Input = (props: InputProps) => {
     onKeyUp && onKeyUp(e);
   };
 
+  const handleClickShowPassword = () => {
+    setShowPassword((show) => !show);
+  };
+
+  useLayoutEffect(() => {
+    if (defaultValue || value) {
+      setInputValue(' ');
+    }
+  }, [defaultValue, value]);
+
+  useEffect(() => {
+    if (type === InputType.Password) {
+      setInputType(showPassword ? InputType.Text : InputType.Password);
+    }
+  }, [showPassword, type]);
+
   return (
     <div
       className={clsx({
         ['Input-root']: true,
-        ['Input-fullwidth']: !!fullWidth,
         ['Input-without-heading ']: !!label,
         [className || '']: !!className,
       })}
@@ -73,7 +89,7 @@ export const Input = (props: InputProps) => {
             ['InputLabel']: true,
             ['InputLabel-small']: size === InputSize.Small,
           })}
-          htmlFor={id || 'inputBaseInput'}
+          htmlFor={id}
         >
           {label}
         </label>
@@ -81,7 +97,7 @@ export const Input = (props: InputProps) => {
       <div
         className={clsx({
           ['InputBase-root']: true,
-          ['InputBase-error']: !!error,
+          ['InputBase-error']: !!isError,
           ['InputBase-root-dark']: theme === InputTheme.Dark,
         })}
       >
@@ -101,7 +117,7 @@ export const Input = (props: InputProps) => {
                 ['InputLabel-position-fixed']: inputValue.length > 0,
                 ['InputLabel-small']: size === InputSize.Small,
               })}
-              htmlFor={id || 'inputBaseInput'}
+              htmlFor={id}
             >
               {placeholder}
             </label>
@@ -117,8 +133,8 @@ export const Input = (props: InputProps) => {
             })}
             disabled={disabled}
             name={name}
-            type={type}
-            id={id || 'inputBaseInput'}
+            type={inputType}
+            id={id}
             value={value}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -133,8 +149,8 @@ export const Input = (props: InputProps) => {
           <div className="InputBase-icon-end">{endIcon}</div>
         )}
         {type === InputType.Password && (
-          <div className="InputBase-icon-end">
-            <EyeOff />
+          <div className="InputBase-icon-end" onClick={handleClickShowPassword}>
+            {showPassword ? <EyeOn /> : <EyeOff />}
           </div>
         )}
       </div>
@@ -142,9 +158,9 @@ export const Input = (props: InputProps) => {
         <p
           className={clsx({
             ['Input-helper-text']: true,
-            ['Input-hint-text']: !!hint,
-            ['Input-error-text']: !!error,
-            ['Input-helper-text-dark']: !error && theme === InputTheme.Dark,
+            ['Input-hint-text']: !!isHint,
+            ['Input-error-text']: !!isError,
+            ['Input-helper-text-dark']: !isError && theme === InputTheme.Dark,
           })}
         >
           {helperText}
