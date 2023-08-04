@@ -97,6 +97,7 @@ export const Input = (props: InputProps) => {
       <div
         className={clsx({
           ['InputBase-root']: true,
+          ['Input-disabled']: disabled,
           ['InputBase-error']: !!isError,
           ['InputBase-root-dark']: theme === InputTheme.Dark,
         })}
@@ -113,9 +114,9 @@ export const Input = (props: InputProps) => {
             <label
               className={clsx({
                 ['InputLabel']: true,
-                ['InputBaseInner-label']: true,
+                ['InputLabel-medium-align-center']: size === InputSize.Medium,
+                ['InputLabel-small-align-center']: size === InputSize.Small,
                 ['InputLabel-position-fixed']: inputValue.length > 0,
-                ['InputLabel-small']: size === InputSize.Small,
               })}
               htmlFor={id}
             >
@@ -150,7 +151,7 @@ export const Input = (props: InputProps) => {
         )}
         {type === InputType.Password && (
           <div className="InputBase-icon-end" onClick={handleClickShowPassword}>
-            {showPassword ? <EyeOn /> : <EyeOff />}
+            {showPassword ? <EyeOff /> : <EyeOn />}
           </div>
         )}
       </div>
