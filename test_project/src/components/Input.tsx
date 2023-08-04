@@ -7,6 +7,7 @@ export const InputApp: React.FC = () =>  {
     <div>
         <Input  
           isError
+          disabled
           type={InputType.Text}
           endIcon={<CheckCircle/>}
           placeholder='Однострочный'
@@ -22,7 +23,7 @@ export const InputApp: React.FC = () =>  {
           size={InputSize.Small}
           endIcon={<CheckCircle/>}
           type={InputType.Password}
-          placeholder='Текст'
+          placeholder='Однострочный'
           name="phone"
           ariaLabel='araiaLabel'
         />

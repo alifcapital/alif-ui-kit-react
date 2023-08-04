@@ -30,8 +30,13 @@
       @include border($color: $green100);
 
       & .InputBaseInner .InputLabel {
+        @include body-small;
         top: 0;
       }
+    }
+
+    &.Input-disabled {
+      pointer-events: none;
     }
 
     & .InputBase-input {
@@ -75,10 +80,20 @@
         -moz-transition: 0.2s ease all;
         -webkit-transition: 0.2s ease all;
       }
-    }
 
-    & .InputLabel-position-fixed {
-      top: 0 !important;
+      & .InputLabel-medium-align-center {
+        @include body-big;
+        top: $baseMargin * 5.5;
+      }
+
+      & .InputLabel-small-align-center {
+        @include body-normal;
+      }
+
+      & .InputLabel-position-fixed {
+        @include body-small;
+        top: 0;
+      }
     }
   }
 
@@ -96,7 +111,7 @@
   }
 
   & .InputBase-error {
-    @include border($color: $redWaring !important);
+    @include border($color: $redWaring);
   }
 
   & .Input-helper-text {
