@@ -28,11 +28,6 @@
     &:focus-within {
       outline: none;
       @include border($color: $green100);
-
-      & .InputBaseInner .InputLabel {
-        @include body-small;
-        top: 0;
-      }
     }
 
     &.Input-disabled {
@@ -95,6 +90,13 @@
       & .InputLabel-position-fixed {
         @include body-small;
         top: 0;
+      }
+
+      &:focus-within {
+        &.InputBaseInner .InputLabel {
+          @include body-small;
+          top: 0;
+        }
       }
     }
   }

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { Button } from '../Button';
-import { ButtonColor, ButtonVariant } from '../ButtonConstants';
+import { BUTTON_COLOR, BUTTON_VARIANT } from '../ButtonConstants';
 
 describe('Button', () => {
   const iconName = 'TEST_SVG';
@@ -20,7 +20,7 @@ describe('Button', () => {
   });
 
   it('should have secondary class', () => {
-    render(<Button ariaLabel="Button" color={ButtonColor.Secondary} />);
+    render(<Button ariaLabel="Button" color={BUTTON_COLOR.Secondary} />);
 
     const primaryButton = screen.getByRole('button');
 
@@ -28,7 +28,7 @@ describe('Button', () => {
   });
 
   it('should have green class', () => {
-    render(<Button ariaLabel="Button" color={ButtonColor.Green} />);
+    render(<Button ariaLabel="Button" color={BUTTON_COLOR.Green} />);
 
     const primaryButton = screen.getByRole('button');
 
@@ -37,7 +37,7 @@ describe('Button', () => {
 
   it('should have outlined class', () => {
     render(
-      <Button ariaLabel="Button" color={ButtonColor.Green} variant={ButtonVariant.Outlined} />,
+      <Button ariaLabel="Button" color={BUTTON_COLOR.Green} variant={BUTTON_VARIANT.Outlined} />,
     );
 
     const primaryButton = screen.getByRole('button');
@@ -46,7 +46,7 @@ describe('Button', () => {
   });
 
   it('should have text class', () => {
-    render(<Button ariaLabel="Button" color={ButtonColor.Green} variant={ButtonVariant.Text} />);
+    render(<Button ariaLabel="Button" color={BUTTON_COLOR.Green} variant={BUTTON_VARIANT.Text} />);
 
     const primaryButton = screen.getByRole('button');
 

@@ -2,7 +2,6 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 import { Checkbox } from '../Checkbox';
-import { CHECKBOX_VALUE } from '../CheckboxConstants';
 
 describe('Checkbox', () => {
   it('should have text value', () => {
@@ -22,15 +21,6 @@ describe('Checkbox', () => {
   it('it should be unchecked', () => {
     const { container } = render(<Checkbox value={false} ariaLabel="checkbox" />);
     const elements = container.getElementsByClassName('Checkbox-unchecked');
-
-    expect(elements.length).toBe(1);
-  });
-
-  it('it should be indeterminate', () => {
-    const { container } = render(
-      <Checkbox value={CHECKBOX_VALUE.indeterminate} ariaLabel="checkbox" />,
-    );
-    const elements = container.getElementsByClassName('Checkbox-checked');
 
     expect(elements.length).toBe(1);
   });

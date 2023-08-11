@@ -1,15 +1,15 @@
-export enum InputType {
+export enum INPUT_TYPE {
   Text = 'text',
   Number = 'number',
   Password = 'password',
 }
 
-export enum InputSize {
+export enum INPUT_SIZE {
   Small = 'small',
   Medium = 'medium',
 }
 
-export enum InputTheme {
+export enum INPUT_THEME {
   Light = 'light',
   Dark = 'dark',
 }

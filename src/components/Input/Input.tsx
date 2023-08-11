@@ -2,7 +2,7 @@ import React, { useEffect, useLayoutEffect, useState } from 'react';
 import clsx from 'clsx';
 import { EyeOff, EyeOn } from 'alif-icon-kit-react';
 
-import { InputSize, InputTheme, InputType } from './InputConstants';
+import { INPUT_SIZE, INPUT_THEME, INPUT_TYPE } from './InputConstants';
 import './InputStyles.scss';
 import { InputProps } from './InputTypes';
 
@@ -24,8 +24,8 @@ export const Input = (props: InputProps) => {
     name,
     ariaLabel,
     autoComplete = true,
-    size = InputSize.Medium,
-    theme = InputTheme.Light,
+    size = INPUT_SIZE.Medium,
+    theme = INPUT_THEME.Light,
     onBlur,
     onChange,
     onFocus,
@@ -35,7 +35,7 @@ export const Input = (props: InputProps) => {
   } = props;
 
   const [inputValue, setInputValue] = useState('');
-  const [inputType, setInputType] = useState<`${InputType}`>(type);
+  const [inputType, setInputType] = useState<`${INPUT_TYPE}`>(type);
   const [showPassword, setShowPassword] = React.useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -70,8 +70,8 @@ export const Input = (props: InputProps) => {
   }, [defaultValue, value]);
 
   useEffect(() => {
-    if (type === InputType.Password) {
-      setInputType(showPassword ? InputType.Text : InputType.Password);
+    if (type === INPUT_TYPE.Password) {
+      setInputType(showPassword ? INPUT_TYPE.Text : INPUT_TYPE.Password);
     }
   }, [showPassword, type]);
 
@@ -87,7 +87,7 @@ export const Input = (props: InputProps) => {
         <label
           className={clsx({
             ['InputLabel']: true,
-            ['InputLabel-small']: size === InputSize.Small,
+            ['InputLabel-small']: size === INPUT_SIZE.Small,
           })}
           htmlFor={id}
         >
@@ -99,10 +99,10 @@ export const Input = (props: InputProps) => {
           ['InputBase-root']: true,
           ['Input-disabled']: disabled,
           ['InputBase-error']: !!isError,
-          ['InputBase-root-dark']: theme === InputTheme.Dark,
+          ['InputBase-root-dark']: theme === INPUT_THEME.Dark,
         })}
       >
-        {type !== InputType.Password && startIcon && (
+        {type !== INPUT_TYPE.Password && startIcon && (
           <div className="InputBase-icon-start">{startIcon}</div>
         )}
         <div
@@ -114,8 +114,8 @@ export const Input = (props: InputProps) => {
             <label
               className={clsx({
                 ['InputLabel']: true,
-                ['InputLabel-medium-align-center']: size === InputSize.Medium,
-                ['InputLabel-small-align-center']: size === InputSize.Small,
+                ['InputLabel-medium-align-center']: size === INPUT_SIZE.Medium,
+                ['InputLabel-small-align-center']: size === INPUT_SIZE.Small,
                 ['InputLabel-position-fixed']: inputValue.length > 0,
               })}
               htmlFor={id}
@@ -129,8 +129,8 @@ export const Input = (props: InputProps) => {
             autoComplete={autoComplete ? 'on' : 'off'}
             className={clsx({
               ['InputBase-input']: true,
-              ['InputBase-input-dark']: theme === InputTheme.Dark,
-              ['InputBase-input-small']: size === InputSize.Small,
+              ['InputBase-input-dark']: theme === INPUT_THEME.Dark,
+              ['InputBase-input-small']: size === INPUT_SIZE.Small,
             })}
             disabled={disabled}
             name={name}
@@ -146,10 +146,10 @@ export const Input = (props: InputProps) => {
             {...rest}
           />
         </div>
-        {type !== InputType.Password && endIcon && (
+        {type !== INPUT_TYPE.Password && endIcon && (
           <div className="InputBase-icon-end">{endIcon}</div>
         )}
-        {type === InputType.Password && (
+        {type === INPUT_TYPE.Password && (
           <button
             aria-label="toggle password visibility"
             className="InputBase-icon-end"
@@ -165,7 +165,7 @@ export const Input = (props: InputProps) => {
             ['Input-helper-text']: true,
             ['Input-hint-text']: !!isHint,
             ['Input-error-text']: !!isError,
-            ['Input-helper-text-dark']: !isError && theme === InputTheme.Dark,
+            ['Input-helper-text-dark']: !isError && theme === INPUT_THEME.Dark,
           })}
         >
           {helperText}

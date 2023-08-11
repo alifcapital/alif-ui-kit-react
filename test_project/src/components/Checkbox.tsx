@@ -5,7 +5,7 @@ import { CHECKBOX_SIZE, Checkbox } from '../../../src';
 export const CheckboxApp: React.FC = () => {
   const [checked, setChecked] = useState(false);
 
-  const handleChange = (checked: boolean) => {
+  const handleChange = (checked: boolean, e: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(checked)
   };
 

@@ -1,4 +1,4 @@
-import { CHECKBOX_VALUE, CHECKBOX_SIZE, CHECKBOX_THEME } from './CheckboxConstants';
+import { CHECKBOX_SIZE, CHECKBOX_THEME } from './CheckboxConstants';
 
 type Size = `${CHECKBOX_SIZE}`;
 type Theme = `${CHECKBOX_THEME}`;
@@ -8,10 +8,10 @@ interface ICheckbox {
   size: Size;
   theme?: Theme;
   disabled: boolean;
-  value: boolean | CHECKBOX_VALUE.indeterminate;
+  value: boolean;
   label: string | React.ReactNode;
   className: string;
-  onChange: (isChecked: boolean, event?: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (isChecked: boolean, event: React.ChangeEvent<HTMLInputElement>) => void;
   error: boolean;
   name: string;
 }

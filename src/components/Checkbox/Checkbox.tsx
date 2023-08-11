@@ -1,9 +1,9 @@
 import React, { useState, useEffect, DetailedHTMLProps, HTMLAttributes } from 'react';
 import clsx from 'clsx';
-import { ICheckboxProps } from './CheckboxTypes';
-import { CHECKBOX_VALUE, CHECKBOX_SIZE, CHECKBOX_THEME } from './CheckboxConstants';
 import { Check } from 'alif-icon-kit-react';
 
+import { ICheckboxProps } from './CheckboxTypes';
+import { CHECKBOX_SIZE, CHECKBOX_THEME } from './CheckboxConstants';
 import './CheckboxStyles.scss';
 
 export const Checkbox: React.FC<ICheckboxProps> = (props) => {
@@ -20,58 +20,45 @@ export const Checkbox: React.FC<ICheckboxProps> = (props) => {
     size = CHECKBOX_SIZE.Medium,
   } = props;
 
-  // Define the component state using useState hooks
   const [isChecked, setIsChecked] = useState(false);
-  const [isIndeterminate, setIsIndeterminate] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isDisabled, setIsDisabled] = useState(disabled);
 
-  // Handle checkbox change event
-  // We can use useCallback here to memoize the function
-  // but it's not necessary since the function is not passed to any child components
   const handleChangeCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (disabled) {
-      // Return if the component is disabled
       return;
     }
 
-    // Toggle the checked state and call onChange callback if provided
     setIsChecked(!isChecked);
     onChange && onChange(!isChecked, e);
   };
 
-  // Handle keyboard events
-  // We can use useCallback here to memoize the function
-  // but it's not necessary since the function is not passed to any child components
   const handleEnterPress = (
     ev: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
   ) => {
     if ((ev.key === 'Enter' || ev.key === ' ') && !disabled) {
-      // Check the box if user presses Enter or Space
+      const event = {
+        target: {
+          ariaLabel,
+          name,
+        },
+      };
       setIsChecked(!isChecked);
-      onChange && onChange(!isChecked);
+      // mapping custom object as React.ChangeEvent<HTMLInputElement>
+      // @ts-ignore
+      onChange && onChange(!isChecked, event);
     }
   };
 
-  // Update the disabled state when props change
   useEffect(() => {
     setIsDisabled(disabled);
   }, [disabled]);
 
-  // Update the checked/indeterminate state when value prop changes
   useEffect(() => {
     const checked = typeof value === 'boolean' ? value : false;
-    const indefinite = value === CHECKBOX_VALUE.indeterminate;
-    if (indefinite) {
-      // Set indeterminate state if the value prop is 'indeterminate'
-      setIsIndeterminate(true);
-    } else {
-      // Otherwise, set checked state
-      setIsChecked(checked);
-    }
+    setIsChecked(checked);
   }, [value]);
 
-  // Update the error state when error prop changes
   useEffect(() => {
     setIsError(!!error);
   }, [error]);
@@ -82,10 +69,10 @@ export const Checkbox: React.FC<ICheckboxProps> = (props) => {
         <label>
           <div
             className={clsx({
-              ['Checkbox-checked']: isChecked || isIndeterminate,
+              ['Checkbox-checked']: isChecked,
               ['Checkbox-dark-checked']: isChecked && theme === CHECKBOX_THEME.Dark,
               ['Checkbox-green-checked']: isChecked && theme === CHECKBOX_THEME.Green,
-              ['Checkbox-unchecked']: !isChecked && !isIndeterminate,
+              ['Checkbox-unchecked']: !isChecked,
               ['Checkbox-error']: isError,
               ['Checkbox-disabled']: isDisabled,
               ['Checkbox-green-disabled']: isDisabled && theme === CHECKBOX_THEME.Green,
@@ -114,7 +101,6 @@ export const Checkbox: React.FC<ICheckboxProps> = (props) => {
                 disabled={isDisabled}
               />
               {isChecked && !isDisabled && <Check />}
-              {isIndeterminate && !isChecked && !isDisabled && <Check />}
             </div>
           </div>
           {(label || children) && (

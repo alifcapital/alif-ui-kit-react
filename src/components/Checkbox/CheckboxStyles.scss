@@ -7,14 +7,12 @@
     display: flex;
     align-items: center;
 
-    // Defining the mixin called checkbox, which takes four optional parameters
     @mixin checkbox(
       $backgroundColor: $white,
       $borderColor: $black90,
       $hoverColor: $black100,
       $color: $black100
     ) {
-      // Applying styles to the element with the class Checkbox-container inside the label
       .Checkbox-container {
         background-color: $backgroundColor;
         cursor: pointer;
@@ -27,7 +25,6 @@
         }
       }
 
-      // When hovering over the label, apply styles to the Checkbox-container element
       &:hover {
         .Checkbox-container {
           @include border($color: $hoverColor);
@@ -35,9 +32,7 @@
       }
     }
 
-    // Applying styles to the input element with type checkbox
     input[type='checkbox'] {
-      // Clipping the element so it is not visible
       clip: rect(0 0 0 0);
       clip-path: inset(50%);
       height: 1px;
@@ -47,9 +42,7 @@
       width: 1px;
     }
 
-    // Applying styles to the element with the class Checkbox-unchecked
     .Checkbox-unchecked {
-      // Including the checkbox mixin without any parameters
       @include checkbox();
     }
 
@@ -85,18 +78,15 @@
       );
     }
 
-    // Applying styles to the element with the class Checkbox-checked that doesn't have the class Checkbox-error or Checkbox-disabled
     .Checkbox-checked:not(
         .Checkbox-error,
         .Checkbox-green-checked,
         .Checkbox-dark-checked,
         .Checkbox-disabled
       ) {
-      // Including the checkbox mixin with specific parameters
       @include checkbox($backgroundColor: $primary, $borderColor: $primary, $hoverColor: $primary);
     }
 
-    // Applying styles to the element with the class Checkbox-disabled
     .Checkbox-disabled {
       @include checkbox($backgroundColor: $black70, $borderColor: $black70, $hoverColor: $black70);
     }
@@ -109,7 +99,6 @@
       @include checkbox($backgroundColor: $black90, $borderColor: $black90, $hoverColor: $black90);
     }
 
-    // Applying styles to the element with the class Checkbox-error that doesn't have the class Checkbox-disabled
     .Checkbox-error:not(.Checkbox-disabled) {
       &:where(.Checkbox-unchecked) {
         @include checkbox(

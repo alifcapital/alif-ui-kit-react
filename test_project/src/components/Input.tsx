@@ -1,6 +1,6 @@
 
 import { CheckCircle } from 'alif-icon-kit-react';
-import { Input, InputSize, InputTheme, InputType } from '../../../src';
+import { Input, INPUT_SIZE,INPUT_THEME,INPUT_TYPE} from '../../../src';
 
 export const InputApp: React.FC = () =>  {
   return (
@@ -8,10 +8,10 @@ export const InputApp: React.FC = () =>  {
         <Input  
           isError
           disabled
-          type={InputType.Text}
+          type={INPUT_TYPE.Text}
           endIcon={<CheckCircle/>}
           placeholder='Однострочный'
-          theme={InputTheme.Dark}
+          theme={INPUT_THEME.Dark}
           label="Текст сверху"
           name="name"
           ariaLabel='araiaLabel'
@@ -20,9 +20,9 @@ export const InputApp: React.FC = () =>  {
         <br /><br />
         <Input  
           defaultValue="default"
-          size={InputSize.Small}
+          size={INPUT_SIZE.Small}
           endIcon={<CheckCircle/>}
-          type={InputType.Password}
+          type={INPUT_TYPE.Password}
           placeholder='Однострочный'
           name="phone"
           ariaLabel='araiaLabel'
