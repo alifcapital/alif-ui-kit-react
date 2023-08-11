@@ -1,8 +1,8 @@
 import { SVGProps } from 'react';
-import { ButtonColor, ButtonSize, ButtonVariant } from './ButtonConstants';
-type Size = `${ButtonSize}`;
-type Variant = `${ButtonVariant}`;
-type Color = `${ButtonColor}`;
+import { BUTTON_COLOR, BUTTON_SIZE, BUTTON_VARIANT } from './ButtonConstants';
+type Size = `${BUTTON_SIZE}`;
+type Variant = `${BUTTON_VARIANT}`;
+type Color = `${BUTTON_COLOR}`;
 type IconType = React.ReactElement<SVGProps<SVGSVGElement>>;
 export type IButtonProps = {
     children?: React.ReactNode;

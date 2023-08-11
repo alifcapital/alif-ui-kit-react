@@ -1,7 +1,7 @@
-import { InputSize, InputTheme, InputType } from './InputConstants';
-type Type = `${InputType}`;
-type Size = `${InputSize}`;
-type Theme = `${InputTheme}`;
+import { INPUT_SIZE, INPUT_THEME, INPUT_TYPE } from './InputConstants';
+type Type = `${INPUT_TYPE}`;
+type Size = `${INPUT_SIZE}`;
+type Theme = `${INPUT_THEME}`;
 type RestProps = Omit<React.ComponentProps<'input'>, 'size'>;
 export interface InputProps extends RestProps {
     id?: string;
