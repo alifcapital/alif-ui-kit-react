@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { Input } from '../Input';
-import { InputTheme, InputType } from '../InputConstants';
+import { INPUT_THEME, INPUT_TYPE } from '../InputConstants';
 
 describe('Input', () => {
   const iconName = 'TEST_SVG';
@@ -13,7 +13,12 @@ describe('Input', () => {
 
   it('should have text type  by default', () => {
     render(
-      <Input ariaLabel="ariaLabel" label="Label" placeholder="placeholder" type={InputType.Text} />,
+      <Input
+        ariaLabel="ariaLabel"
+        label="Label"
+        placeholder="placeholder"
+        type={INPUT_TYPE.Text}
+      />,
     );
 
     const input = screen.getByRole('textbox');
@@ -28,7 +33,7 @@ describe('Input', () => {
         ariaLabel="ariaLabel"
         label="Label"
         placeholder="placeholder"
-        type={InputType.Number}
+        type={INPUT_TYPE.Number}
       />,
     );
 
@@ -44,7 +49,7 @@ describe('Input', () => {
         ariaLabel="ariaLabel"
         label="Label"
         placeholder="placeholder"
-        type={InputType.Password}
+        type={INPUT_TYPE.Password}
       />,
     );
 
@@ -60,7 +65,7 @@ describe('Input', () => {
         id="test_id"
         label="Label"
         placeholder="placeholder"
-        type={InputType.Text}
+        type={INPUT_TYPE.Text}
       />,
     );
 
@@ -77,7 +82,7 @@ describe('Input', () => {
         name="phone"
         label="Label"
         placeholder="placeholder"
-        type={InputType.Text}
+        type={INPUT_TYPE.Text}
       />,
     );
 
@@ -92,7 +97,7 @@ describe('Input', () => {
         ariaLabel="ariaLabel"
         label="Label"
         placeholder="placeholder"
-        type={InputType.Text}
+        type={INPUT_TYPE.Text}
         disabled
       />,
     );
@@ -108,7 +113,7 @@ describe('Input', () => {
         ariaLabel="ariaLabel"
         label="Label"
         placeholder="placeholder"
-        type={InputType.Text}
+        type={INPUT_TYPE.Text}
         startIcon={<Icon />}
       />,
     );
@@ -122,7 +127,7 @@ describe('Input', () => {
         ariaLabel="ariaLabel"
         label="Label"
         placeholder="placeholder"
-        type={InputType.Text}
+        type={INPUT_TYPE.Text}
         endIcon={<Icon />}
       />,
     );
@@ -135,7 +140,7 @@ describe('Input', () => {
         ariaLabel="ariaLabel"
         label="Label"
         placeholder="placeholder"
-        type={InputType.Text}
+        type={INPUT_TYPE.Text}
         helperText={'test helper text'}
       />,
     );
@@ -149,8 +154,8 @@ describe('Input', () => {
         ariaLabel="ariaLabel"
         label="Label"
         placeholder="placeholder"
-        type={InputType.Text}
-        theme={InputTheme.Dark}
+        type={INPUT_TYPE.Text}
+        theme={INPUT_THEME.Dark}
         helperText="test helper text"
       />,
     );

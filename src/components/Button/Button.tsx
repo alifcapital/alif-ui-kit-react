@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import { ButtonColor, ButtonSize, ButtonVariant } from './ButtonConstants';
+import { BUTTON_COLOR, BUTTON_SIZE, BUTTON_VARIANT } from './ButtonConstants';
 import './ButtonStyles.scss';
 import { IButtonProps } from './ButtonTypes';
 
@@ -15,10 +15,10 @@ export const Button = (props: IButtonProps) => {
     rounded,
     endIcon,
     startIcon,
-    color = ButtonColor.Primary,
+    color = BUTTON_COLOR.Primary,
     withIcon,
-    size = ButtonSize.Medium,
-    variant = ButtonVariant.Contained,
+    size = BUTTON_SIZE.Medium,
+    variant = BUTTON_VARIANT.Contained,
   } = props;
 
   return (
@@ -28,25 +28,25 @@ export const Button = (props: IButtonProps) => {
       disabled={disabled}
       className={clsx({
         ['Button']: true,
-        ['Button-contained']: variant === ButtonVariant.Contained,
-        ['Button-outlined']: variant === ButtonVariant.Outlined,
-        ['Button-outlined-disable']: !!disabled && variant === ButtonVariant.Outlined,
-        ['Button-text']: variant === ButtonVariant.Text,
-        ['Button-text-small']: size === ButtonSize.Small && variant === ButtonVariant.Text,
-        ['Button-text-large']: size === ButtonSize.large && variant === ButtonVariant.Text,
-        ['Button-text-disable']: !!disabled && variant === ButtonVariant.Text,
-        ['Button-primary']: size === ButtonSize.Medium,
-        ['Button-primary-disable']: !!disabled && color === ButtonColor.Primary,
-        ['Button-secondary']: color === ButtonColor.Secondary,
-        ['Button-secondary-disable']: !!disabled && color === ButtonColor.Secondary,
-        ['Button-green']: color === ButtonColor.Green,
-        ['Button-green-disable']: !!disabled && color === ButtonColor.Green,
-        ['Button-small']: size === ButtonSize.Small,
-        ['Button-large']: size === ButtonSize.large,
+        ['Button-contained']: variant === BUTTON_VARIANT.Contained,
+        ['Button-outlined']: variant === BUTTON_VARIANT.Outlined,
+        ['Button-outlined-disable']: !!disabled && variant === BUTTON_VARIANT.Outlined,
+        ['Button-text']: variant === BUTTON_VARIANT.Text,
+        ['Button-text-small']: size === BUTTON_SIZE.Small && variant === BUTTON_VARIANT.Text,
+        ['Button-text-large']: size === BUTTON_SIZE.large && variant === BUTTON_VARIANT.Text,
+        ['Button-text-disable']: !!disabled && variant === BUTTON_VARIANT.Text,
+        ['Button-primary']: size === BUTTON_SIZE.Medium,
+        ['Button-primary-disable']: !!disabled && color === BUTTON_COLOR.Primary,
+        ['Button-secondary']: color === BUTTON_COLOR.Secondary,
+        ['Button-secondary-disable']: !!disabled && color === BUTTON_COLOR.Secondary,
+        ['Button-green']: color === BUTTON_COLOR.Green,
+        ['Button-green-disable']: !!disabled && color === BUTTON_COLOR.Green,
+        ['Button-small']: size === BUTTON_SIZE.Small,
+        ['Button-large']: size === BUTTON_SIZE.large,
         ['Button-round']: !!rounded,
         ['Button-only_icon']: !!withIcon,
-        ['Button-only_icon-small']: !!withIcon && size === ButtonSize.Small,
-        ['Button-only_icon-large']: !!withIcon && size === ButtonSize.large,
+        ['Button-only_icon-small']: !!withIcon && size === BUTTON_SIZE.Small,
+        ['Button-only_icon-large']: !!withIcon && size === BUTTON_SIZE.large,
         [className || '']: !!className,
       })}
     >

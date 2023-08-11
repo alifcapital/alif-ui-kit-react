@@ -1,6 +1,6 @@
 import { Search } from 'alif-icon-kit-react';
 
-import { Button, ButtonColor, ButtonSize, ButtonVariant } from '../../../src';
+import { Button, BUTTON_COLOR, BUTTON_SIZE, BUTTON_VARIANT } from '../../../src';
 
 
 export const ButtonApp: React.FC = () => {
@@ -10,10 +10,10 @@ export const ButtonApp: React.FC = () => {
       <Button  ariaLabel='Button' >Кнопка</Button>
       <br /> <br /> 
       Small 
-      <Button  ariaLabel='Button'  size={ButtonSize.Small}>Кнопка</Button>
+      <Button  ariaLabel='Button'  size={BUTTON_SIZE.Small}>Кнопка</Button>
       <br /> <br /> 
       Large
-      <Button  ariaLabel='Button' size={ButtonSize.large}>Кнопка</Button>
+      <Button  ariaLabel='Button' size={BUTTON_SIZE.large}>Кнопка</Button>
       <br/> <br/>
       Disabled
       <Button  ariaLabel='Button' disabled>Кнопка</Button>
@@ -25,7 +25,7 @@ export const ButtonApp: React.FC = () => {
       <Button  ariaLabel='Button' endIcon={<Search />}>Кнопка</Button>
       <br/> <br/>
        Button Small With Icon right
-      <Button  ariaLabel='Button' size={ButtonSize.Small} endIcon={<Search />}>Кнопка</Button>
+      <Button  ariaLabel='Button' size={BUTTON_SIZE.Small} endIcon={<Search />}>Кнопка</Button>
       <br/> <br/>
       With Icon 
       <Button  ariaLabel='Button'withIcon >
@@ -33,37 +33,37 @@ export const ButtonApp: React.FC = () => {
       </Button>
       <br/><br/>
       Variant Outlined
-      <Button  ariaLabel='Button' variant={ButtonVariant.Outlined} size={ButtonSize.large} >Кнопка</Button>
+      <Button  ariaLabel='Button' variant={BUTTON_VARIANT.Outlined} size={BUTTON_SIZE.large} >Кнопка</Button>
       <br/><br/>
       Variant Outlined Disabled
-      <Button  ariaLabel='Button'  variant={ButtonVariant.Outlined} size={ButtonSize.Small} disabled >Кнопка</Button>
+      <Button  ariaLabel='Button'  variant={BUTTON_VARIANT.Outlined} size={BUTTON_SIZE.Small} disabled >Кнопка</Button>
       <br/><br/>
        Variant Text 
-      <Button  ariaLabel='Button'  variant={ButtonVariant.Text}  >Кнопка</Button>
+      <Button  ariaLabel='Button'  variant={BUTTON_VARIANT.Text}  >Кнопка</Button>
       <br/><br/>
        Variant Text disabled
-      <Button  ariaLabel='Button'  variant={ButtonVariant.Text}  disabled >Кнопка</Button>
+      <Button  ariaLabel='Button'  variant={BUTTON_VARIANT.Text}  disabled >Кнопка</Button>
       <br/><br/>
        With Icon large
-      <Button  ariaLabel='Button'  withIcon size={ButtonSize.large} ><Search /></Button>
+      <Button  ariaLabel='Button'  withIcon size={BUTTON_SIZE.large} ><Search /></Button>
       <br/><br/>
        With Icon medium
       <Button  ariaLabel='Button'withIcon ><Search /></Button>
       <br/><br/>
        With Icon small
-      <Button  ariaLabel='Button'  withIcon size={ButtonSize.Small} ><Search /></Button>
+      <Button  ariaLabel='Button'  withIcon size={BUTTON_SIZE.Small} ><Search /></Button>
       <br/><br/>
       Secondary large
-      <Button  ariaLabel='Button'  color={ButtonColor.Secondary} size={ButtonSize.large}>Кнопка</Button>
+      <Button  ariaLabel='Button'  color={BUTTON_COLOR.Secondary} size={BUTTON_SIZE.large}>Кнопка</Button>
       <br/> <br/>
       Secondary disabled
-      <Button  ariaLabel='Button'  color={ButtonColor.Secondary}   disabled >Кнопка</Button>
+      <Button  ariaLabel='Button'  color={BUTTON_COLOR.Secondary}   disabled >Кнопка</Button>
       <br/><br/>
       Green large
-      <Button  ariaLabel='Button'  color={ButtonColor.Green} size={ButtonSize.large}>Кнопка</Button>
+      <Button  ariaLabel='Button'  color={BUTTON_COLOR.Green} size={BUTTON_SIZE.large}>Кнопка</Button>
       <br/> <br/>
       Green disabled
-      <Button  ariaLabel='Button'  color={ButtonColor.Green}   disabled >Кнопка</Button>
+      <Button  ariaLabel='Button'  color={BUTTON_COLOR.Green}   disabled >Кнопка</Button>
       <br/><br/>
     </div>
   );

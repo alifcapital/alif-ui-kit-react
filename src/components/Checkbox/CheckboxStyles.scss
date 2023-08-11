@@ -1,0 +1,148 @@
+@import '../../styles/index.scss';
+
+.Checkbox {
+  display: table-cell;
+
+  label {
+    display: flex;
+    align-items: center;
+
+    @mixin checkbox(
+      $backgroundColor: $white,
+      $borderColor: $black90,
+      $hoverColor: $black100,
+      $color: $black100
+    ) {
+      .Checkbox-container {
+        background-color: $backgroundColor;
+        cursor: pointer;
+        border-radius: 3px;
+        @include border($color: $borderColor);
+        @include flexAligment;
+        @include transition(background-color);
+        @if (svg) {
+          color: $white;
+        }
+      }
+
+      &:hover {
+        .Checkbox-container {
+          @include border($color: $hoverColor);
+        }
+      }
+    }
+
+    input[type='checkbox'] {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    .Checkbox-unchecked {
+      @include checkbox();
+    }
+
+    .Checkbox-large {
+      height: 26px;
+      width: 26px;
+    }
+
+    .Checkbox-medium {
+      height: 24px;
+      width: 24px;
+    }
+
+    .Checkbox-small {
+      height: 20px;
+      width: 20px;
+    }
+
+    .Checkbox-green,
+    .Checkbox-dark {
+      @include checkbox($borderColor: $black80, $hoverColor: $black90, $color: $white);
+    }
+
+    .Checkbox-dark-checked {
+      @include checkbox($backgroundColor: $primary, $borderColor: $primary, $hoverColor: $primary);
+    }
+
+    .Checkbox-green-checked {
+      @include checkbox(
+        $backgroundColor: $black100,
+        $borderColor: $black100,
+        $hoverColor: $black100
+      );
+    }
+
+    .Checkbox-checked:not(
+        .Checkbox-error,
+        .Checkbox-green-checked,
+        .Checkbox-dark-checked,
+        .Checkbox-disabled
+      ) {
+      @include checkbox($backgroundColor: $primary, $borderColor: $primary, $hoverColor: $primary);
+    }
+
+    .Checkbox-disabled {
+      @include checkbox($backgroundColor: $black70, $borderColor: $black70, $hoverColor: $black70);
+    }
+
+    .Checkbox-green-disabled {
+      @include checkbox($backgroundColor: $black80, $borderColor: $black80, $hoverColor: $black80);
+    }
+
+    .Checkbox-dark-disabled {
+      @include checkbox($backgroundColor: $black90, $borderColor: $black90, $hoverColor: $black90);
+    }
+
+    .Checkbox-error:not(.Checkbox-disabled) {
+      &:where(.Checkbox-unchecked) {
+        @include checkbox(
+          $backgroundColor: $white,
+          $borderColor: $redWaring,
+          $color: $redWaring,
+          $hoverColor: $redWaring
+        );
+      }
+
+      &:where(.Checkbox-checked) {
+        @include checkbox(
+          $backgroundColor: $white,
+          $borderColor: $redWaring,
+          $color: $redWaring,
+          $hoverColor: $redWaring
+        );
+      }
+    }
+
+    .Checkbox-label {
+      margin-left: $baseMargin * 3;
+      @include body-big;
+    }
+
+    .Checkbox-label-small {
+      @include body-normal;
+    }
+
+    .Checkbox-label-disabled {
+      color: $black80;
+    }
+
+    .Checkbox-label-dark-disabled {
+      color: $white;
+    }
+
+    .Checkbox-label-green-disabled {
+      color: $black70;
+    }
+
+    .Checkbox-label-dark,
+    .Checkbox-label-green:not(.Checkbox-label-dark-disabled, .Checkbox-label-green-disabled) {
+      color: $white;
+    }
+  }
+}
