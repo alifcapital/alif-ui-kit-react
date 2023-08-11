@@ -66,6 +66,8 @@
 
     & .InputBase-icon-end {
       @include flexAligment;
+      border: none;
+      background-color: transparent;
       cursor: pointer;
       margin-left: $baseMargin * 4;
     }

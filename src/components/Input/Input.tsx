@@ -150,9 +150,13 @@ export const Input = (props: InputProps) => {
           <div className="InputBase-icon-end">{endIcon}</div>
         )}
         {type === InputType.Password && (
-          <div className="InputBase-icon-end" onClick={handleClickShowPassword}>
-            {showPassword ? <EyeOff /> : <EyeOn />}
-          </div>
+          <button
+            aria-label="toggle password visibility"
+            className="InputBase-icon-end"
+            onClick={handleClickShowPassword}
+          >
+            {showPassword ? <EyeOn /> : <EyeOff />}
+          </button>
         )}
       </div>
       {helperText && (
