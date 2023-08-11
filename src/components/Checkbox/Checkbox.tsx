@@ -8,6 +8,8 @@ import './CheckboxStyles.scss';
 
 export const Checkbox: React.FC<ICheckboxProps> = (props) => {
   const {
+    id,
+    name,
     disabled,
     children,
     value,
@@ -94,6 +96,7 @@ export const Checkbox: React.FC<ICheckboxProps> = (props) => {
               onKeyDown={handleEnterPress}
             >
               <input
+                id={id}
                 type="checkbox"
                 onChange={handleChangeCheckbox}
                 aria-label={ariaLabel}
