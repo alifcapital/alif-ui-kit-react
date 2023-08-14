@@ -9,7 +9,7 @@ interface ICheckbox {
   theme?: Theme;
   disabled: boolean;
   value: boolean;
-  label: string | React.ReactNode;
+  label: string;
   className: string;
   onChange: (isChecked: boolean, event: React.ChangeEvent<HTMLInputElement>) => void;
   error: boolean;
