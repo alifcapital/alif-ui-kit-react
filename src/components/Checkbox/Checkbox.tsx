@@ -106,22 +106,22 @@ export const Checkbox: React.FC<ICheckboxProps> = (props) => {
               {isChecked && !isDisabled && <Check />}
             </div>
           </div>
-          {(label || children) && (
-            <div
-              className={clsx({
-                ['Checkbox-label']: true,
-                ['Checkbox-label-small']: size === CHECKBOX_SIZE.Small,
-                ['Checkbox-label-dark']: theme === CHECKBOX_THEME.Dark,
-                ['Checkbox-label-green']: theme === CHECKBOX_THEME.Green,
-                ['Checkbox-label-disabled']: isDisabled,
-                ['Checkbox-label-dark-disabled']: isDisabled && theme === CHECKBOX_THEME.Dark,
-                ['Checkbox-label-green-disabled']: isDisabled && theme === CHECKBOX_THEME.Green,
-              })}
-            >
-              {label || children}
-            </div>
-          )}
         </label>
+        {(label || children) && (
+          <div
+            className={clsx({
+              ['Checkbox-label']: true,
+              ['Checkbox-label-small']: size === CHECKBOX_SIZE.Small,
+              ['Checkbox-label-dark']: theme === CHECKBOX_THEME.Dark,
+              ['Checkbox-label-green']: theme === CHECKBOX_THEME.Green,
+              ['Checkbox-label-disabled']: isDisabled,
+              ['Checkbox-label-dark-disabled']: isDisabled && theme === CHECKBOX_THEME.Dark,
+              ['Checkbox-label-green-disabled']: isDisabled && theme === CHECKBOX_THEME.Green,
+            })}
+          >
+            {label || children}
+          </div>
+        )}
       </div>
     </>
   );
