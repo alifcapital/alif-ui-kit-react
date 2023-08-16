@@ -1784,6 +1784,8 @@ export {
   Ge as INPUT_THEME,
   be as INPUT_TYPE,
   Ur as Input,
+  K as SWITCH_SIZE,
+  W as SWITCH_THEME,
   Jr as Switch,
   zr as Text
 };
