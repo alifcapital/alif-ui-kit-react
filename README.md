@@ -23,4 +23,5 @@
 *Keep current style code and follow with current folder structure of the project while developing.
 Inside `src/*` folder implement the component from design system. Write tests for the component, referring to previously tests, like in `Button` component. Create a Pull request to main branch, and assign `mkhushang`, with `Odinaev444` to reviewers.*
 
+*In the root first need to run* `npm pkg set scripts.prepare="husky install"`.
 *Inside* `test_project/*` *folder you can import your component, then run* `yarn dev` *or* `npm run dev` *to start the project and develop the component.*
