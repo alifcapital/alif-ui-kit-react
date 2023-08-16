@@ -79,17 +79,18 @@ export const Switch: React.FC<ISwitchProps> = (props) => {
             })}
           ></div>
         </div>
+
+        <div
+          className={clsx({
+            ['Switch-label']: true,
+            ['Switch-label-small']: size === SWITCH_SIZE.Small,
+            ['Switch-label-dark']: theme === SWITCH_THEME.Dark,
+            ['Switch-label-green']: theme === SWITCH_THEME.Green,
+          })}
+        >
+          {label}
+        </div>
       </label>
-      <div
-        className={clsx({
-          ['Switch-label']: true,
-          ['Switch-label-small']: size === SWITCH_SIZE.Small,
-          ['Switch-label-dark']: theme === SWITCH_THEME.Dark,
-          ['Switch-label-green']: theme === SWITCH_THEME.Green,
-        })}
-      >
-        {label}
-      </div>
     </div>
   );
 };
