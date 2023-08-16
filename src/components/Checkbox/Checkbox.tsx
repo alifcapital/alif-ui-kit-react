@@ -106,6 +106,7 @@ export const Checkbox: React.FC<ICheckboxProps> = (props) => {
               {isChecked && !isDisabled && <Check />}
             </div>
           </div>
+
           {(label || children) && (
             <div
               className={clsx({

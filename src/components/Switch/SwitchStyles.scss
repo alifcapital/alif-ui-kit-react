@@ -1,0 +1,127 @@
+@import '../../styles/index.scss';
+
+.Switch-root {
+  height: 24px;
+  @include flexAligment($justifyContent: start);
+
+  label {
+    @include flexAligment($justifyContent: start);
+
+    @mixin switch($backgroundColor: $black80) {
+      cursor: pointer;
+      box-sizing: border-box;
+      background-color: $backgroundColor;
+      padding: $basePadding - 1;
+      border-radius: $baseBorderRadius * 2;
+      @include transition(background-color);
+
+      & .Switch-ellipse {
+        margin-left: 0;
+        width: 18px;
+        height: 18px;
+        background-color: $white;
+        border-radius: 100%;
+
+        @include transition(margin);
+      }
+
+      input[type='checkbox'] {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+      }
+    }
+
+    @mixin alignEllipse($marginLeft: 18px) {
+      & .Switch-ellipse {
+        margin-left: calc(100% - $marginLeft);
+      }
+    }
+
+    & .Switch-light {
+      @include switch($backgroundColor: $black80);
+    }
+
+    & .Switch-green {
+      @include switch($backgroundColor: $black90);
+    }
+
+    & .Switch-dark {
+      @include switch($backgroundColor: rgba(236, 240, 243, 0.4));
+    }
+
+    & .Switch-light-active,
+    .Switch-green-active {
+      @include switch($backgroundColor: $primary);
+    }
+
+    & .Switch-dark-active {
+      @include switch($backgroundColor: $black100);
+    }
+
+    & .Switch-large-active {
+      @include alignEllipse(20px);
+    }
+
+    & .Switch-medium-active {
+      @include alignEllipse;
+    }
+
+    & .Switch-small-active {
+      @include alignEllipse(16px);
+    }
+
+    & .Switch-disabled {
+      cursor: no-drop;
+      background-color: opacity(0.5);
+    }
+
+    & .Switch-large {
+      min-width: 48px;
+      height: 26px;
+
+      & .Switch-ellipse {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    & .Switch-medium {
+      min-width: 48px;
+      height: 24px;
+    }
+
+    & .Switch-small {
+      min-width: 40px;
+      height: 20px;
+      padding: calc($basePadding / 2);
+      & .Switch-ellipse {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    & .Switch-large {
+      min-width: 48px;
+      height: 26px;
+    }
+
+    & .Switch-label {
+      @include body-big;
+      margin-left: $baseMargin * 2;
+    }
+
+    & .Switch-label-dark,
+    .Switch-label-green {
+      color: $white;
+    }
+
+    & .Switch-label-small {
+      @include body-normal;
+    }
+  }
+}
