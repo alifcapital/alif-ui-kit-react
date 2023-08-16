@@ -13,7 +13,7 @@ export const SwitchApp: React.FC = () => {
   return (
     <div>
       Without Label
-      <Switch  ariaLabel='aria-lable' checked={isChecked} onChange={handleChange} />
+      <Switch  ariaLabel='aria-lable' />
       <br /> 
       Disabled
       <Switch  ariaLabel='aria-lable'  disabled />

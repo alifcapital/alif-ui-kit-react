@@ -1,4 +1,4 @@
-import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
+import React, { DetailedHTMLProps, HTMLAttributes, useEffect, useState } from 'react';
 import clsx from 'clsx';
 
 import { ISwitchProps } from './SwitchTypes';
@@ -19,28 +19,44 @@ export const Switch: React.FC<ISwitchProps> = (props) => {
     onChange,
   } = props;
 
+  const [isChecked, setIsChecked] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(disabled);
+
   const handleChangeCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (disabled) {
+    if (isDisabled) {
       return;
     }
-    onChange && onChange(!checked, e);
+
+    setIsChecked(!isChecked);
+    onChange && onChange(!isChecked, e);
   };
 
   const handleEnterPress = (
     ev: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
   ) => {
-    if ((ev.key === 'Enter' || ev.key === ' ') && !disabled) {
+    if ((ev.key === 'Enter' || ev.key === ' ') && !isDisabled) {
       const event = {
         target: {
           ariaLabel,
           name,
         },
       };
+
+      setIsChecked(!isChecked);
       // mapping custom object as React.ChangeEvent<HTMLInputElement>
       // @ts-ignore
-      onChange && onChange(!checked, event);
+      onChange && onChange(!isChecked, event);
     }
   };
+
+  useEffect(() => {
+    setIsDisabled(disabled);
+  }, [disabled]);
+
+  useEffect(() => {
+    const value = typeof checked === 'boolean' ? checked : false;
+    setIsChecked(value);
+  }, [checked]);
 
   return (
     <div className="Switch-root">
@@ -53,13 +69,13 @@ export const Switch: React.FC<ISwitchProps> = (props) => {
             ['Switch-large']: size === SWITCH_SIZE.Large,
             ['Switch-medium']: size === SWITCH_SIZE.Medium,
             ['Switch-small']: size === SWITCH_SIZE.Small,
-            ['Switch-light-active']: checked && theme === SWITCH_THEME.Light,
-            ['Switch-dark-active']: checked && theme === SWITCH_THEME.Dark,
-            ['Switch-green-active']: checked && theme === SWITCH_THEME.Green,
-            ['Switch-large-active']: checked && size === SWITCH_SIZE.Large,
-            ['Switch-medium-active']: checked && size === SWITCH_SIZE.Medium,
-            ['Switch-small-active']: checked && size === SWITCH_SIZE.Small,
-            ['Switch-disabled']: disabled,
+            ['Switch-light-active']: isChecked && theme === SWITCH_THEME.Light,
+            ['Switch-dark-active']: isChecked && theme === SWITCH_THEME.Dark,
+            ['Switch-green-active']: isChecked && theme === SWITCH_THEME.Green,
+            ['Switch-large-active']: isChecked && size === SWITCH_SIZE.Large,
+            ['Switch-medium-active']: isChecked && size === SWITCH_SIZE.Medium,
+            ['Switch-small-active']: isChecked && size === SWITCH_SIZE.Small,
+            ['Switch-disabled']: isDisabled,
             [className || '']: !!className,
           })}
           tabIndex={0}
@@ -79,7 +95,6 @@ export const Switch: React.FC<ISwitchProps> = (props) => {
             })}
           ></div>
         </div>
-
         <div
           className={clsx({
             ['Switch-label']: true,

@@ -27,7 +27,7 @@ export const Checkbox: React.FC<ICheckboxProps> = (props) => {
   const [isDisabled, setIsDisabled] = useState(disabled);
 
   const handleChangeCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (disabled) {
+    if (isDisabled) {
       return;
     }
 
@@ -38,7 +38,7 @@ export const Checkbox: React.FC<ICheckboxProps> = (props) => {
   const handleEnterPress = (
     ev: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
   ) => {
-    if ((ev.key === 'Enter' || ev.key === ' ') && !disabled) {
+    if ((ev.key === 'Enter' || ev.key === ' ') && !isDisabled) {
       const event = {
         target: {
           ariaLabel,
