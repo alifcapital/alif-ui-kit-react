@@ -83,6 +83,7 @@ export const Switch: React.FC<ISwitchProps> = (props) => {
           onKeyDown={handleEnterPress}
         >
           <input
+            aria-label={ariaLabel}
             tabIndex={-1}
             type="checkbox"
             name={name}
