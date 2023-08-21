@@ -59,7 +59,7 @@ export const Switch: React.FC<ISwitchProps> = (props) => {
   }, [checked]);
 
   return (
-    <div className="Switch-root">
+    <div className="Switch">
       <label>
         <div
           className={clsx({
@@ -83,6 +83,7 @@ export const Switch: React.FC<ISwitchProps> = (props) => {
           onKeyDown={handleEnterPress}
         >
           <input
+            aria-label={ariaLabel}
             tabIndex={-1}
             type="checkbox"
             name={name}
