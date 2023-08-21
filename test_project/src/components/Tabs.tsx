@@ -19,11 +19,11 @@ export const TabsApp: React.FC = () => {
       label: 'Label 3',
     },
   ];
-         
+        
   return (
     <div>
-      <Tabs className='custom-class' tabs={tabs}/> <br></br> 
-      <Tabs size={ TABS_SIZE.Small} className='custom-class' tabs={tabs}/>
+      <Tabs   className='custom-class' tabs={tabs}/> <br></br> 
+      <Tabs  activeTab='three' size={ TABS_SIZE.Small} className='custom-class' tabs={tabs}/>
     </div>
   );
 };

@@ -1,4 +1,4 @@
 export enum TABS_SIZE {
-  large = 'large',
+  Large = 'large',
   Small = 'small',
 }

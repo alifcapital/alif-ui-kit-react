@@ -59,7 +59,7 @@ export const Switch: React.FC<ISwitchProps> = (props) => {
   }, [checked]);
 
   return (
-    <div className="Switch-root">
+    <div className="Switch">
       <label>
         <div
           className={clsx({

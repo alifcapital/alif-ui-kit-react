@@ -45,6 +45,14 @@ describe('Tabs', () => {
     expect(tabs[0]).toHaveClass('Tab-root-active');
   });
 
+  it('should render active tab', () => {
+    render(<Tabs activeTab="two" tabs={tabList} />);
+
+    const tabs = screen.getAllByRole('button');
+
+    expect(tabs[1]).toHaveClass('Tab-root-active');
+  });
+
   it('should active  tab after click', async () => {
     const user = userEvent.setup();
 

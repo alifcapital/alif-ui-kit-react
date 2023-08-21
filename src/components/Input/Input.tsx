@@ -78,7 +78,7 @@ export const Input = (props: InputProps) => {
   return (
     <div
       className={clsx({
-        ['Input-root']: true,
+        ['Input']: true,
         ['Input-without-heading ']: !!label,
         [className || '']: !!className,
       })}

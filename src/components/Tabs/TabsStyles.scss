@@ -1,12 +1,11 @@
 @import '../../styles/index.scss';
 
-.Tabs-root {
+.Tabs {
   @include flexAligment($justifyContent: start);
   gap: 16px;
 
   .Tab-root {
     position: relative;
-    height: 47px;
     display: flex;
     background: white;
     border: none;
