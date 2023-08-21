@@ -11,9 +11,9 @@ export const Tabs = (props: ITabsProps) => {
   const [selectedId, setSelectedId] = useState(tabs[0]?.id);
   const selectedTab = useMemo(() => tabs.find((tab) => tab.id === selectedId), [selectedId, tabs]);
 
-  const handleTabClick = (id: string, clickHandler?: () => void) => {
+  const handleTabClick = (id: string, clickHandler?: (id: string) => void) => {
     setSelectedId(id);
-    clickHandler && clickHandler();
+    clickHandler && clickHandler(id);
   };
 
   useLayoutEffect(() => {
@@ -51,7 +51,7 @@ export const Tabs = (props: ITabsProps) => {
             >
               {tab.label}
             </div>
-            <div className="Tab-active-line"></div>
+            <div className="Tab-active-line" />
           </button>
         ))}
       </div>

@@ -6,7 +6,7 @@ type Size = `${TABS_SIZE}`;
 interface ITab {
   disabled?: boolean;
   content?: React.ReactNode;
-  onClick?: () => void;
+  onClick?: (id: string) => void;
   id: string;
   label: string;
 }
