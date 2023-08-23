@@ -7,17 +7,19 @@ import { TextApp } from './components/Text';
 import { CheckboxApp } from './components/Checkbox';
 import { SwitchApp } from './components/Switch';
 import { TabsApp } from './components/Tabs';
+import { AccordionApp } from './components/Accordion';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='conatainer'>
-      <TabsApp/><br /><hr />
+    <AccordionApp/>
+      {/* <TabsApp/><br /><hr />
       <SwitchApp/><br /><hr />
       <CheckboxApp/><br /><hr />
       <InputApp/><br /><hr />
       <ButtonApp/><hr />
-      <TextApp />
+      <TextApp /> */}
     </div>
   </React.StrictMode>,
 );
