@@ -1,0 +1,38 @@
+@import '../../styles/index.scss';
+
+.Accordion {
+  cursor: pointer;
+  position: relative;
+
+  .Accordion-heading {
+    $headingColor: $black100;
+    color: $headingColor;
+    overflow: hidden;
+    @include flexAligment($justifyContent: space-between);
+
+    .Accordion-heading-label {
+      @include body-normal;
+    }
+
+    .Accordion-heading-arrow {
+      svg {
+        display: block;
+        stroke: $headingColor;
+      }
+      @include transition(transform);
+    }
+
+    .Accordion-heading-arrow-up {
+      transform: rotate(180deg);
+    }
+  }
+
+  .Accordion-details {
+    overflow: hidden;
+    visibility: collapse;
+    @include transition(height);
+  }
+  .Accordion-details-open {
+    visibility: visible;
+  }
+}
