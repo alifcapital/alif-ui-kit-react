@@ -66,7 +66,6 @@ export const Accordion = (props: IAccordionProps) => {
     >
       <div
         tabIndex={0}
-        id={'Accordion-heading'}
         className="Accordion-heading"
         role="button"
         aria-expanded="true"

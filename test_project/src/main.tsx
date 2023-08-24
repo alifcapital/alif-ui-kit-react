@@ -13,13 +13,13 @@ import './index.css';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='conatainer'>
-    <AccordionApp/>
-      {/* <TabsApp/><br /><hr />
-      <SwitchApp/><br /><hr />
-      <CheckboxApp/><br /><hr />
-      <InputApp/><br /><hr />
-      <ButtonApp/><hr />
-      <TextApp /> */}
+    <AccordionApp/><br /><hr />
+    <TabsApp/><br /><hr />
+    <SwitchApp/><br /><hr />
+    <CheckboxApp/><br /><hr />
+    <InputApp/><br /><hr />
+    <ButtonApp/><hr />
+    <TextApp />
     </div>
   </React.StrictMode>,
 );
