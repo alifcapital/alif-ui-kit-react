@@ -6,7 +6,16 @@ import { IAccordionProps } from './AccordionTypes';
 import './AccordionStyles.scss';
 
 export const Accordion = (props: IAccordionProps) => {
-  const { className, ariaLabel, content, header, contentMarginTop = 0, isOpen, onChange } = props;
+  const {
+    className,
+    color,
+    ariaLabel,
+    content,
+    header,
+    contentMarginTop = 0,
+    isOpen,
+    onChange,
+  } = props;
 
   const [open, setOpen] = useState(isOpen);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -57,23 +66,34 @@ export const Accordion = (props: IAccordionProps) => {
     >
       <div
         tabIndex={0}
+        id={'Accordion-heading'}
         className="Accordion-heading"
         role="button"
+        aria-expanded="true"
         aria-label={ariaLabel}
         onClick={handleClick}
         onKeyDown={handleEnterPress}
       >
-        <div className="Accordion-heading-label">{header}</div>
+        <div style={{ color: color }} className="Accordion-heading-label">
+          {header}
+        </div>
         <div
           className={clsx({
             ['Accordion-heading-arrow']: true,
             ['Accordion-heading-arrow-up']: open,
           })}
         >
-          <SelectOpenDown width="24" height="24" />
+          <SelectOpenDown width="24" height="24" color={color} />
         </div>
       </div>
-      <div style={{ marginTop: contentMarginTop }} ref={contentRef} className="Accordion-details">
+      <div
+        style={{ marginTop: contentMarginTop }}
+        ref={contentRef}
+        className={clsx({
+          ['Accordion-details']: true,
+          ['Accordion-details-open']: open,
+        })}
+      >
         {content}
       </div>
     </div>

@@ -29,6 +29,10 @@
 
   .Accordion-details {
     overflow: hidden;
+    visibility: collapse;
     @include transition(height);
+  }
+  .Accordion-details-open {
+    visibility: visible;
   }
 }
