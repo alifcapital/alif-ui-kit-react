@@ -22,8 +22,8 @@ export const TagsApp: React.FC = () => {
         
   return (
     <div>
-      <Tags  activeTab='three' size={ TAGS_SIZE.Medium} className='custom-class' tags={tags}/><br></br> 
-      <Tags  activeColor='black'  className='custom-class' size={ TAGS_SIZE.large} tags={tags}/> 
+      <Tags  activeTag='three' size={ TAGS_SIZE.Medium} className='custom-class' tags={tags}/><br></br> 
+      <Tags  activeColor='black'  className='custom-class' size={ TAGS_SIZE.Large} tags={tags}/> 
     </div>
   );
 };

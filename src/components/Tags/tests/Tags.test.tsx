@@ -6,7 +6,7 @@ import { Tags } from '../Tags';
 import { TAGS_SIZE } from '../TagsConstants';
 
 describe('Tags', () => {
-  const tabList = [
+  const tagList = [
     { id: 'one', label: 'Label 1' },
     {
       id: 'two',
@@ -15,67 +15,67 @@ describe('Tags', () => {
   ];
 
   it('should render 2 tags', () => {
-    render(<Tags tags={tabList} />);
+    render(<Tags tags={tagList} />);
 
     const tags = screen.getAllByRole('button');
 
-    tags.forEach((tab) => {
-      expect(tab).toHaveClass('Tag');
+    tags.forEach((tag) => {
+      expect(tag).toHaveClass('Tag');
     });
 
     expect(tags.length).toBe(2);
   });
 
   it('should have medium size', () => {
-    render(<Tags size={TAGS_SIZE.Medium} tags={tabList} />);
+    render(<Tags size={TAGS_SIZE.Medium} tags={tagList} />);
 
     const tags = screen.getAllByRole('button');
 
-    tags.forEach((tab) => {
-      expect(tab).toHaveClass('Tag');
-      expect(tab).toHaveClass('Tag-medium');
+    tags.forEach((tag) => {
+      expect(tag).toHaveClass('Tag');
+      expect(tag).toHaveClass('Tag-medium');
     });
   });
 
   it('should have large size', () => {
-    render(<Tags size={TAGS_SIZE.large} tags={tabList} />);
+    render(<Tags size={TAGS_SIZE.Large} tags={tagList} />);
 
     const tags = screen.getAllByRole('button');
 
-    tags.forEach((tab) => {
-      expect(tab).toHaveClass('Tag');
-      expect(tab).toHaveClass('Tag-large');
+    tags.forEach((tag) => {
+      expect(tag).toHaveClass('Tag');
+      expect(tag).toHaveClass('Tag-large');
     });
   });
 
   it('should render fisrt tag as active', () => {
-    render(<Tags tags={tabList} />);
+    render(<Tags tags={tagList} />);
 
     const tags = screen.getAllByRole('button');
 
     expect(tags[0]).toHaveClass('Tag-active');
   });
 
-  it('should render active tab', () => {
-    render(<Tags activeTab="two" tags={tabList} />);
+  it('should render active tag', () => {
+    render(<Tags activeTag="two" tags={tagList} />);
 
     const tags = screen.getAllByRole('button');
 
     expect(tags[1]).toHaveClass('Tag-active');
   });
 
-  it('should change active tab color', () => {
-    render(<Tags activeTab="two" activeColor="#000" tags={tabList} />);
+  it('should change active tag color', () => {
+    render(<Tags activeTag="two" activeColor="#000" tags={tagList} />);
 
     const tags = screen.getAllByRole('button');
 
     expect(tags[1].style.backgroundColor).toEqual('rgb(0, 0, 0)');
   });
 
-  it('should active  tab after click', async () => {
+  it('should active  tag after click', async () => {
     const user = userEvent.setup();
 
-    render(<Tags tags={tabList} />);
+    render(<Tags tags={tagList} />);
 
     const tags = screen.getAllByRole('button');
 

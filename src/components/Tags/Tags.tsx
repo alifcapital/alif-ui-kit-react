@@ -6,7 +6,7 @@ import { TAGS_SIZE } from './TagsConstants';
 import './TagsStyles.scss';
 
 export const Tags = (props: ITagsProps) => {
-  const { className, size = TAGS_SIZE.Medium, tags, gap, activeTab, activeColor } = props;
+  const { className, size = TAGS_SIZE.Medium, tags, gap, activeTag, activeColor } = props;
 
   const [selectedId, setSelectedId] = useState(tags[0]?.id);
   const selectedTab = useMemo(() => tags.find((tag) => tag.id === selectedId), [selectedId, tags]);
@@ -17,17 +17,17 @@ export const Tags = (props: ITagsProps) => {
   };
 
   useLayoutEffect(() => {
-    if (activeTab) {
-      setSelectedId(activeTab);
+    if (activeTag) {
+      setSelectedId(activeTag);
     }
-  }, [activeTab]);
+  }, [activeTag]);
 
   return (
-    <>
+    <div className="Tags">
       <div
         style={{ gap: gap }}
         className={clsx({
-          ['Tags']: true,
+          ['Tags-base']: true,
           [className || '']: !!className,
         })}
       >
@@ -41,7 +41,7 @@ export const Tags = (props: ITagsProps) => {
             className={clsx({
               ['Tag']: true,
               ['Tag-medium']: size === TAGS_SIZE.Medium,
-              ['Tag-large']: size === TAGS_SIZE.large,
+              ['Tag-large']: size === TAGS_SIZE.Large,
               ['Tag-active']: selectedId === tag.id,
               [className || '']: !!className,
             })}
@@ -58,6 +58,6 @@ export const Tags = (props: ITagsProps) => {
       {selectedTab && selectedTab.content && (
         <div className="Tag-content">{selectedTab.content}</div>
       )}
-    </>
+    </div>
   );
 };

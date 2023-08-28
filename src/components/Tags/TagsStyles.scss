@@ -1,55 +1,57 @@
 @import '../../styles/index.scss';
 
 .Tags {
-  @include flexAligment($justifyContent: flex-start);
-  gap: $baseMargin * 2;
+  .Tags-base {
+    @include flexAligment($justifyContent: flex-start);
+    gap: $baseMargin * 2;
 
-  .Tag {
-    background-color: $black70;
-    border-radius: $baseBorderRadius;
-    color: $black90;
-    border: none;
-    border-radius: 28px;
-    cursor: pointer;
-    @include flexAligment;
-
-    & .Tag-label {
+    .Tag {
+      background-color: $black70;
+      border-radius: $baseBorderRadius;
+      color: $black90;
+      border: none;
+      border-radius: 28px;
+      cursor: pointer;
       @include flexAligment;
-    }
 
-    &.Tag-large {
-      @include body-normal;
-      padding: $basePadding + 6 $basePadding * 5;
-    }
+      & .Tag-label {
+        @include flexAligment;
+      }
 
-    &.Tag-medium {
-      @include body-small;
-      height: 32px;
-      padding: $basePadding * 2 $basePadding * 3;
+      &.Tag-large {
+        @include body-normal;
+        padding: $basePadding * 2.5 $basePadding * 5;
+      }
 
-      & .Tag-label svg {
-        width: 15px;
-        height: 15px;
+      &.Tag-medium {
+        @include body-small;
+        height: 32px;
+        padding: $basePadding * 2 $basePadding * 3;
+
+        & .Tag-label svg {
+          width: 15px;
+          height: 15px;
+        }
+      }
+
+      & .Tag-icon-left {
+        display: flex;
+        svg {
+          margin-right: $baseMargin * 2;
+        }
+      }
+
+      & .Tag-icon-right {
+        display: flex;
+        svg {
+          margin-left: $baseMargin * 2;
+        }
       }
     }
 
-    & .Tag-icon-left {
-      display: flex;
-      svg {
-        margin-right: $baseMargin * 2;
-      }
+    .Tag-active {
+      background-color: $grey90;
+      color: $white;
     }
-
-    & .Tag-icon-right {
-      display: flex;
-      svg {
-        margin-left: $baseMargin * 2;
-      }
-    }
-  }
-
-  .Tag-active {
-    background-color: $grey90;
-    color: $white;
   }
 }

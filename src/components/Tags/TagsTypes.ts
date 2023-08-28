@@ -16,7 +16,7 @@ interface ITag {
 
 export interface ITagsProps {
   tags: ITag[];
-  activeTab?: string;
+  activeTag?: string;
   activeColor?: string;
   gap?: number;
   size?: Size;

@@ -1,4 +1,4 @@
 export enum TAGS_SIZE {
-  large = 'large',
+  Large = 'large',
   Medium = 'medium',
 }
