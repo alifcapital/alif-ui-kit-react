@@ -23,11 +23,11 @@ export const Tabs = (props: ITabsProps) => {
   }, [activeTab]);
 
   return (
-    <>
+    <div className="Tabs">
       <div
         style={{ gap: gap }}
         className={clsx({
-          ['Tabs']: true,
+          ['Tabs-base']: true,
           [className || '']: !!className,
         })}
       >
@@ -58,6 +58,6 @@ export const Tabs = (props: ITabsProps) => {
       {selectedTab && selectedTab.content && (
         <div className="Tab-content">{selectedTab.content}</div>
       )}
-    </>
+    </div>
   );
 };

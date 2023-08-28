@@ -9,10 +9,12 @@ import { SwitchApp } from './components/Switch';
 import { TabsApp } from './components/Tabs';
 import { AccordionApp } from './components/Accordion';
 import './index.css';
+import { TagsApp } from './components/Tags';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='conatainer'>
+    <TagsApp/><br /><hr />
     <AccordionApp/><br /><hr />
     <TabsApp/><br /><hr />
     <SwitchApp/><br /><hr />

@@ -33,7 +33,7 @@ export const Button = (props: IButtonProps) => {
         ['Button-outlined-disable']: !!disabled && variant === BUTTON_VARIANT.Outlined,
         ['Button-text']: variant === BUTTON_VARIANT.Text,
         ['Button-text-small']: size === BUTTON_SIZE.Small && variant === BUTTON_VARIANT.Text,
-        ['Button-text-large']: size === BUTTON_SIZE.large && variant === BUTTON_VARIANT.Text,
+        ['Button-text-large']: size === BUTTON_SIZE.Large && variant === BUTTON_VARIANT.Text,
         ['Button-text-disable']: !!disabled && variant === BUTTON_VARIANT.Text,
         ['Button-primary']: size === BUTTON_SIZE.Medium,
         ['Button-primary-disable']: !!disabled && color === BUTTON_COLOR.Primary,
@@ -42,11 +42,11 @@ export const Button = (props: IButtonProps) => {
         ['Button-green']: color === BUTTON_COLOR.Green,
         ['Button-green-disable']: !!disabled && color === BUTTON_COLOR.Green,
         ['Button-small']: size === BUTTON_SIZE.Small,
-        ['Button-large']: size === BUTTON_SIZE.large,
+        ['Button-large']: size === BUTTON_SIZE.Large,
         ['Button-round']: !!rounded,
         ['Button-only_icon']: !!withIcon,
         ['Button-only_icon-small']: !!withIcon && size === BUTTON_SIZE.Small,
-        ['Button-only_icon-large']: !!withIcon && size === BUTTON_SIZE.large,
+        ['Button-only_icon-large']: !!withIcon && size === BUTTON_SIZE.Large,
         [className || '']: !!className,
       })}
     >
