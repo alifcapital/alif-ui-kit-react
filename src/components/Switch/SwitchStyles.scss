@@ -2,10 +2,10 @@
 
 .Switch {
   height: 24px;
-  @include flexAligment($justifyContent: start);
+  @include flexAligment($justifyContent: flex-start);
 
   label {
-    @include flexAligment($justifyContent: start);
+    @include flexAligment($justifyContent: flex-start);
 
     @mixin switch($backgroundColor: $black80) {
       cursor: pointer;

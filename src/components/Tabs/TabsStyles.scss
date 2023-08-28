@@ -1,7 +1,7 @@
 @import '../../styles/index.scss';
 
 .Tabs {
-  @include flexAligment($justifyContent: start);
+  @include flexAligment($justifyContent: flex-start);
   gap: $baseMargin * 4;
 
   .Tab-root {

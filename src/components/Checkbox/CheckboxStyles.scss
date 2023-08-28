@@ -1,10 +1,10 @@
 @import '../../styles/index.scss';
 
 .Checkbox {
-  @include flexAligment($justifyContent: start);
+  @include flexAligment($justifyContent: flex-start);
 
   label {
-    @include flexAligment($justifyContent: start);
+    @include flexAligment($justifyContent: flex-start);
 
     @mixin checkbox(
       $backgroundColor: $white,
