@@ -7,10 +7,9 @@
 
     .Tag {
       background-color: $black70;
-      border-radius: $baseBorderRadius;
+      border-radius: $baseBorderRadius * 12.5;
       color: $black90;
       border: none;
-      border-radius: 28px;
       cursor: pointer;
       @include flexAligment;
 

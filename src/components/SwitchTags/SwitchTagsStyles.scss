@@ -1,0 +1,76 @@
+@import '../../styles/index.scss';
+
+.SwitchTags {
+  display: flex;
+
+  .SwitchTags-base {
+    position: relative;
+    @include flexAligment($justifyContent: flex-start);
+    gap: $baseMargin * 2;
+    background-color: $black70;
+    padding: $basePadding * 1.5;
+    border-radius: $baseBorderRadius * 6.25;
+
+    .SwitchTag {
+      z-index: 1;
+      background-color: transparent;
+      color: $black90;
+      border: none;
+      border-radius: $baseBorderRadius * 6.25;
+      cursor: pointer;
+      @include flexAligment;
+
+      & .SwitchTag-label {
+        @include flexAligment;
+      }
+
+      &.SwitchTag-large {
+        @include body-normal;
+        padding: $basePadding * 2.5 $basePadding * 5;
+      }
+
+      &.SwitchTag-medium {
+        @include body-small;
+        height: 34px;
+        padding: $basePadding * 2 $basePadding * 3;
+
+        & svg {
+          width: 15px;
+          height: 15px;
+        }
+      }
+
+      & .SwitchTag-icon-left {
+        display: flex;
+        svg {
+          margin-right: $baseMargin * 2;
+        }
+      }
+
+      & .SwitchTag-icon-right {
+        display: flex;
+        svg {
+          margin-left: $baseMargin * 2;
+        }
+      }
+    }
+
+    .SwitchTag-active {
+      color: $white;
+    }
+
+    .ActiveTab {
+      @include flexAligment;
+      position: absolute;
+      background-color: $grey90;
+      color: $grey90;
+      height: 40px;
+      border-radius: $baseBorderRadius * 6.25;
+      left: 6px;
+    }
+    .ActiveTab-small {
+      height: 34px;
+      @include body-small;
+    }
+  }
+}
