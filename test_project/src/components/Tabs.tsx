@@ -23,7 +23,7 @@ export const TabsApp: React.FC = () => {
   return (
     <div>
       <Tabs   className='custom-class' tabs={tabs}/> <br></br> 
-      <Tabs  activeTab='three' size={ TABS_SIZE.Small} className='custom-class' tabs={tabs}/>
+      <Tabs  activeTab='three' activeColor='black' size={ TABS_SIZE.Small} className='custom-class' tabs={tabs}/>
     </div>
   );
 };

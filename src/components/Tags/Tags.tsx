@@ -9,7 +9,7 @@ export const Tags = (props: ITagsProps) => {
   const { className, size = TAGS_SIZE.Medium, tags, gap, activeTag, activeColor } = props;
 
   const [selectedId, setSelectedId] = useState(tags[0]?.id);
-  const selectedTab = useMemo(() => tags.find((tag) => tag.id === selectedId), [selectedId, tags]);
+  const selectedTag = useMemo(() => tags.find((tag) => tag.id === selectedId), [selectedId, tags]);
 
   const handleTabClick = (id: string, clickHandler?: (id: string) => void) => {
     setSelectedId(id);
@@ -55,8 +55,8 @@ export const Tags = (props: ITagsProps) => {
           </button>
         ))}
       </div>
-      {selectedTab && selectedTab.content && (
-        <div className="Tag-content">{selectedTab.content}</div>
+      {selectedTag && selectedTag.content && (
+        <div className="Tag-content">{selectedTag.content}</div>
       )}
     </div>
   );

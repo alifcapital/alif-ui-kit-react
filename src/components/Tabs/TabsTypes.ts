@@ -14,6 +14,7 @@ interface ITab {
 export interface ITabsProps {
   tabs: ITab[];
   activeTab?: string;
+  activeColor?: string;
   tabMarginBottom?: number;
   gap?: number;
   size?: Size;

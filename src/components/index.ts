@@ -6,3 +6,4 @@ export * from './Switch';
 export * from './Tabs';
 export * from './Accordion';
 export * from './Tags';
+export * from './SwitchTags';
