@@ -1,22 +1,21 @@
 @import '../../styles/index.scss';
 
 .SwitchTags {
-  display: flex;
+  display: block;
 
   .SwitchTags-base {
     position: relative;
     @include flexAligment($justifyContent: flex-start);
+    display: inline-flex;
     gap: $baseMargin * 2;
     background-color: $black70;
     padding: $basePadding * 1.5;
-    border-radius: $baseBorderRadius * 6.25;
 
     .SwitchTag {
       z-index: 1;
       background-color: transparent;
       color: $black90;
       border: none;
-      border-radius: $baseBorderRadius * 6.25;
       cursor: pointer;
       @include flexAligment;
 
@@ -65,12 +64,31 @@
       background-color: $grey90;
       color: $grey90;
       height: 40px;
-      border-radius: $baseBorderRadius * 6.25;
       left: 6px;
     }
     .ActiveTab-small {
       height: 34px;
       @include body-small;
+    }
+  }
+
+  .SwitchTags-base-round {
+    border-radius: $baseBorderRadius * 6.25;
+    .SwitchTag {
+      border-radius: $baseBorderRadius * 6.25;
+    }
+    .ActiveTab {
+      border-radius: $baseBorderRadius * 6.25;
+    }
+  }
+
+  .SwitchTags-base-square {
+    border-radius: $baseBorderRadius;
+    .SwitchTag {
+      border-radius: calc($baseBorderRadius / 1.6);
+    }
+    .ActiveTab {
+      border-radius: calc($baseBorderRadius / 1.6);
     }
   }
 }

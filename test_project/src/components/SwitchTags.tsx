@@ -1,4 +1,4 @@
-import { TAGS_SIZE, SwitchTags} from '../../../src';
+import { SWITCH_TAGS_SIZE, SWITCH_TAGS_VARIANT, SwitchTags} from '../../../src';
 import { ISwitchTagsProps} from '../../../src/components/SwitchTags/SwitchTagsTypes';
 
 export const SwitchTagsApp: React.FC = () => {
@@ -15,6 +15,7 @@ export const SwitchTagsApp: React.FC = () => {
     {
       id: 'cash',
       label: 'Касса',
+      content: <h5>Hello there</h5>
     },
     {
       id: 'purchases',
@@ -24,8 +25,8 @@ export const SwitchTagsApp: React.FC = () => {
         
   return (
     <div>
-      <SwitchTags activeTag='cash' activeColor='black'  className='custom-class' size={ TAGS_SIZE.Large} tags={tags}/> <br/> 
-      <SwitchTags   size={ TAGS_SIZE.Medium} className='custom-class' tags={tags}/>
+      <SwitchTags activeTag='cash' activeColor='black'  className='custom-class' size={ SWITCH_TAGS_SIZE.Large} tags={tags}/> <br/> 
+      <SwitchTags varinat={SWITCH_TAGS_VARIANT.Square}  size={ SWITCH_TAGS_SIZE.Medium} className='custom-class' tags={tags}/>
     </div>
   );
 };

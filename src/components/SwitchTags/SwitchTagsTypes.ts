@@ -1,7 +1,8 @@
 import React, { SVGProps } from 'react';
-import { SWITCH_TAGS_SIZE } from './SwitchTagsConstants';
+import { SWITCH_TAGS_SIZE, SWITCH_TAGS_VARIANT } from './SwitchTagsConstants';
 
 type Size = `${SWITCH_TAGS_SIZE}`;
+type Variant = `${SWITCH_TAGS_VARIANT}`;
 type IconType = React.ReactElement<SVGProps<SVGSVGElement>>;
 
 interface ISwitchTag {
@@ -16,9 +17,10 @@ interface ISwitchTag {
 
 export interface ISwitchTagsProps {
   tags: ISwitchTag[];
+  varinat?: Variant;
   activeTag?: string;
   activeColor?: string;
-  tagsBackgroundColor?: string;
+  backgroundColor?: string;
   gap?: number;
   size?: Size;
   className?: string;

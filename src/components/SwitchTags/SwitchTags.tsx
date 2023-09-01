@@ -3,18 +3,19 @@ import React, { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import clsx from 'clsx';
 
 import { ISwitchTagsProps } from './SwitchTagsTypes';
-import { SWITCH_TAGS_SIZE } from './SwitchTagsConstants';
+import { SWITCH_TAGS_SIZE, SWITCH_TAGS_VARIANT } from './SwitchTagsConstants';
 import './SwitchTagsStyles.scss';
 
 export const SwitchTags = (props: ISwitchTagsProps) => {
   const {
     className,
     size = SWITCH_TAGS_SIZE.Medium,
+    varinat = SWITCH_TAGS_VARIANT.Round,
     tags,
     gap,
     activeTag,
     activeColor,
-    tagsBackgroundColor,
+    backgroundColor,
   } = props;
 
   const [selectedId, setSelectedId] = useState(tags[0]?.id);
@@ -60,9 +61,11 @@ export const SwitchTags = (props: ISwitchTagsProps) => {
   return (
     <div className="SwitchTags">
       <div
-        style={{ gap, backgroundColor: tagsBackgroundColor }}
+        style={{ gap, backgroundColor }}
         className={clsx({
           ['SwitchTags-base']: true,
+          ['SwitchTags-base-round']: varinat === SWITCH_TAGS_VARIANT.Round,
+          ['SwitchTags-base-square']: varinat === SWITCH_TAGS_VARIANT.Square,
           [className || '']: !!className,
         })}
       >
