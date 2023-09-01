@@ -2001,7 +2001,7 @@ const ot = (n) => {
   const {
     className: i,
     size: p = Ke.Medium,
-    varinat: o = He.Round,
+    variant: o = He.Round,
     tags: k,
     gap: S,
     activeTag: T,
