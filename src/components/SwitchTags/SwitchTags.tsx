@@ -10,7 +10,7 @@ export const SwitchTags = (props: ISwitchTagsProps) => {
   const {
     className,
     size = SWITCH_TAGS_SIZE.Medium,
-    varinat = SWITCH_TAGS_VARIANT.Round,
+    variant = SWITCH_TAGS_VARIANT.Round,
     tags,
     gap,
     activeTag,
@@ -64,8 +64,8 @@ export const SwitchTags = (props: ISwitchTagsProps) => {
         style={{ gap, backgroundColor }}
         className={clsx({
           ['SwitchTags-base']: true,
-          ['SwitchTags-base-round']: varinat === SWITCH_TAGS_VARIANT.Round,
-          ['SwitchTags-base-square']: varinat === SWITCH_TAGS_VARIANT.Square,
+          ['SwitchTags-base-round']: variant === SWITCH_TAGS_VARIANT.Round,
+          ['SwitchTags-base-square']: variant === SWITCH_TAGS_VARIANT.Square,
           [className || '']: !!className,
         })}
       >

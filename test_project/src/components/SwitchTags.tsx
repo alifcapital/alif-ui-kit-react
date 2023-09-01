@@ -26,7 +26,7 @@ export const SwitchTagsApp: React.FC = () => {
   return (
     <div>
       <SwitchTags activeTag='cash' activeColor='black'  className='custom-class' size={ SWITCH_TAGS_SIZE.Large} tags={tags}/> <br/> 
-      <SwitchTags varinat={SWITCH_TAGS_VARIANT.Square}  size={ SWITCH_TAGS_SIZE.Medium} className='custom-class' tags={tags}/>
+      <SwitchTags variant={SWITCH_TAGS_VARIANT.Square}  size={ SWITCH_TAGS_SIZE.Medium} className='custom-class' tags={tags}/>
     </div>
   );
 };
