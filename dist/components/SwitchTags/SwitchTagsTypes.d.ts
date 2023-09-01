@@ -14,7 +14,7 @@ interface ISwitchTag {
 }
 export interface ISwitchTagsProps {
     tags: ISwitchTag[];
-    varinat?: Variant;
+    variant?: Variant;
     activeTag?: string;
     activeColor?: string;
     backgroundColor?: string;
