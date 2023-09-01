@@ -16,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='conatainer'>
       <SwitchTagsApp/><br /><hr />
+      <TagsApp/><br /><hr />
       <TabsApp/><br /><hr />
       <AccordionApp/><br /><hr />
       <SwitchApp/><br /><hr />
