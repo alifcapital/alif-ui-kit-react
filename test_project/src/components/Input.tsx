@@ -27,6 +27,15 @@ export const InputApp: React.FC = () =>  {
           name="phone"
           ariaLabel='araiaLabel'
         />
+
+        <Input  
+          defaultValue="default"
+          size={INPUT_SIZE.Small}
+          type={INPUT_TYPE.Telephone}
+          placeholder='Однострочный'
+          name="phone"
+          ariaLabel='araiaLabel'
+        />
     </div>
   );
 };
