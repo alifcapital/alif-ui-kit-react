@@ -11,7 +11,7 @@ describe('Input', () => {
     </svg>
   );
 
-  it('should have text type  by default', () => {
+  it('should have text type by default', () => {
     render(
       <Input
         ariaLabel="ariaLabel"
@@ -56,6 +56,38 @@ describe('Input', () => {
     const input = screen.getByLabelText('Label');
 
     expect(input).toHaveAttribute('type', 'password');
+  });
+
+  it('should have phone type', () => {
+    render(
+      <Input
+        id="test_id"
+        ariaLabel="ariaLabel"
+        label="Label"
+        placeholder="placeholder"
+        type={INPUT_TYPE.Telephone}
+      />,
+    );
+
+    const input = screen.getByLabelText('Label');
+
+    expect(input).toHaveAttribute('type', 'tel');
+  });
+
+  it('should have email type', () => {
+    render(
+      <Input
+        id="test_id"
+        ariaLabel="ariaLabel"
+        label="Label"
+        placeholder="placeholder"
+        type={INPUT_TYPE.Email}
+      />,
+    );
+
+    const input = screen.getByLabelText('Label');
+
+    expect(input).toHaveAttribute('type', 'email');
   });
 
   it('should have id props', () => {
