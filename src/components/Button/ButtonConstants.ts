@@ -15,3 +15,9 @@ export enum BUTTON_COLOR {
   Secondary = 'secondary',
   Green = 'green',
 }
+
+export enum BUTTON_TYPE {
+  Submit = 'submit',
+  Reset = 'reset',
+  Button = 'button',
+}
