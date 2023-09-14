@@ -680,7 +680,7 @@ const Qr = (n) => {
     withIcon: y,
     size: c = te.Medium,
     variant: f = ne.Contained,
-    buttonType: w = "button"
+    type: w = "button"
   } = n;
   return /* @__PURE__ */ v.jsx(
     "button",
@@ -1581,6 +1581,7 @@ const Hr = (n) => {
               w === ke.Password && /* @__PURE__ */ v.jsx(
                 "button",
                 {
+                  type: "button",
                   "aria-label": "toggle password visibility",
                   className: "InputBase-icon-end",
                   onClick: de,

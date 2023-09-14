@@ -18,6 +18,6 @@ export interface IButtonProps {
     ariaLabel: string;
     color?: Color;
     id?: string;
-    buttonType?: ButtonType;
+    type?: ButtonType;
 }
 export {};
