@@ -19,12 +19,12 @@ export const Button = (props: IButtonProps) => {
     withIcon,
     size = BUTTON_SIZE.Medium,
     variant = BUTTON_VARIANT.Contained,
-    buttonType = "button",
+    type = "button",
   } = props;
 
   return (
     <button
-      type={buttonType}
+      type={type}
       aria-label={ariaLabel}
       id={id}
       disabled={disabled}
