@@ -2,9 +2,9 @@
   transition: $name $curve $duration;
 }
 
-@mixin flexAligment($aligment: center, $justifyContent: center, $flexDirection: initial) {
+@mixin flexAligment($alignment: center, $justifyContent: center, $flexDirection: initial) {
   display: flex;
-  align-items: $aligment;
+  align-items: $alignment;
   justify-content: $justifyContent;
   flex-direction: $flexDirection;
 }

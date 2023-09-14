@@ -4,7 +4,7 @@
   @include flexAligment($justifyContent: flex-start);
 
   label {
-    @include flexAligment($justifyContent: flex-start);
+    @include flexAligment($alignment: normal, $justifyContent: flex-start);
 
     @mixin checkbox(
       $backgroundColor: $white,

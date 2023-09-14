@@ -4,7 +4,7 @@
   position: relative;
   gap: unset;
   color: $black90;
-  @include flexAligment($aligment: flex-start, $flexDirection: column);
+  @include flexAligment($alignment: flex-start, $flexDirection: column);
 
   &.Input-without-heading {
     gap: $baseMargin;
