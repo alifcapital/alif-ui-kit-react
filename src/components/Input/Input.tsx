@@ -151,6 +151,7 @@ export const Input = (props: InputProps) => {
         )}
         {type === INPUT_TYPE.Password && (
           <button
+            type="button"
             aria-label="toggle password visibility"
             className="InputBase-icon-end"
             onClick={handleClickShowPassword}

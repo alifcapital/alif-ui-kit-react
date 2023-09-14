@@ -13,3 +13,8 @@ export declare enum BUTTON_COLOR {
     Secondary = "secondary",
     Green = "green"
 }
+export declare enum BUTTON_TYPE {
+    Submit = "submit",
+    Reset = "reset",
+    Button = "button"
+}
