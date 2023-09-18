@@ -1,3 +1,4 @@
 import React from 'react';
 import { InputProps } from './InputTypes';
-export declare const Input: (props: InputProps) => React.JSX.Element;
+declare const Input: React.ForwardRefExoticComponent<Omit<InputProps, "ref"> & React.RefAttributes<HTMLInputElement>>;
+export { Input };

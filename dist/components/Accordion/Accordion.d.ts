@@ -1,3 +1,4 @@
 import React from 'react';
 import { IAccordionProps } from './AccordionTypes';
-export declare const Accordion: (props: IAccordionProps) => React.JSX.Element;
+declare const Accordion: React.ForwardRefExoticComponent<IAccordionProps & React.RefAttributes<HTMLDivElement>>;
+export { Accordion };

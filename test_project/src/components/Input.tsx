@@ -1,7 +1,10 @@
 import {CheckCircle} from 'alif-icon-kit-react';
 import {Input, INPUT_SIZE, INPUT_THEME, INPUT_TYPE} from '../../../src';
+import { useRef } from 'react';
 
 export const InputApp: React.FC = () => {
+    const ref = useRef<HTMLInputElement>(null);
+
     return (
         <div>
             <Input
@@ -19,7 +22,7 @@ export const InputApp: React.FC = () => {
             <br/><br/>
             <form>
                 <Input
-                    defaultValue="default"
+                    ref={ref}
                     size={INPUT_SIZE.Small}
                     endIcon={<CheckCircle/>}
                     type={INPUT_TYPE.Password}
@@ -28,18 +31,14 @@ export const InputApp: React.FC = () => {
                     ariaLabel='araiaLabel'
                 />
             </form>
-
             <Input
-                defaultValue="default"
                 size={INPUT_SIZE.Small}
                 type={INPUT_TYPE.Telephone}
                 placeholder='Однострочный'
                 name="phone"
                 ariaLabel='araiaLabel'
             />
-
             <Input
-                defaultValue="default"
                 size={INPUT_SIZE.Small}
                 type={INPUT_TYPE.Email}
                 placeholder='email'

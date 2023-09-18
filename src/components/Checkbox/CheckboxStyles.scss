@@ -2,7 +2,6 @@
 
 .Checkbox {
   @include flexAligment($justifyContent: flex-start);
-
   label {
     @include flexAligment($alignment: normal, $justifyContent: flex-start);
 

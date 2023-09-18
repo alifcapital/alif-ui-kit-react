@@ -2,10 +2,10 @@ import React, { DetailedHTMLProps, HTMLAttributes, useEffect, useState } from 'r
 import clsx from 'clsx';
 
 import { ISwitchProps } from './SwitchTypes';
-import './SwitchStyles.scss';
 import { SWITCH_SIZE, SWITCH_THEME } from './SwitchConstants';
+import './SwitchStyles.scss';
 
-export const Switch: React.FC<ISwitchProps> = (props) => {
+const Switch = React.forwardRef<HTMLInputElement, ISwitchProps>((props, ref) => {
   const {
     id,
     name,
@@ -83,6 +83,7 @@ export const Switch: React.FC<ISwitchProps> = (props) => {
           onKeyDown={handleEnterPress}
         >
           <input
+            ref={ref}
             aria-label={ariaLabel}
             tabIndex={-1}
             type="checkbox"
@@ -109,4 +110,8 @@ export const Switch: React.FC<ISwitchProps> = (props) => {
       </label>
     </div>
   );
-};
+});
+
+Switch.displayName = 'Switch';
+
+export { Switch };
