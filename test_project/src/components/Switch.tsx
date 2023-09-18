@@ -1,10 +1,11 @@
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Switch } from '../../../src';
 import { SWITCH_SIZE, SWITCH_THEME } from '../../../src/components/Switch/SwitchConstants';
 
 export const SwitchApp: React.FC = () => {
   const [isChecked, setIsChecked] = useState(false);
+  const ref = useRef<HTMLInputElement>(null);
 
   const handleChange = (checked: boolean, e: React.ChangeEvent<HTMLInputElement>) => {
     setIsChecked(checked)
@@ -13,7 +14,7 @@ export const SwitchApp: React.FC = () => {
   return (
     <div>
       Without Label
-      <Switch  ariaLabel='aria-lable' />
+      <Switch ref={ref}  ariaLabel='aria-lable' />
       <br /> 
       Disabled
       <Switch  ariaLabel='aria-lable'  disabled />

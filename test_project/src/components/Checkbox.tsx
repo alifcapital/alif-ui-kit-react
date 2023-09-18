@@ -1,19 +1,19 @@
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { CHECKBOX_SIZE, CHECKBOX_THEME, Checkbox } from '../../../src';
 
 export const CheckboxApp: React.FC = () => {
   const [checked, setChecked] = useState(false);
+  const ref = useRef<HTMLInputElement>(null);
 
   const handleChange = (checked: boolean, e: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(checked)
   };
 
-
   return (
     <div>
       Theme light
-      <Checkbox theme={CHECKBOX_THEME.Light}  ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} size={CHECKBOX_SIZE.Large} />
+      <Checkbox  theme={CHECKBOX_THEME.Light}  ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} size={CHECKBOX_SIZE.Large} />
       <br /> 
       Theme Dark
       <Checkbox theme={CHECKBOX_THEME.Dark}  ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} size={CHECKBOX_SIZE.Large} />
@@ -23,7 +23,7 @@ export const CheckboxApp: React.FC = () => {
       <br /> 
 
       Large
-      <Checkbox   ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} size={CHECKBOX_SIZE.Large} />
+      <Checkbox ref={ref}  ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} size={CHECKBOX_SIZE.Large} />
       <br /> 
       Medium
       <Checkbox ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked}  />

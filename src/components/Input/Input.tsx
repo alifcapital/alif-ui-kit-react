@@ -6,7 +6,7 @@ import { INPUT_SIZE, INPUT_THEME, INPUT_TYPE } from './InputConstants';
 import './InputStyles.scss';
 import { InputProps } from './InputTypes';
 
-export const Input = (props: InputProps) => {
+const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const {
     id,
     value,
@@ -143,6 +143,7 @@ export const Input = (props: InputProps) => {
             onKeyDown={handleKeyDown}
             onKeyUp={handleKeyUp}
             placeholder={label ? placeholder : ''}
+            ref={ref}
             {...rest}
           />
         </div>
@@ -174,4 +175,8 @@ export const Input = (props: InputProps) => {
       )}
     </div>
   );
-};
+});
+
+Input.displayName = 'Input';
+
+export { Input };

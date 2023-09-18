@@ -5,7 +5,7 @@ import { BUTTON_COLOR, BUTTON_SIZE, BUTTON_VARIANT } from './ButtonConstants';
 import './ButtonStyles.scss';
 import { IButtonProps } from './ButtonTypes';
 
-export const Button = (props: IButtonProps) => {
+const Button = React.forwardRef<HTMLButtonElement, IButtonProps>((props, ref) => {
   const {
     id,
     ariaLabel,
@@ -19,11 +19,12 @@ export const Button = (props: IButtonProps) => {
     withIcon,
     size = BUTTON_SIZE.Medium,
     variant = BUTTON_VARIANT.Contained,
-    type = "button",
+    type = 'button',
   } = props;
 
   return (
     <button
+      ref={ref}
       type={type}
       aria-label={ariaLabel}
       id={id}
@@ -59,4 +60,8 @@ export const Button = (props: IButtonProps) => {
       </div>
     </button>
   );
-};
+});
+
+Button.displayName = 'Button';
+
+export { Button };

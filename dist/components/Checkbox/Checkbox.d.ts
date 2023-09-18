@@ -1,3 +1,4 @@
 import React from 'react';
 import { ICheckboxProps } from './CheckboxTypes';
-export declare const Checkbox: React.FC<ICheckboxProps>;
+declare const Checkbox: React.ForwardRefExoticComponent<ICheckboxProps & React.RefAttributes<HTMLInputElement>>;
+export { Checkbox };

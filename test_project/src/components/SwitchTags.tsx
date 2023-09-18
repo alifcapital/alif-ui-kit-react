@@ -22,7 +22,7 @@ export const SwitchTagsApp: React.FC = () => {
       label: 'Покупки',
     },
   ];
-        
+
   return (
     <div>
       <SwitchTags activeTag='cash' activeColor='black'  className='custom-class' size={ SWITCH_TAGS_SIZE.Large} tags={tags}/> <br/> 

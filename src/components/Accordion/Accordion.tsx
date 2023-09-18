@@ -5,7 +5,7 @@ import { SelectOpenDown } from 'alif-icon-kit-react';
 import { IAccordionProps } from './AccordionTypes';
 import './AccordionStyles.scss';
 
-export const Accordion = (props: IAccordionProps) => {
+const Accordion = React.forwardRef<HTMLDivElement, IAccordionProps>((props, ref) => {
   const {
     className,
     color,
@@ -65,6 +65,7 @@ export const Accordion = (props: IAccordionProps) => {
       })}
     >
       <div
+        ref={ref}
         tabIndex={0}
         className="Accordion-heading"
         role="button"
@@ -97,4 +98,8 @@ export const Accordion = (props: IAccordionProps) => {
       </div>
     </div>
   );
-};
+});
+
+Accordion.displayName = 'Accordion';
+
+export { Accordion };

@@ -1,3 +1,4 @@
 import React from 'react';
 import { IButtonProps } from './ButtonTypes';
-export declare const Button: (props: IButtonProps) => React.JSX.Element;
+declare const Button: React.ForwardRefExoticComponent<IButtonProps & React.RefAttributes<HTMLButtonElement>>;
+export { Button };
