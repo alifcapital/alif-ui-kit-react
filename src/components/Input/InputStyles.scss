@@ -71,6 +71,7 @@
     & .InputBaseInner {
       position: relative;
       width: 100%;
+
       & .InputLabel {
         position: absolute;
         top: $baseMargin * 4.5;
@@ -141,5 +142,15 @@
 
   & .Input-error-text {
     color: $redWaring;
+  }
+
+  & input[type=number]::-webkit-outer-spin-button,
+  & input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  & input[type=number] {
+    -moz-appearance: textfield;
   }
 }

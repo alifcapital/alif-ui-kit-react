@@ -31,6 +31,15 @@ export const InputApp: React.FC = () => {
                     ariaLabel='araiaLabel'
                 />
             </form>
+
+            <Input
+                size={INPUT_SIZE.Small}
+                type={INPUT_TYPE.Number}
+                placeholder='Однострочный'
+                name="number"
+                ariaLabel='araiaLabel'
+            />
+
             <Input
                 size={INPUT_SIZE.Small}
                 type={INPUT_TYPE.Telephone}
