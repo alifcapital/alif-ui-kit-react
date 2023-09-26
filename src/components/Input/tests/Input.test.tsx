@@ -188,23 +188,12 @@ describe('Input', () => {
         placeholder="placeholder"
         type={INPUT_TYPE.Text}
         helperText={'test helper text'}
-        requiredProps={{ isRequired: true }}
+        required
       />,
     );
 
     const inputLabel = container.querySelector('.InputLabel');
     expect(inputLabel?.textContent).toMatch(/\*$/);
-  });
-
-  it('the * (required) symbol should have red color', () => {
-    const { container } = render(
-      <div>
-        <div>fdsfsfds</div>
-      </div>,
-    );
-
-    const requiredSymbol = container.querySelector('span');
-    expect(requiredSymbol?.style.color).toBe('rgb(255, 0, 0)');
   });
 
   it('should have dark mode', () => {

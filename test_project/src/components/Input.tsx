@@ -15,7 +15,7 @@ export const InputApp: React.FC = () => {
                 placeholder='Однострочный'
                 theme={INPUT_THEME.Dark}
                 label="Текст сверху"
-                requiredProps={{isRequired: true, color: "#ff0000"}}
+                required={{ color: "#ff0000"}}
                 name="name"
                 ariaLabel='araiaLabel'
                 helperText={<><CheckCircle/> Ошибочка вышла</>}

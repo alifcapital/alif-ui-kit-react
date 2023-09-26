@@ -5,6 +5,7 @@ import { EyeOff, EyeOn } from 'alif-icon-kit-react';
 import { INPUT_SIZE, INPUT_THEME, INPUT_TYPE } from './InputConstants';
 import './InputStyles.scss';
 import { InputProps } from './InputTypes';
+import { isObject } from 'util';
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const {
@@ -31,7 +32,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     onFocus,
     onKeyDown,
     onKeyUp,
-    requiredProps,
+    required,
     ...rest
   } = props;
 
@@ -93,8 +94,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
           htmlFor={id}
         >
           {label}
-          {requiredProps?.isRequired && (
-            <span style={{ color: requiredProps.color }}>{requiredProps.isRequired && '*'}</span>
+          {required && (
+            <span style={{ color: typeof required === 'object' ? required.color : undefined }}>
+              {required && '*'}
+            </span>
           )}
         </label>
       )}
