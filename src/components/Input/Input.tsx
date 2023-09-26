@@ -31,7 +31,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     onFocus,
     onKeyDown,
     onKeyUp,
-    required,
+    requiredSymbol,
     ...rest
   } = props;
 
@@ -93,9 +93,13 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
           htmlFor={id}
         >
           {label}
-          {required && (
-            <span style={{ color: typeof required === 'object' ? required.color : undefined }}>
-              {required && '*'}
+          {requiredSymbol && (
+            <span
+              style={{
+                color: typeof requiredSymbol === 'object' ? requiredSymbol.color : undefined,
+              }}
+            >
+              {requiredSymbol && '*'}
             </span>
           )}
         </label>

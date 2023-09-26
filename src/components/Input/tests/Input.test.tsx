@@ -188,7 +188,7 @@ describe('Input', () => {
         placeholder="placeholder"
         type={INPUT_TYPE.Text}
         helperText={'test helper text'}
-        required
+        requiredSymbol
       />,
     );
 

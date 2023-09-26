@@ -20,7 +20,7 @@ var Ir = (n, c) => {
   return p;
 };
 import Z, { useState as A, useLayoutEffect as _e, useEffect as Oe, useMemo as Tr, useRef as Or } from "react";
-var jr = { exports: {} }, Ue = {};
+var Rr = { exports: {} }, Ue = {};
 /**
  * @license React
  * react-jsx-runtime.production.min.js
@@ -36,15 +36,15 @@ function Gr() {
     return Ue;
   Fr = 1;
   var n = Z, c = Symbol.for("react.element"), p = Symbol.for("react.fragment"), s = Object.prototype.hasOwnProperty, k = n.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, E = { key: !0, ref: !0, __self: !0, __source: !0 };
-  function S(j, h, y) {
+  function S(R, h, y) {
     var f, b = {}, o = null, g = null;
     y !== void 0 && (o = "" + y), h.key !== void 0 && (o = "" + h.key), h.ref !== void 0 && (g = h.ref);
     for (f in h)
       s.call(h, f) && !E.hasOwnProperty(f) && (b[f] = h[f]);
-    if (j && j.defaultProps)
-      for (f in h = j.defaultProps, h)
+    if (R && R.defaultProps)
+      for (f in h = R.defaultProps, h)
         b[f] === void 0 && (b[f] = h[f]);
-    return { $$typeof: c, type: j, key: o, ref: g, props: b, _owner: k.current };
+    return { $$typeof: c, type: R, key: o, ref: g, props: b, _owner: k.current };
   }
   return Ue.Fragment = p, Ue.jsx = S, Ue.jsxs = S, Ue;
 }
@@ -61,11 +61,11 @@ var qe = {};
 var $r;
 function Ur() {
   return $r || ($r = 1, process.env.NODE_ENV !== "production" && function() {
-    var n = Z, c = Symbol.for("react.element"), p = Symbol.for("react.portal"), s = Symbol.for("react.fragment"), k = Symbol.for("react.strict_mode"), E = Symbol.for("react.profiler"), S = Symbol.for("react.provider"), j = Symbol.for("react.context"), h = Symbol.for("react.forward_ref"), y = Symbol.for("react.suspense"), f = Symbol.for("react.suspense_list"), b = Symbol.for("react.memo"), o = Symbol.for("react.lazy"), g = Symbol.for("react.offscreen"), _ = Symbol.iterator, B = "@@iterator";
+    var n = Z, c = Symbol.for("react.element"), p = Symbol.for("react.portal"), s = Symbol.for("react.fragment"), k = Symbol.for("react.strict_mode"), E = Symbol.for("react.profiler"), S = Symbol.for("react.provider"), R = Symbol.for("react.context"), h = Symbol.for("react.forward_ref"), y = Symbol.for("react.suspense"), f = Symbol.for("react.suspense_list"), b = Symbol.for("react.memo"), o = Symbol.for("react.lazy"), g = Symbol.for("react.offscreen"), _ = Symbol.iterator, M = "@@iterator";
     function D(e) {
       if (e === null || typeof e != "object")
         return null;
-      var r = _ && e[_] || e[B];
+      var r = _ && e[_] || e[M];
       return typeof r == "function" ? r : null;
     }
     var L = n.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
@@ -86,14 +86,14 @@ function Ur() {
         m.unshift("Warning: " + r), Function.prototype.apply.call(console[e], console, m);
       }
     }
-    var z = !1, G = !1, T = !1, R = !1, I = !1, M;
-    M = Symbol.for("react.module.reference");
+    var z = !1, G = !1, T = !1, j = !1, I = !1, B;
+    B = Symbol.for("react.module.reference");
     function Le(e) {
-      return !!(typeof e == "string" || typeof e == "function" || e === s || e === E || I || e === k || e === y || e === f || R || e === g || z || G || T || typeof e == "object" && e !== null && (e.$$typeof === o || e.$$typeof === b || e.$$typeof === S || e.$$typeof === j || e.$$typeof === h || // This needs to include all possible module reference object
+      return !!(typeof e == "string" || typeof e == "function" || e === s || e === E || I || e === k || e === y || e === f || j || e === g || z || G || T || typeof e == "object" && e !== null && (e.$$typeof === o || e.$$typeof === b || e.$$typeof === S || e.$$typeof === R || e.$$typeof === h || // This needs to include all possible module reference object
       // types supported by any Flight configuration anywhere since
       // we don't know which Flight build this will end up being used
       // with.
-      e.$$typeof === M || e.getModuleId !== void 0));
+      e.$$typeof === B || e.getModuleId !== void 0));
     }
     function Pe(e, r, t) {
       var a = e.displayName;
@@ -128,7 +128,7 @@ function Ur() {
       }
       if (typeof e == "object")
         switch (e.$$typeof) {
-          case j:
+          case R:
             var r = e;
             return ie(r) + ".Consumer";
           case S:
@@ -641,12 +641,12 @@ Check the top-level render call using <` + t + ">.");
     function kr(e, r, t) {
       return ze(e, r, t, !1);
     }
-    var Sr = kr, Rr = wr;
-    qe.Fragment = s, qe.jsx = Sr, qe.jsxs = Rr;
+    var Sr = kr, jr = wr;
+    qe.Fragment = s, qe.jsx = Sr, qe.jsxs = jr;
   }()), qe;
 }
-process.env.NODE_ENV === "production" ? jr.exports = Gr() : jr.exports = Ur();
-var v = jr.exports;
+process.env.NODE_ENV === "production" ? Rr.exports = Gr() : Rr.exports = Ur();
+var v = Rr.exports;
 function Mr(n) {
   var c, p, s = "";
   if (typeof n == "string" || typeof n == "number")
@@ -665,7 +665,7 @@ function N() {
     (n = arguments[p++]) && (c = Mr(n)) && (s && (s += " "), s += c);
   return s;
 }
-var ne = /* @__PURE__ */ ((n) => (n.Large = "large", n.Medium = "medium", n.Small = "small", n))(ne || {}), ae = /* @__PURE__ */ ((n) => (n.Contained = "contained", n.Outlined = "outlined", n.Text = "text", n))(ae || {}), Re = /* @__PURE__ */ ((n) => (n.Primary = "primary", n.Secondary = "secondary", n.Green = "green", n))(Re || {}), qr = /* @__PURE__ */ ((n) => (n.Submit = "submit", n.Reset = "reset", n.Button = "button", n))(qr || {});
+var ne = /* @__PURE__ */ ((n) => (n.Large = "large", n.Medium = "medium", n.Small = "small", n))(ne || {}), ae = /* @__PURE__ */ ((n) => (n.Contained = "contained", n.Outlined = "outlined", n.Text = "text", n))(ae || {}), je = /* @__PURE__ */ ((n) => (n.Primary = "primary", n.Secondary = "secondary", n.Green = "green", n))(je || {}), qr = /* @__PURE__ */ ((n) => (n.Submit = "submit", n.Reset = "reset", n.Button = "button", n))(qr || {});
 const Kr = Z.forwardRef((n, c) => {
   const {
     id: p,
@@ -673,10 +673,10 @@ const Kr = Z.forwardRef((n, c) => {
     className: k,
     children: E,
     disabled: S,
-    rounded: j,
+    rounded: R,
     endIcon: h,
     startIcon: y,
-    color: f = Re.Primary,
+    color: f = je.Primary,
     withIcon: b,
     size: o = ne.Medium,
     variant: g = ae.Contained,
@@ -700,14 +700,14 @@ const Kr = Z.forwardRef((n, c) => {
         "Button-text-large": o === ne.Large && g === ae.Text,
         "Button-text-disable": !!S && g === ae.Text,
         "Button-primary": o === ne.Medium,
-        "Button-primary-disable": !!S && f === Re.Primary,
-        "Button-secondary": f === Re.Secondary,
-        "Button-secondary-disable": !!S && f === Re.Secondary,
-        "Button-green": f === Re.Green,
-        "Button-green-disable": !!S && f === Re.Green,
+        "Button-primary-disable": !!S && f === je.Primary,
+        "Button-secondary": f === je.Secondary,
+        "Button-secondary-disable": !!S && f === je.Secondary,
+        "Button-green": f === je.Green,
+        "Button-green-disable": !!S && f === je.Green,
         "Button-small": o === ne.Small,
         "Button-large": o === ne.Large,
-        "Button-round": !!j,
+        "Button-round": !!R,
         "Button-only_icon": !!b,
         "Button-only_icon-small": !!b && o === ne.Small,
         "Button-only_icon-large": !!b && o === ne.Large,
@@ -738,15 +738,15 @@ function Jr() {
     return Ke;
   Cr = 1;
   var n = Z, c = Symbol.for("react.element"), p = Symbol.for("react.fragment"), s = Object.prototype.hasOwnProperty, k = n.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, E = { key: !0, ref: !0, __self: !0, __source: !0 };
-  function S(j, h, y) {
+  function S(R, h, y) {
     var f, b = {}, o = null, g = null;
     y !== void 0 && (o = "" + y), h.key !== void 0 && (o = "" + h.key), h.ref !== void 0 && (g = h.ref);
     for (f in h)
       s.call(h, f) && !E.hasOwnProperty(f) && (b[f] = h[f]);
-    if (j && j.defaultProps)
-      for (f in h = j.defaultProps, h)
+    if (R && R.defaultProps)
+      for (f in h = R.defaultProps, h)
         b[f] === void 0 && (b[f] = h[f]);
-    return { $$typeof: c, type: j, key: o, ref: g, props: b, _owner: k.current };
+    return { $$typeof: c, type: R, key: o, ref: g, props: b, _owner: k.current };
   }
   return Ke.Fragment = p, Ke.jsx = S, Ke.jsxs = S, Ke;
 }
@@ -763,11 +763,11 @@ var Qe = {};
 var Ar;
 function Xr() {
   return Ar || (Ar = 1, process.env.NODE_ENV !== "production" && function() {
-    var n = Z, c = Symbol.for("react.element"), p = Symbol.for("react.portal"), s = Symbol.for("react.fragment"), k = Symbol.for("react.strict_mode"), E = Symbol.for("react.profiler"), S = Symbol.for("react.provider"), j = Symbol.for("react.context"), h = Symbol.for("react.forward_ref"), y = Symbol.for("react.suspense"), f = Symbol.for("react.suspense_list"), b = Symbol.for("react.memo"), o = Symbol.for("react.lazy"), g = Symbol.for("react.offscreen"), _ = Symbol.iterator, B = "@@iterator";
+    var n = Z, c = Symbol.for("react.element"), p = Symbol.for("react.portal"), s = Symbol.for("react.fragment"), k = Symbol.for("react.strict_mode"), E = Symbol.for("react.profiler"), S = Symbol.for("react.provider"), R = Symbol.for("react.context"), h = Symbol.for("react.forward_ref"), y = Symbol.for("react.suspense"), f = Symbol.for("react.suspense_list"), b = Symbol.for("react.memo"), o = Symbol.for("react.lazy"), g = Symbol.for("react.offscreen"), _ = Symbol.iterator, M = "@@iterator";
     function D(e) {
       if (e === null || typeof e != "object")
         return null;
-      var r = _ && e[_] || e[B];
+      var r = _ && e[_] || e[M];
       return typeof r == "function" ? r : null;
     }
     var L = n.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
@@ -788,14 +788,14 @@ function Xr() {
         m.unshift("Warning: " + r), Function.prototype.apply.call(console[e], console, m);
       }
     }
-    var z = !1, G = !1, T = !1, R = !1, I = !1, M;
-    M = Symbol.for("react.module.reference");
+    var z = !1, G = !1, T = !1, j = !1, I = !1, B;
+    B = Symbol.for("react.module.reference");
     function Le(e) {
-      return !!(typeof e == "string" || typeof e == "function" || e === s || e === E || I || e === k || e === y || e === f || R || e === g || z || G || T || typeof e == "object" && e !== null && (e.$$typeof === o || e.$$typeof === b || e.$$typeof === S || e.$$typeof === j || e.$$typeof === h || // This needs to include all possible module reference object
+      return !!(typeof e == "string" || typeof e == "function" || e === s || e === E || I || e === k || e === y || e === f || j || e === g || z || G || T || typeof e == "object" && e !== null && (e.$$typeof === o || e.$$typeof === b || e.$$typeof === S || e.$$typeof === R || e.$$typeof === h || // This needs to include all possible module reference object
       // types supported by any Flight configuration anywhere since
       // we don't know which Flight build this will end up being used
       // with.
-      e.$$typeof === M || e.getModuleId !== void 0));
+      e.$$typeof === B || e.getModuleId !== void 0));
     }
     function Pe(e, r, t) {
       var a = e.displayName;
@@ -830,7 +830,7 @@ function Xr() {
       }
       if (typeof e == "object")
         switch (e.$$typeof) {
-          case j:
+          case R:
             var r = e;
             return ie(r) + ".Consumer";
           case S:
@@ -1343,8 +1343,8 @@ Check the top-level render call using <` + t + ">.");
     function kr(e, r, t) {
       return ze(e, r, t, !1);
     }
-    var Sr = kr, Rr = wr;
-    Qe.Fragment = s, Qe.jsx = Sr, Qe.jsxs = Rr;
+    var Sr = kr, jr = wr;
+    Qe.Fragment = s, Qe.jsx = Sr, Qe.jsxs = jr;
   }()), Qe;
 }
 process.env.NODE_ENV === "production" ? _r.exports = Jr() : _r.exports = Xr();
@@ -1434,7 +1434,7 @@ const Yr = ({ width: n = "25", height: c = "25", color: p = "currentColor" }) =>
   }
 );
 Yr.displayName = "Check";
-var je = /* @__PURE__ */ ((n) => (n.Text = "text", n.Number = "number", n.Password = "password", n.Telephone = "tel", n.Email = "email", n))(je || {}), Ee = /* @__PURE__ */ ((n) => (n.Small = "small", n.Medium = "medium", n))(Ee || {}), Je = /* @__PURE__ */ ((n) => (n.Light = "light", n.Dark = "dark", n))(Je || {});
+var Re = /* @__PURE__ */ ((n) => (n.Text = "text", n.Number = "number", n.Password = "password", n.Telephone = "tel", n.Email = "email", n))(Re || {}), Ee = /* @__PURE__ */ ((n) => (n.Small = "small", n.Medium = "medium", n))(Ee || {}), Je = /* @__PURE__ */ ((n) => (n.Light = "light", n.Dark = "dark", n))(Je || {});
 const Zr = Z.forwardRef((n, c) => {
   const se = n, {
     id: p,
@@ -1442,7 +1442,7 @@ const Zr = Z.forwardRef((n, c) => {
     defaultValue: k,
     className: E,
     disabled: S,
-    endIcon: j,
+    endIcon: R,
     startIcon: h,
     isError: y,
     isHint: f,
@@ -1450,7 +1450,7 @@ const Zr = Z.forwardRef((n, c) => {
     placeholder: o,
     label: g,
     type: _,
-    name: B,
+    name: M,
     ariaLabel: D,
     autoComplete: L = !0,
     size: d = Ee.Medium,
@@ -1458,9 +1458,9 @@ const Zr = Z.forwardRef((n, c) => {
     onBlur: z,
     onChange: G,
     onFocus: T,
-    onKeyDown: R,
+    onKeyDown: j,
     onKeyUp: I,
-    requiredProps: M
+    requiredSymbol: B
   } = se, Le = Ir(se, [
     "id",
     "value",
@@ -1485,7 +1485,7 @@ const Zr = Z.forwardRef((n, c) => {
     "onFocus",
     "onKeyDown",
     "onKeyUp",
-    "requiredProps"
+    "requiredSymbol"
   ]), [Pe, ie] = A(""), [F, W] = A(_), [Y, ce] = Z.useState(!1), ue = (V) => {
     ie(V.target.value), G && G(V);
   }, fe = (V) => {
@@ -1493,7 +1493,7 @@ const Zr = Z.forwardRef((n, c) => {
   }, de = (V) => {
     T && T(V);
   }, pe = (V) => {
-    R && R(V);
+    j && j(V);
   }, he = (V) => {
     I && I(V);
   }, ve = () => {
@@ -1502,7 +1502,7 @@ const Zr = Z.forwardRef((n, c) => {
   return _e(() => {
     (k || s) && ie(" ");
   }, [k, s]), Oe(() => {
-    _ === je.Password && W(Y ? je.Text : je.Password);
+    _ === Re.Password && W(Y ? Re.Text : Re.Password);
   }, [Y, _]), /* @__PURE__ */ v.jsxs(
     "div",
     {
@@ -1522,7 +1522,15 @@ const Zr = Z.forwardRef((n, c) => {
             htmlFor: p,
             children: [
               g,
-              (M == null ? void 0 : M.isRequired) && /* @__PURE__ */ v.jsx("span", { style: { color: M.color }, children: M.isRequired && "*" })
+              B && /* @__PURE__ */ v.jsx(
+                "span",
+                {
+                  style: {
+                    color: typeof B == "object" ? B.color : void 0
+                  },
+                  children: B && "*"
+                }
+              )
             ]
           }
         ),
@@ -1536,7 +1544,7 @@ const Zr = Z.forwardRef((n, c) => {
               "InputBase-root-dark": $ === Je.Dark
             }),
             children: [
-              _ !== je.Password && h && /* @__PURE__ */ v.jsx("div", { className: "InputBase-icon-start", children: h }),
+              _ !== Re.Password && h && /* @__PURE__ */ v.jsx("div", { className: "InputBase-icon-start", children: h }),
               /* @__PURE__ */ v.jsxs(
                 "div",
                 {
@@ -1569,7 +1577,7 @@ const Zr = Z.forwardRef((n, c) => {
                           "InputBase-input-small": d === Ee.Small
                         }),
                         disabled: S,
-                        name: B,
+                        name: M,
                         type: F,
                         id: p,
                         value: s,
@@ -1585,8 +1593,8 @@ const Zr = Z.forwardRef((n, c) => {
                   ]
                 }
               ),
-              _ !== je.Password && j && /* @__PURE__ */ v.jsx("div", { className: "InputBase-icon-end", children: j }),
-              _ === je.Password && /* @__PURE__ */ v.jsx(
+              _ !== Re.Password && R && /* @__PURE__ */ v.jsx("div", { className: "InputBase-icon-end", children: R }),
+              _ === Re.Password && /* @__PURE__ */ v.jsx(
                 "button",
                 {
                   type: "button",
@@ -1624,30 +1632,30 @@ const Qr = Z.forwardRef((n, c) => {
     disabled: k,
     children: E,
     value: S,
-    label: j,
+    label: R,
     className: h,
     onChange: y,
     ariaLabel: f,
     error: b,
     theme: o = K.Light,
     size: g = Te.Medium
-  } = n, [_, B] = A(!1), [D, L] = A(!1), [d, $] = A(k), z = (T) => {
-    d || (B(!_), y && y(!_, T));
+  } = n, [_, M] = A(!1), [D, L] = A(!1), [d, $] = A(k), z = (T) => {
+    d || (M(!_), y && y(!_, T));
   }, G = (T) => {
     if ((T.key === "Enter" || T.key === " ") && !d) {
-      const R = {
+      const j = {
         target: {
           ariaLabel: f,
           name: s
         }
       };
-      B(!_), y && y(!_, R);
+      M(!_), y && y(!_, j);
     }
   };
   return Oe(() => {
     $(k);
   }, [k]), Oe(() => {
-    B(typeof S == "boolean" ? S : !1);
+    M(typeof S == "boolean" ? S : !1);
   }, [S]), Oe(() => {
     L(!!b);
   }, [b]), /* @__PURE__ */ v.jsx("div", { className: "Checkbox", children: /* @__PURE__ */ v.jsxs("label", { children: [
@@ -1698,7 +1706,7 @@ const Qr = Z.forwardRef((n, c) => {
         )
       }
     ),
-    (j || E) && /* @__PURE__ */ v.jsx(
+    (R || E) && /* @__PURE__ */ v.jsx(
       "div",
       {
         className: N({
@@ -1710,7 +1718,7 @@ const Qr = Z.forwardRef((n, c) => {
           "Checkbox-label-dark-disabled": d && o === K.Dark,
           "Checkbox-label-green-disabled": d && o === K.Green
         }),
-        children: j || E
+        children: R || E
       }
     )
   ] }) });
@@ -1724,18 +1732,18 @@ const Hr = Z.forwardRef((n, c) => {
     className: k,
     checked: E,
     disabled: S,
-    ariaLabel: j,
+    ariaLabel: R,
     label: h,
     theme: y = X.Light,
     size: f = oe.Medium,
     onChange: b
-  } = n, [o, g] = A(!1), [_, B] = A(S), D = (d) => {
+  } = n, [o, g] = A(!1), [_, M] = A(S), D = (d) => {
     _ || (g(!o), b && b(!o, d));
   }, L = (d) => {
     if ((d.key === "Enter" || d.key === " ") && !_) {
       const $ = {
         target: {
-          ariaLabel: j,
+          ariaLabel: R,
           name: s
         }
       };
@@ -1743,7 +1751,7 @@ const Hr = Z.forwardRef((n, c) => {
     }
   };
   return Oe(() => {
-    B(S);
+    M(S);
   }, [S]), Oe(() => {
     g(typeof E == "boolean" ? E : !1);
   }, [E]), /* @__PURE__ */ v.jsx("div", { className: "Switch", children: /* @__PURE__ */ v.jsxs("label", { children: [
@@ -1774,7 +1782,7 @@ const Hr = Z.forwardRef((n, c) => {
             "input",
             {
               ref: c,
-              "aria-label": j,
+              "aria-label": R,
               tabIndex: -1,
               type: "checkbox",
               name: s,
@@ -1818,18 +1826,18 @@ const nt = (n) => {
     gap: k,
     activeTab: E,
     activeColor: S,
-    tabMarginBottom: j = 16
-  } = n, [h, y] = A((G = s[0]) == null ? void 0 : G.id), [f, b] = A(6), [o, g] = A(0), [_, B] = A("none"), [D, L] = A(0), d = Tr(() => s.find((T) => T.id === h), [h, s]), $ = Or(new Array(s.length)), z = (T, R, I) => {
-    R !== h && (B("left 200ms linear, width 200ms linear"), b(T.currentTarget.offsetLeft), g(T.currentTarget.offsetWidth), y(R), I && I(R));
+    tabMarginBottom: R = 16
+  } = n, [h, y] = A((G = s[0]) == null ? void 0 : G.id), [f, b] = A(6), [o, g] = A(0), [_, M] = A("none"), [D, L] = A(0), d = Tr(() => s.find((T) => T.id === h), [h, s]), $ = Or(new Array(s.length)), z = (T, j, I) => {
+    j !== h && (M("left 200ms linear, width 200ms linear"), b(T.currentTarget.offsetLeft), g(T.currentTarget.offsetWidth), y(j), I && I(j));
   };
   return _e(() => {
     if (E) {
-      const T = s.findIndex((R) => R.id === E);
+      const T = s.findIndex((j) => j.id === E);
       L(T), y(E);
     }
   }, [E, s]), _e(() => {
-    const T = $.current[D].offsetWidth, R = $.current[D].offsetLeft;
-    g(T), b(R);
+    const T = $.current[D].offsetWidth, j = $.current[D].offsetLeft;
+    g(T), b(j);
   }, [D]), /* @__PURE__ */ v.jsxs("div", { className: "Tabs", children: [
     /* @__PURE__ */ v.jsxs(
       "div",
@@ -1840,10 +1848,10 @@ const nt = (n) => {
           [c || ""]: !!c
         }),
         children: [
-          s == null ? void 0 : s.map((T, R) => /* @__PURE__ */ v.jsx(
+          s == null ? void 0 : s.map((T, j) => /* @__PURE__ */ v.jsx(
             "button",
             {
-              ref: (I) => $.current[R] = I,
+              ref: (I) => $.current[j] = I,
               "aria-label": T.label,
               disabled: T.disabled,
               className: N({
@@ -1855,7 +1863,7 @@ const nt = (n) => {
               children: /* @__PURE__ */ v.jsx(
                 "div",
                 {
-                  style: { marginBottom: j },
+                  style: { marginBottom: R },
                   className: N({
                     "Tab-label": !0
                   }),
@@ -1890,7 +1898,7 @@ const et = Z.forwardRef((n, c) => {
     ariaLabel: k,
     content: E,
     header: S,
-    contentMarginTop: j = 0,
+    contentMarginTop: R = 0,
     isOpen: h,
     onChange: y
   } = n, [f, b] = A(h), o = Or(null), g = (D, L) => {
@@ -1898,7 +1906,7 @@ const et = Z.forwardRef((n, c) => {
     D.style.height = (L ? d : 0) + "px";
   }, _ = () => {
     b(!f), y && y(!f), o.current && g(o.current, !f);
-  }, B = (D) => {
+  }, M = (D) => {
     (D.key === "Enter" || D.key === " ") && (b(!f), y && y(!f), o.current && g(o.current, !f));
   };
   return _e(() => {
@@ -1922,7 +1930,7 @@ const et = Z.forwardRef((n, c) => {
             "aria-expanded": "true",
             "aria-label": k,
             onClick: _,
-            onKeyDown: B,
+            onKeyDown: M,
             children: [
               /* @__PURE__ */ v.jsx("div", { style: { color: s }, className: "Accordion-heading-label", children: S }),
               /* @__PURE__ */ v.jsx(
@@ -1941,7 +1949,7 @@ const et = Z.forwardRef((n, c) => {
         /* @__PURE__ */ v.jsx(
           "div",
           {
-            style: { marginTop: j },
+            style: { marginTop: R },
             ref: o,
             className: N({
               "Accordion-details": !0,
@@ -1958,7 +1966,7 @@ et.displayName = "Accordion";
 var He = /* @__PURE__ */ ((n) => (n.Large = "large", n.Medium = "medium", n))(He || {});
 const at = (n) => {
   var b;
-  const { className: c, size: p = He.Medium, tags: s, gap: k, activeTag: E, activeColor: S } = n, [j, h] = A((b = s[0]) == null ? void 0 : b.id), y = Tr(() => s.find((o) => o.id === j), [j, s]), f = (o, g) => {
+  const { className: c, size: p = He.Medium, tags: s, gap: k, activeTag: E, activeColor: S } = n, [R, h] = A((b = s[0]) == null ? void 0 : b.id), y = Tr(() => s.find((o) => o.id === R), [R, s]), f = (o, g) => {
     h(o), g && g(o);
   };
   return _e(() => {
@@ -1978,12 +1986,12 @@ const at = (n) => {
             "aria-label": o.label,
             id: o.id,
             disabled: o.disabled,
-            style: { backgroundColor: j === o.id ? S : "" },
+            style: { backgroundColor: R === o.id ? S : "" },
             className: N({
               Tag: !0,
               "Tag-medium": p === He.Medium,
               "Tag-large": p === He.Large,
-              "Tag-active": j === o.id,
+              "Tag-active": R === o.id,
               [c || ""]: !!c
             }),
             onClick: () => f(o.id, o.onClick),
@@ -2010,19 +2018,19 @@ const ot = (n) => {
     tags: k,
     gap: E,
     activeTag: S,
-    activeColor: j,
+    activeColor: R,
     backgroundColor: h
-  } = n, [y, f] = A((T = k[0]) == null ? void 0 : T.id), [b, o] = A(6), [g, _] = A(0), [B, D] = A("none"), [L, d] = A(0), $ = Tr(() => k.find((R) => R.id === y), [y, k]), z = Or(new Array(k.length)), G = (R, I, M) => {
-    I !== y && (D("left 200ms linear, width 200ms linear"), o(R.currentTarget.offsetLeft), _(R.currentTarget.offsetWidth), f(I), M && M(I));
+  } = n, [y, f] = A((T = k[0]) == null ? void 0 : T.id), [b, o] = A(6), [g, _] = A(0), [M, D] = A("none"), [L, d] = A(0), $ = Tr(() => k.find((j) => j.id === y), [y, k]), z = Or(new Array(k.length)), G = (j, I, B) => {
+    I !== y && (D("left 200ms linear, width 200ms linear"), o(j.currentTarget.offsetLeft), _(j.currentTarget.offsetWidth), f(I), B && B(I));
   };
   return _e(() => {
     if (S) {
-      const R = k.findIndex((I) => I.id === S);
-      d(R), f(S);
+      const j = k.findIndex((I) => I.id === S);
+      d(j), f(S);
     }
   }, [S, k]), _e(() => {
-    const R = z.current[L].offsetWidth, I = z.current[L].offsetLeft;
-    _(R), o(I);
+    const j = z.current[L].offsetWidth, I = z.current[L].offsetLeft;
+    _(j), o(I);
   }, [L]), /* @__PURE__ */ v.jsxs("div", { className: "SwitchTags", children: [
     /* @__PURE__ */ v.jsxs(
       "div",
@@ -2035,28 +2043,28 @@ const ot = (n) => {
           [c || ""]: !!c
         }),
         children: [
-          k == null ? void 0 : k.map((R, I) => /* @__PURE__ */ v.jsxs(
+          k == null ? void 0 : k.map((j, I) => /* @__PURE__ */ v.jsxs(
             "button",
             {
-              ref: (M) => z.current[I] = M,
-              "aria-label": R.label,
-              id: R.id,
-              disabled: R.disabled,
+              ref: (B) => z.current[I] = B,
+              "aria-label": j.label,
+              id: j.id,
+              disabled: j.disabled,
               className: N({
                 SwitchTag: !0,
                 "SwitchTag-medium": p === Xe.Medium,
                 "SwitchTag-large": p === Xe.Large,
-                "SwitchTag-active": y === R.id,
+                "SwitchTag-active": y === j.id,
                 [c || ""]: !!c
               }),
-              onClick: (M) => G(M, R.id, R.onClick),
+              onClick: (B) => G(B, j.id, j.onClick),
               children: [
-                R.startIcon && /* @__PURE__ */ v.jsx("span", { className: "SwitchTag-icon-left", children: R.startIcon }),
-                R.label,
-                R.endIcon && /* @__PURE__ */ v.jsx("span", { className: "SwitchTag-icon-right", children: R.endIcon })
+                j.startIcon && /* @__PURE__ */ v.jsx("span", { className: "SwitchTag-icon-left", children: j.startIcon }),
+                j.label,
+                j.endIcon && /* @__PURE__ */ v.jsx("span", { className: "SwitchTag-icon-right", children: j.endIcon })
               ]
             },
-            R.id
+            j.id
           )),
           /* @__PURE__ */ v.jsx(
             "div",
@@ -2064,8 +2072,8 @@ const ot = (n) => {
               style: {
                 left: b,
                 width: g,
-                transition: B,
-                backgroundColor: j
+                transition: M,
+                backgroundColor: R
               },
               className: N({
                 ActiveTab: !0,
@@ -2081,7 +2089,7 @@ const ot = (n) => {
 };
 export {
   et as Accordion,
-  Re as BUTTON_COLOR,
+  je as BUTTON_COLOR,
   ne as BUTTON_SIZE,
   qr as BUTTON_TYPE,
   ae as BUTTON_VARIANT,
@@ -2091,7 +2099,7 @@ export {
   Qr as Checkbox,
   Ee as INPUT_SIZE,
   Je as INPUT_THEME,
-  je as INPUT_TYPE,
+  Re as INPUT_TYPE,
   Zr as Input,
   oe as SWITCH_SIZE,
   Xe as SWITCH_TAGS_SIZE,
