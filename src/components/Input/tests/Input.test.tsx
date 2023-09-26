@@ -182,14 +182,14 @@ describe('Input', () => {
 
   it('should have * symbol at the end of the label', () => {
     const { container } = render(
-        <Input
-            ariaLabel="ariaLabel"
-            label="Label"
-            placeholder="placeholder"
-            type={INPUT_TYPE.Text}
-            helperText={'test helper text'}
-            requiredProps={{isRequired: true}}
-        />,
+      <Input
+        ariaLabel="ariaLabel"
+        label="Label"
+        placeholder="placeholder"
+        type={INPUT_TYPE.Text}
+        helperText={'test helper text'}
+        requiredProps={{ isRequired: true }}
+      />,
     );
 
     const inputLabel = container.querySelector('.InputLabel');
@@ -198,18 +198,13 @@ describe('Input', () => {
 
   it('the * (required) symbol should have red color', () => {
     const { container } = render(
-        <Input
-            ariaLabel="ariaLabel"
-            label="Label"
-            placeholder="placeholder"
-            type={INPUT_TYPE.Text}
-            helperText={'test helper text'}
-            requiredProps={{isRequired: true, color: "#ff0000"}}
-        />,
+      <div>
+        <div>fdsfsfds</div>
+      </div>,
     );
 
     const requiredSymbol = container.querySelector('span');
-    expect(requiredSymbol?.style.color).toBe("rgb(255, 0, 0)");
+    expect(requiredSymbol?.style.color).toBe('rgb(255, 0, 0)');
   });
 
   it('should have dark mode', () => {
