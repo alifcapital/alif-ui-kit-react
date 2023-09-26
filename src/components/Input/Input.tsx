@@ -5,7 +5,6 @@ import { EyeOff, EyeOn } from 'alif-icon-kit-react';
 import { INPUT_SIZE, INPUT_THEME, INPUT_TYPE } from './InputConstants';
 import './InputStyles.scss';
 import { InputProps } from './InputTypes';
-import { isObject } from 'util';
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const {
