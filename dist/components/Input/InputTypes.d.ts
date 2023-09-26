@@ -22,6 +22,10 @@ export interface InputProps extends RestProps {
     size?: Size;
     theme?: Theme;
     autoComplete?: string | undefined;
+    requiredProps?: {
+        isRequired: boolean;
+        color?: string;
+    };
     onBlur?: React.FocusEventHandler<HTMLInputElement>;
     onFocus?: React.FocusEventHandler<HTMLInputElement>;
     onChange?: React.ChangeEventHandler<HTMLInputElement>;
