@@ -180,6 +180,22 @@ describe('Input', () => {
     expect(container.getElementsByClassName('Input-helper-text').length).toBe(1);
   });
 
+  it('should have * symbol at the end of the label', () => {
+    const { container } = render(
+      <Input
+        ariaLabel="ariaLabel"
+        label="Label"
+        placeholder="placeholder"
+        type={INPUT_TYPE.Text}
+        helperText={'test helper text'}
+        requiredSymbol
+      />,
+    );
+
+    const inputLabel = container.querySelector('.InputLabel');
+    expect(inputLabel?.textContent).toMatch(/\*$/);
+  });
+
   it('should have dark mode', () => {
     const { container } = render(
       <Input
