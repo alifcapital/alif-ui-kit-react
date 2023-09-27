@@ -1452,7 +1452,7 @@ const Zr = Z.forwardRef((n, c) => {
     type: _,
     name: M,
     ariaLabel: D,
-    autoComplete: L = !0,
+    autoComplete: L,
     size: d = Ee.Medium,
     theme: $ = Je.Light,
     onBlur: z,
@@ -1570,7 +1570,7 @@ const Zr = Z.forwardRef((n, c) => {
                       Dr({
                         defaultValue: !s && k ? k : void 0,
                         "aria-label": D,
-                        autoComplete: L ? "on" : "off",
+                        autoComplete: L,
                         className: N({
                           "InputBase-input": !0,
                           "InputBase-input-dark": $ === Je.Dark,
