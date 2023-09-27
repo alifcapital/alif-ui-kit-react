@@ -42,6 +42,9 @@
       border: none;
       background: transparent;
       @include body-big;
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+      }
     }
 
     & .InputBase-input-dark {
@@ -109,6 +112,7 @@
   }
 
   & .InputLabel {
+    z-index: 1;
     @include body-normal;
   }
 
@@ -144,13 +148,13 @@
     color: $redWaring;
   }
 
-  & input[type=number]::-webkit-outer-spin-button,
-  & input[type=number]::-webkit-inner-spin-button {
+  & input[type='number']::-webkit-outer-spin-button,
+  & input[type='number']::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
 
-  & input[type=number] {
+  & input[type='number'] {
     -moz-appearance: textfield;
   }
 }

@@ -6,7 +6,8 @@ type Variant = `${BUTTON_VARIANT}`;
 type Color = `${BUTTON_COLOR}`;
 type IconType = React.ReactElement<SVGProps<SVGSVGElement>>;
 
-export interface IButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>{
+export interface IButtonProps
+  extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   children?: React.ReactNode;
   size?: Size;
   className?: string;

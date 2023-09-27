@@ -1,11 +1,11 @@
 import React, { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import clsx from 'clsx';
 
-import { ITabsProps } from './TabsTypes';
+import { ITabsProps, TTabId } from './TabsTypes';
 import { TABS_SIZE } from './TabsConstants';
 import './TabsStyles.scss';
 
-export const Tabs = (props: ITabsProps) => {
+export const Tabs = <T,>(props: ITabsProps<T>) => {
   const {
     className,
     size = TABS_SIZE.Large,
@@ -16,7 +16,7 @@ export const Tabs = (props: ITabsProps) => {
     tabMarginBottom = 16,
   } = props;
 
-  const [selectedId, setSelectedId] = useState(tabs[0]?.id);
+  const [selectedId, setSelectedId] = useState<TTabId<T>>(tabs[0]?.id);
   const [left, setLeft] = useState(6);
   const [width, setWidth] = useState(0);
   const [transition, setTransition] = useState('none');
@@ -27,8 +27,8 @@ export const Tabs = (props: ITabsProps) => {
 
   const handleTabClick = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    id: string,
-    clickHandler?: (id: string) => void,
+    id: TTabId<T>,
+    clickHandler?: (id: TTabId<T>) => void,
   ) => {
     if (id !== selectedId) {
       setTransition('left 200ms linear, width 200ms linear');

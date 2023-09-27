@@ -23,7 +23,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     type,
     name,
     ariaLabel,
-    autoComplete = true,
+    autoComplete,
     size = INPUT_SIZE.Medium,
     theme = INPUT_THEME.Light,
     onBlur,
@@ -126,7 +126,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
           <input
             defaultValue={!value && defaultValue ? defaultValue : undefined}
             aria-label={ariaLabel}
-            autoComplete={autoComplete ? 'on' : 'off'}
+            autoComplete={autoComplete}
             className={clsx({
               ['InputBase-input']: true,
               ['InputBase-input-dark']: theme === INPUT_THEME.Dark,
