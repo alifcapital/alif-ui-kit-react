@@ -42,6 +42,9 @@
       border: none;
       background: transparent;
       @include body-big;
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+      }
     }
 
     & .InputBase-input-dark {
@@ -109,6 +112,7 @@
   }
 
   & .InputLabel {
+    z-index: 1;
     @include body-normal;
   }
 

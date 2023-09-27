@@ -1,28 +1,38 @@
 
+import { useState } from 'react';
 import { TAGS_SIZE, Tags} from '../../../src';
 import { ITagsProps } from '../../../src/components/Tags/TagsTypes';
 
 export const TagsApp: React.FC = () => {
+  
+  type TField  = "transfer" | "cards" | "cash" | "purchases";
 
-  const tags: ITagsProps['tags'] = [
+  const [active, setActive] = useState<TField>("cards");
+
+  const tags: ITagsProps<TField>['tags'] = [
     {
-      id: 'one',
+      id: 'transfer',
       label: 'Переводы',
+      onClick: (id) => setActive(id)
     },
     {
-      id: 'two',
+      id: 'cards',
       label: 'Карты',
-      content: <a href="#"> Click me</a>,
     },
     {
-      id: 'three',
+      id: 'cash',
       label: 'Касса',
+      content: <h5>Hello there</h5>
+    },
+    {
+      id: 'purchases',
+      label: 'Покупки',
     },
   ];
         
   return (
     <div>
-      <Tags  activeTag='three' size={ TAGS_SIZE.Medium} className='custom-class' tags={tags}/><br></br> 
+      <Tags  activeTag={active} size={ TAGS_SIZE.Medium} className='custom-class' tags={tags}/><br></br> 
       <Tags  activeColor='black'  className='custom-class' size={ TAGS_SIZE.Large} tags={tags}/> 
     </div>
   );

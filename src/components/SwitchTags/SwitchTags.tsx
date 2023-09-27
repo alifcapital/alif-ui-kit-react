@@ -2,11 +2,11 @@ import React, { useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import clsx from 'clsx';
 
-import { ISwitchTagsProps } from './SwitchTagsTypes';
+import { ISwitchTagsProps, TSwitchTagId } from './SwitchTagsTypes';
 import { SWITCH_TAGS_SIZE, SWITCH_TAGS_VARIANT } from './SwitchTagsConstants';
 import './SwitchTagsStyles.scss';
 
-export const SwitchTags = (props: ISwitchTagsProps) => {
+export const SwitchTags = <T,>(props: ISwitchTagsProps<T>) => {
   const {
     className,
     size = SWITCH_TAGS_SIZE.Medium,
@@ -18,7 +18,7 @@ export const SwitchTags = (props: ISwitchTagsProps) => {
     backgroundColor,
   } = props;
 
-  const [selectedId, setSelectedId] = useState(tags[0]?.id);
+  const [selectedId, setSelectedId] = useState<TSwitchTagId<T>>(tags[0]?.id);
   const [left, setLeft] = useState(6);
   const [width, setWidth] = useState(0);
   const [transition, setTransition] = useState('none');
@@ -29,8 +29,8 @@ export const SwitchTags = (props: ISwitchTagsProps) => {
 
   const handleTabClick = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    id: string,
-    clickHandler?: (id: string) => void,
+    id: TSwitchTagId<T>,
+    clickHandler?: (id: TSwitchTagId<T>) => void,
   ) => {
     if (id !== selectedId) {
       setTransition('left 200ms linear, width 200ms linear');

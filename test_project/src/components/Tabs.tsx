@@ -1,13 +1,20 @@
 
+import { useState } from 'react';
 import { TABS_SIZE, Tabs} from '../../../src';
 import { ITabsProps } from '../../../src/components/Tabs/TabsTypes';
 
 export const TabsApp: React.FC = () => {
+  
+  type TField  = "one" | "two" | "three";
 
-  const tabs: ITabsProps['tabs'] = [
+  const [active, setActive] = useState<TField>("three");
+
+
+  const tabs: ITabsProps<TField>['tabs'] = [
     {
-      id: 'one',
+      id: "one",
       label: 'Label 1',
+      onClick: (id) => setActive(id)
     },
     {
       id: 'two',
@@ -23,7 +30,7 @@ export const TabsApp: React.FC = () => {
   return (
     <div>
       <Tabs   className='custom-class' tabs={tabs}/> <br></br> 
-      <Tabs  activeTab='three' activeColor='black' size={ TABS_SIZE.Small} className='custom-class' tabs={tabs}/>
+      <Tabs  activeTab={active} activeColor='black' size={ TABS_SIZE.Small} className='custom-class' tabs={tabs}/>
     </div>
   );
 };

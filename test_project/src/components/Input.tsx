@@ -24,37 +24,27 @@ export const InputApp: React.FC = () => {
             <form>
                 <Input
                     ref={ref}
+                    autoComplete='off'
+                    size={INPUT_SIZE.Small}
+                    endIcon={<CheckCircle/>}
+                    type={INPUT_TYPE.Email}
+                    placeholder='Однострочный'
+                    name="email"
+                    ariaLabel='araiaLabel'
+                />
+                <Input
+                    ref={ref}
+                    // autoComplete='off'
                     size={INPUT_SIZE.Small}
                     endIcon={<CheckCircle/>}
                     type={INPUT_TYPE.Password}
                     placeholder='Однострочный'
-                    name="phone"
+                    name="password"
                     ariaLabel='araiaLabel'
                 />
+
+                <input type="submit" value="okkk" />
             </form>
-
-            <Input
-                size={INPUT_SIZE.Small}
-                type={INPUT_TYPE.Number}
-                placeholder='Однострочный'
-                name="number"
-                ariaLabel='araiaLabel'
-            />
-
-            <Input
-                size={INPUT_SIZE.Small}
-                type={INPUT_TYPE.Telephone}
-                placeholder='Однострочный'
-                name="phone"
-                ariaLabel='araiaLabel'
-            />
-            <Input
-                size={INPUT_SIZE.Small}
-                type={INPUT_TYPE.Email}
-                placeholder='email'
-                name='emil'
-                ariaLabel='araiaLabel'
-            />
         </div>
     );
 };

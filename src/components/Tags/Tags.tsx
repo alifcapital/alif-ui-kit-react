@@ -1,17 +1,17 @@
 import React, { useLayoutEffect, useMemo, useState } from 'react';
 import clsx from 'clsx';
 
-import { ITagsProps } from './TagsTypes';
+import { ITagsProps, TTagId } from './TagsTypes';
 import { TAGS_SIZE } from './TagsConstants';
 import './TagsStyles.scss';
 
-export const Tags = (props: ITagsProps) => {
+export const Tags = <T,>(props: ITagsProps<T>) => {
   const { className, size = TAGS_SIZE.Medium, tags, gap, activeTag, activeColor } = props;
 
-  const [selectedId, setSelectedId] = useState(tags[0]?.id);
+  const [selectedId, setSelectedId] = useState<TTagId<T>>(tags[0]?.id);
   const selectedTag = useMemo(() => tags.find((tag) => tag.id === selectedId), [selectedId, tags]);
 
-  const handleTabClick = (id: string, clickHandler?: (id: string) => void) => {
+  const handleTabClick = (id: TTagId<T>, clickHandler?: (id: TTagId<T>) => void) => {
     setSelectedId(id);
     clickHandler && clickHandler(id);
   };
