@@ -1,7 +1,7 @@
 {
   "name": "alif-ui-kit-react",
-  "version": "0.0.3",
-  "description": "Aif UI components pack for React",
+  "version": "1.0.0",
+  "description": "Alif UI components pack for React",
   "type": "module",
   "files": [
     "dist",
@@ -24,7 +24,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/alifcapital/alif-ui-kit-react.git"
+    "url": "git+https://github.com/alifcapital/alif-ui-kit-react.git"
   },
   "scripts": {
     "dev": "vite --host",
@@ -82,7 +82,7 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.0.0",
-    "alif-icon-kit-react": "git+https://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:x-oauth-basic@github.com/alifcapital/alif-icon-kit-react.git",
+    "alif-icon-kit-react": "^1.0.1",
     "clsx": "^1.2.1",
     "sass": "^1.57.1",
     "vite-plugin-dts": "^2.3.0",
