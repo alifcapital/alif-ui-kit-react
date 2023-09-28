@@ -18,7 +18,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: './src/index.ts',
-      name: 'AlifUiKitReact',
+      name: 'AlifReactUiKit',
       fileName: 'index'
     },
     rollupOptions: {
