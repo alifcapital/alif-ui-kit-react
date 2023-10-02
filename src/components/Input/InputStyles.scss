@@ -43,6 +43,7 @@
       background: transparent;
       @include body-big;
       &:-webkit-autofill {
+        animation-name: onAutoFillStart;
         -webkit-box-shadow: 0 0 0px 1000px white inset;
       }
     }
@@ -112,8 +113,10 @@
   }
 
   & .InputLabel {
-    z-index: 1;
     @include body-normal;
+    &:hover {
+      cursor: text;
+    }
   }
 
   & .InputLabel-small {
@@ -156,5 +159,8 @@
 
   & input[type='number'] {
     -moz-appearance: textfield;
+  }
+
+  @keyframes onAutoFillStart {
   }
 }

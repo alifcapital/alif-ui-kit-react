@@ -36,6 +36,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   } = props;
 
   const [inputValue, setInputValue] = useState('');
+  const [isAutoFill, setIsAutofill] = useState(false);
   const [inputType, setInputType] = useState<`${INPUT_TYPE}`>(type);
   const [showPassword, setShowPassword] = React.useState(false);
 
@@ -64,6 +65,12 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     setShowPassword((show) => !show);
   };
 
+  const handleAutofill = (e: React.AnimationEvent<HTMLInputElement>) => {
+    if (e.animationName === 'onAutoFillStart') {
+      setIsAutofill(true);
+    }
+  };
+
   useLayoutEffect(() => {
     if (defaultValue || value) {
       setInputValue(' ');
@@ -75,6 +82,12 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
       setInputType(showPassword ? INPUT_TYPE.Text : INPUT_TYPE.Password);
     }
   }, [showPassword, type]);
+
+  useEffect(() => {
+    if (inputValue.length === 0) {
+      setIsAutofill(false);
+    }
+  }, [inputValue]);
 
   return (
     <div
@@ -122,11 +135,14 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
         >
           {!label && (
             <label
+              style={{
+                zIndex: isAutoFill ? 1 : 0,
+              }}
               className={clsx({
                 ['InputLabel']: true,
                 ['InputLabel-medium-align-center']: size === INPUT_SIZE.Medium,
                 ['InputLabel-small-align-center']: size === INPUT_SIZE.Small,
-                ['InputLabel-position-fixed']: inputValue.length > 0,
+                ['InputLabel-position-fixed']: inputValue.length > 0 || isAutoFill,
               })}
               htmlFor={id}
             >
@@ -141,12 +157,14 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
               ['InputBase-input']: true,
               ['InputBase-input-dark']: theme === INPUT_THEME.Dark,
               ['InputBase-input-small']: size === INPUT_SIZE.Small,
+              ['InputBase-autofill-font']: isAutoFill,
             })}
             disabled={disabled}
             name={name}
             type={inputType}
             id={id}
             value={value}
+            onAnimationStart={handleAutofill}
             onChange={handleChange}
             onBlur={handleBlur}
             onFocus={handleFocus}

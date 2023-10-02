@@ -21,10 +21,9 @@ export const InputApp: React.FC = () => {
                 helperText={<><CheckCircle/> Ошибочка вышла</>}
             />
             <br/><br/>
-            <form>
+            <form >
                 <Input
                     ref={ref}
-                    autoComplete='off'
                     size={INPUT_SIZE.Small}
                     endIcon={<CheckCircle/>}
                     type={INPUT_TYPE.Email}
@@ -34,7 +33,6 @@ export const InputApp: React.FC = () => {
                 />
                 <Input
                     ref={ref}
-                    // autoComplete='off'
                     size={INPUT_SIZE.Small}
                     endIcon={<CheckCircle/>}
                     type={INPUT_TYPE.Password}
@@ -42,7 +40,6 @@ export const InputApp: React.FC = () => {
                     name="password"
                     ariaLabel='araiaLabel'
                 />
-
                 <input type="submit" value="okkk" />
             </form>
         </div>
