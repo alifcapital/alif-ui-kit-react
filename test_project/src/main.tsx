@@ -14,14 +14,14 @@ import './index.css';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='conatainer'>
-      <SwitchTagsApp/><br /><hr />
+      {/* <SwitchTagsApp/><br /><hr />
       <TagsApp/><br /><hr />
       <TabsApp/><br /><hr />
       <SwitchApp/><br /><hr />
-      <CheckboxApp/><br /><hr />
+      <CheckboxApp/><br /><hr /> */}
       <InputApp/><br /><hr />
-      <AccordionApp/><br /><hr />
-      <ButtonApp/><hr />
+      {/* <AccordionApp/><br /><hr />
+      <ButtonApp/><hr /> */}
     </div>
   </React.StrictMode>,
 );
