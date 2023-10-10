@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import clsx from 'clsx';
 

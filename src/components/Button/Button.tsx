@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import clsx from 'clsx';
 
@@ -20,10 +22,16 @@ const Button = React.forwardRef<HTMLButtonElement, IButtonProps>((props, ref) =>
     size = BUTTON_SIZE.Medium,
     variant = BUTTON_VARIANT.Contained,
     type = 'button',
+    onClick,
   } = props;
+
+  const hadnleOnClick = () => {
+    onClick && onClick();
+  };
 
   return (
     <button
+      onClick={hadnleOnClick}
       ref={ref}
       type={type}
       aria-label={ariaLabel}

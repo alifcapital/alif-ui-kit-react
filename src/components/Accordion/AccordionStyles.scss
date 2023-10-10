@@ -1,13 +1,13 @@
 @import '../../styles/index.scss';
 
 .Accordion {
-  cursor: pointer;
   position: relative;
 
   .Accordion-heading {
     $headingColor: $black100;
     color: $headingColor;
     overflow: hidden;
+    cursor: pointer;
     @include flexAligment($justifyContent: space-between);
 
     .Accordion-heading-label {

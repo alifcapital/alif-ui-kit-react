@@ -1,3 +1,5 @@
+'use client';
+
 import React, { DetailedHTMLProps, HTMLAttributes, useEffect, useState } from 'react';
 import clsx from 'clsx';
 

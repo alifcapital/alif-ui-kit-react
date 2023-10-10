@@ -13,7 +13,13 @@ export const AccordionApp: React.FC = () => {
 
   return (
     <div>
-      <Accordion ref={ref} ariaLabel='acorrdion label' color='grey'  content={content} header="Карты"  className='custom-class' /> 
+      <Accordion 
+        ref={ref} 
+        ariaLabel='acorrdion label' color='grey'  
+        content={<>
+          <div>{content}</div>
+          <div>{content}</div>
+        </>} header="Карты"  className='custom-class' /> 
       <Accordion onChange={handleChange} isOpen={state} ariaLabel='acorrdion label 2'  content={content} header="Карты 2222"  className='custom-class' /> 
     </div>
   );

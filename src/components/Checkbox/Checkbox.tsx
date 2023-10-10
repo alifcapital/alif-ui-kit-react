@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect, DetailedHTMLProps, HTMLAttributes } from 'react';
 import clsx from 'clsx';
 import { Check } from 'alif-icon-kit-react';

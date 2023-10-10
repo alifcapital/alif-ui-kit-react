@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import clsx from 'clsx';
 import { EyeOff, EyeOn } from 'alif-icon-kit-react';

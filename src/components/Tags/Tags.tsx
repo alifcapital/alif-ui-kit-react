@@ -1,6 +1,8 @@
 import React, { useLayoutEffect, useMemo, useState } from 'react';
 import clsx from 'clsx';
 
+('use client');
+
 import { ITagsProps, TTagId } from './TagsTypes';
 import { TAGS_SIZE } from './TagsConstants';
 import './TagsStyles.scss';
