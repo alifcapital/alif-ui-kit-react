@@ -10,10 +10,12 @@ import { TabsApp } from './components/Tabs';
 import { TagsApp } from './components/Tags';
 import { SwitchTagsApp } from './components/SwitchTags';
 import './index.css';
+import { IconButtonApp } from './components/IconButton';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='conatainer'>
+      <IconButtonApp/>
       <SwitchTagsApp/><br /><hr />
       <TagsApp/><br /><hr />
       <TabsApp/><br /><hr />
