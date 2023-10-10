@@ -1,3 +1,5 @@
+'use client';
+
 import React, { DetailedHTMLProps, HTMLAttributes, useLayoutEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { SelectOpenDown } from 'alif-icon-kit-react';

@@ -4,18 +4,21 @@ type Size = `${BUTTON_SIZE}`;
 type Variant = `${BUTTON_VARIANT}`;
 type Color = `${BUTTON_COLOR}`;
 type IconType = React.ReactElement<SVGProps<SVGSVGElement>>;
-export interface IButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-    children?: React.ReactNode;
-    size?: Size;
-    className?: string;
-    disabled?: boolean;
-    rounded?: boolean;
-    variant?: Variant;
-    startIcon?: IconType;
-    endIcon?: IconType;
-    withIcon?: boolean;
+export interface IButton extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+    size: Size;
+    className: string;
+    disabled: boolean;
+    rounded: boolean;
+    variant: Variant;
+    startIcon: IconType;
+    endIcon: IconType;
+    withIcon: boolean;
+    color: Color;
+    id: string;
+    onClick: () => void;
+}
+export interface IButtonProps extends Partial<IButton> {
     ariaLabel: string;
-    color?: Color;
-    id?: string;
+    children: React.ReactNode;
 }
 export {};
