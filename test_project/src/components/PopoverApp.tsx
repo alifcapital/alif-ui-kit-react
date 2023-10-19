@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Bell } from 'alif-icon-kit-react';
+import { Bell, User } from 'alif-icon-kit-react';
 import { Popover } from '../../../src';
 
 export const PopoverApp: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleClick = () => {
     setIsOpen((prev) => !prev);
@@ -158,6 +159,15 @@ export const PopoverApp: React.FC = () => {
             </div>
           </div>
         </div>
+      </Popover>
+
+      <Popover
+        triggerElement={<User />}
+        ariaLabel='test'
+        open={open}
+        onOpenChange={()=> setOpen((prev) => !prev)}
+      >
+        test content
       </Popover>
       <div>
         <div>
