@@ -8,6 +8,7 @@ export const Popover = (props: IPopoverProps) => {
   const {
     open,
     onOpenChange,
+    ariaLabel,
     triggerElement,
     children,
     popoverClassName,
@@ -25,7 +26,9 @@ export const Popover = (props: IPopoverProps) => {
     >
       <Root open={open} onOpenChange={onOpenChange}>
         {triggerElement && (
-          <PopoverTrigger className="Popover-trigger">{triggerElement}</PopoverTrigger>
+          <PopoverTrigger aria-label={ariaLabel} className="Popover-trigger">
+            {triggerElement}
+          </PopoverTrigger>
         )}
 
         {open && children && (

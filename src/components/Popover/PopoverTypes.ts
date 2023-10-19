@@ -4,6 +4,7 @@ export interface IPopoverProps
   extends PopoverContentProps,
     Pick<PopoverProps, 'open' | 'onOpenChange'> {
   open: boolean;
+  ariaLabel: string;
   triggerElement: JSX.Element;
   onOpenChange?: (open: boolean) => void;
   children: React.ReactNode;

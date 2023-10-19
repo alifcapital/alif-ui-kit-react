@@ -58,6 +58,7 @@ export const PopoverApp: React.FC = () => {
       }}
     >
       <Popover
+        ariaLabel='test'
         open={isOpen}
         onOpenChange={handleClick}
         triggerElement={TriggerElement}
