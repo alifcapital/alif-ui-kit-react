@@ -3,6 +3,10 @@
 .Popover {
   .Popover-trigger {
     all: unset;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .Popover-content {
