@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { PopoverContent, PopoverTrigger, Root } from '@radix-ui/react-popover';
 import { IPopoverProps } from './PopoverTypes';
 import clsx from 'clsx';
