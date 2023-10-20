@@ -1,7 +1,7 @@
 import React from 'react';
 import { PopoverContent, PopoverTrigger, Root } from '@radix-ui/react-popover';
-import { IPopoverProps } from './PopoverTypes';
 import clsx from 'clsx';
+import { IPopoverProps } from './PopoverTypes';
 import './PopoverStyle.scss';
 
 export const Popover = (props: IPopoverProps) => {
