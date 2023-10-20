@@ -5,34 +5,29 @@ import { Popover } from '../Popover';
 
 describe('Popover', () => {
   const popoverContent = 'test content';
-  const triggerElement = <Bell />;
+
+  const TestComponent = ({ initialState = false }: { initialState?: boolean }) => {
+    const [open, setOpen] = useState(initialState);
+
+    return (
+      <Popover
+        open={open}
+        onOpenChange={() => setOpen((prev) => !prev)}
+        ariaLabel="notification label"
+        triggerElement={<Bell />}
+      >
+        {popoverContent}
+      </Popover>
+    );
+  };
 
   it('should render trigger element', () => {
-    const { container } = render(
-      <Popover open ariaLabel="notification label" triggerElement={triggerElement}>
-        {popoverContent}
-      </Popover>,
-    );
+    const { container } = render(<TestComponent />);
 
     expect(container.getElementsByClassName('Popover-trigger')[0].children[0].tagName).toBe('svg');
   });
 
   it('should render popover content', async () => {
-    const TestComponent = () => {
-      const [open, setOpen] = useState(false);
-
-      return (
-        <Popover
-          open={open}
-          onOpenChange={() => setOpen((prev) => !prev)}
-          ariaLabel="notification label"
-          triggerElement={triggerElement}
-        >
-          {popoverContent}
-        </Popover>
-      );
-    };
-
     const { findByText } = render(<TestComponent />);
 
     fireEvent.click(screen.getByRole('button'));
@@ -43,22 +38,7 @@ describe('Popover', () => {
   });
 
   it('should close popover content', async () => {
-    const TestComponent = () => {
-      const [open, setOpen] = useState(true);
-
-      return (
-        <Popover
-          open={open}
-          onOpenChange={() => setOpen((prev) => !prev)}
-          ariaLabel="notification label"
-          triggerElement={triggerElement}
-        >
-          {popoverContent}
-        </Popover>
-      );
-    };
-
-    const { queryByText } = render(<TestComponent />);
+    const { queryByText } = render(<TestComponent initialState />);
 
     fireEvent.click(screen.getByRole('button'));
 
@@ -70,22 +50,7 @@ describe('Popover', () => {
   });
 
   it('should close the popover content when the escape key is pressed', async () => {
-    const TestComponent = () => {
-      const [open, setOpen] = useState(true);
-
-      return (
-        <Popover
-          open={open}
-          onOpenChange={() => setOpen((prev) => !prev)}
-          ariaLabel="notification label"
-          triggerElement={triggerElement}
-        >
-          {popoverContent}
-        </Popover>
-      );
-    };
-
-    const { queryByText } = render(<TestComponent />);
+    const { queryByText } = render(<TestComponent initialState />);
 
     fireEvent.keyDown(document, { key: 'Escape' });
 
