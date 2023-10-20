@@ -17,7 +17,7 @@ describe('Popover', () => {
     expect(container.getElementsByClassName('Popover-trigger')[0].children[0].tagName).toBe('svg');
   });
 
-  it('should render content', async () => {
+  it('should render popover content', async () => {
     const TestComponent = () => {
       const [open, setOpen] = useState(false);
 
@@ -42,7 +42,7 @@ describe('Popover', () => {
     expect(element.textContent).toBe(popoverContent);
   });
 
-  it('should close popover content', async () => {
+  it('should close the popover content when the escape key is pressed', async () => {
     const TestComponent = () => {
       const [open, setOpen] = useState(true);
 
@@ -64,6 +64,7 @@ describe('Popover', () => {
 
     await waitFor(() => {
       const contentElement = queryByText(popoverContent);
+
       expect(contentElement).not.toBeInTheDocument();
     });
   });
