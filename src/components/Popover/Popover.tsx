@@ -37,7 +37,7 @@ export const Popover = (props: IPopoverProps) => {
             sideOffset={8}
             className={clsx({
               [contentClassName || '']: !!contentClassName,
-              ['Popover-content']: !contentClassName || noStyle,
+              ['Popover-content']: !!contentClassName || !noStyle,
             })}
             {...restProps}
           >
