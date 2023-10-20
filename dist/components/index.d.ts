@@ -7,3 +7,4 @@ export * from './Accordion';
 export * from './Tags';
 export * from './SwitchTags';
 export * from './IconButton';
+export * from './Popover';
