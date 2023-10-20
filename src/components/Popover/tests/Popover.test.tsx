@@ -42,6 +42,33 @@ describe('Popover', () => {
     expect(element.textContent).toBe(popoverContent);
   });
 
+  it('should close popover content', async () => {
+    const TestComponent = () => {
+      const [open, setOpen] = useState(true);
+
+      return (
+        <Popover
+          open={open}
+          onOpenChange={() => setOpen((prev) => !prev)}
+          ariaLabel="notification label"
+          triggerElement={triggerElement}
+        >
+          {popoverContent}
+        </Popover>
+      );
+    };
+
+    const { queryByText } = render(<TestComponent />);
+
+    fireEvent.click(screen.getByRole('button'));
+
+    await waitFor(() => {
+      const contentElement = queryByText(popoverContent);
+
+      expect(contentElement).not.toBeInTheDocument();
+    });
+  });
+
   it('should close the popover content when the escape key is pressed', async () => {
     const TestComponent = () => {
       const [open, setOpen] = useState(true);
