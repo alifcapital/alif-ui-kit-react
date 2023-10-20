@@ -10,11 +10,13 @@ import { TabsApp } from './components/Tabs';
 import { TagsApp } from './components/Tags';
 import { SwitchTagsApp } from './components/SwitchTags';
 import { IconButtonApp } from './components/IconButton';
+import { PopoverApp } from './components/PopoverApp';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='conatainer'>
+      <PopoverApp/> 
       <IconButtonApp/>
       <SwitchTagsApp/><br /><hr />
       <TagsApp/><br /><hr />

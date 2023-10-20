@@ -1,0 +1,17 @@
+@import '../../styles/index.scss';
+
+.Popover {
+  .Popover-trigger {
+    all: unset;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .Popover-content {
+    background-color: $white;
+    border-radius: 16px;
+    padding: 24px;
+  }
+}

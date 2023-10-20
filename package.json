@@ -1,6 +1,6 @@
 {
   "name": "alif-react-ui-kit",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Alif UI components pack for React",
   "type": "module",
   "files": [
@@ -81,6 +81,7 @@
     "vitest": "^0.29.8"
   },
   "dependencies": {
+    "@radix-ui/react-popover": "^1.0.7",
     "@vitejs/plugin-react": "^4.0.0",
     "alif-icon-kit-react": "^1.0.1",
     "clsx": "^1.2.1",
