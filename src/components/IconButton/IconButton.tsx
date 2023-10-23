@@ -20,8 +20,11 @@ const IconButton = React.forwardRef<HTMLButtonElement, IIconButtonProps>((props,
       aria-label={ariaLabel}
       id={id}
       className="IconButton"
+      tabIndex={-1}
     >
-      {children}
+      <div style={{ display: 'flex' }} role="button" tabIndex={0}>
+        {children}
+      </div>
     </button>
   );
 });

@@ -10,7 +10,7 @@ export const IconButtonApp: React.FC = () => {
   return (
     <div>
        Icon Button <br/>
-      <IconButton ref={ref} ariaLabel='icon button' >
+      <IconButton onClick={() => console.log(222)} ref={ref} ariaLabel='icon button' >
         <Search/>
       </IconButton>
       <br /> <br />
