@@ -2133,7 +2133,8 @@ const _o = Pe.forwardRef((e, t) => {
       "aria-label": o,
       id: n,
       className: "IconButton",
-      children: i
+      tabIndex: -1,
+      children: /* @__PURE__ */ A.jsx("div", { style: { display: "flex" }, role: "button", tabIndex: 0, children: i })
     }
   );
 });
@@ -4795,8 +4796,8 @@ const cc = (e) => {
     popoverClassName: c,
     contentClassName: s,
     noStyle: l = !1,
-    sideOffset: u = 8,
-    align: v = "center"
+    sideOffset: u = 18,
+    align: v = "end"
   } = d, p = oe(d, [
     "open",
     "onOpenChange",

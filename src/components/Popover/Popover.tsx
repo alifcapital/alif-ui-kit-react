@@ -14,8 +14,8 @@ export const Popover = (props: IPopoverProps) => {
     popoverClassName,
     contentClassName,
     noStyle = false,
-    sideOffset = 8,
-    align = 'center',
+    sideOffset = 18,
+    align = 'end',
     ...restProps
   } = props;
 

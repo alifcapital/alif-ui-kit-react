@@ -22,7 +22,7 @@ const IconButton = React.forwardRef<HTMLButtonElement, IIconButtonProps>((props,
       className="IconButton"
       tabIndex={-1}
     >
-      <div style={{ display: 'flex' }} role="button" tabIndex={0}>
+      <div style={{ display: 'flex' }} tabIndex={0}>
         {children}
       </div>
     </button>
