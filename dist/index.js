@@ -2133,7 +2133,8 @@ const _o = Pe.forwardRef((e, t) => {
       "aria-label": o,
       id: n,
       className: "IconButton",
-      children: i
+      tabIndex: -1,
+      children: /* @__PURE__ */ A.jsx("div", { style: { display: "flex" }, role: "button", tabIndex: 0, children: i })
     }
   );
 });
