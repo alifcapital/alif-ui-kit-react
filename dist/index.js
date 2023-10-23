@@ -2134,7 +2134,7 @@ const _o = Pe.forwardRef((e, t) => {
       id: n,
       className: "IconButton",
       tabIndex: -1,
-      children: /* @__PURE__ */ A.jsx("div", { style: { display: "flex" }, role: "button", tabIndex: 0, children: i })
+      children: /* @__PURE__ */ A.jsx("div", { style: { display: "flex" }, tabIndex: 0, children: i })
     }
   );
 });
