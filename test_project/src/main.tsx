@@ -12,11 +12,13 @@ import { SwitchTagsApp } from './components/SwitchTags';
 import { IconButtonApp } from './components/IconButton';
 import { PopoverApp } from './components/PopoverApp';
 import './index.css';
+import { DropdownApp } from './components/Dropdown';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='conatainer'>
-      <PopoverApp/> 
+      <DropdownApp/>
+      {/* <PopoverApp/> 
       <IconButtonApp/>
       <SwitchTagsApp/><br /><hr />
       <TagsApp/><br /><hr />
@@ -25,7 +27,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <CheckboxApp/><br /><hr /> 
       <InputApp/><br /><hr />
       <AccordionApp/><br /><hr />
-      <ButtonApp/><hr />
+      <ButtonApp/><hr /> */}
     </div>
   </React.StrictMode>,
 );

@@ -1,0 +1,154 @@
+@import '../../styles/index.scss';
+
+.Dropdown {
+  color: $black90;
+  @include flexAligment($flexDirection: column, $alignment: initial);
+  gap: $baseMargin;
+
+  .Dropdown-label-medium {
+    @include body-normal;
+  }
+
+  .Dropdown-label-small {
+    @include body-small;
+  }
+
+  & .Popover button {
+    width: 100%;
+  }
+
+  .Dropdown-root {
+    @include border($color: $black80);
+    border-radius: $baseBorderRadius;
+    cursor: pointer;
+
+    &:hover {
+      @include border($color: $green70);
+    }
+
+    &[tabindex]:focus-visible {
+      outline: solid 2px;
+    }
+  }
+
+  .Dropdown-root-error {
+    @include border($color: $redWaring);
+    &:hover {
+      @include border($color: $redWaring);
+    }
+  }
+
+  .Dropdown-root-medium {
+    @include body-big;
+    padding: $basePadding * 5.5 $basePadding * 5;
+  }
+
+  .Dropdown-root-small {
+    @include body-normal;
+    padding: $basePadding * 4 $basePadding * 5;
+  }
+
+  .Dropdown-root-active {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    &:hover {
+      @include border($color: $black80);
+    }
+  }
+
+  & .Dropdown-popover {
+    transition: all 0.5s ease;
+    & div[data-radix-popper-content-wrapper] {
+      width: 100%;
+    }
+  }
+
+  .Dropdown-popover-content {
+    @include border($color: $black80);
+    border-top: 0;
+    border-radius: 0 0 $baseBorderRadius $baseBorderRadius;
+
+    &.Dropdown-popover-content-medium {
+      padding: $basePadding * 2;
+    }
+
+    &.Dropdown-popover-content-small {
+      padding: $basePadding;
+    }
+
+    .Dropdown-list {
+      @include flexAligment($flexDirection: column, $alignment: initial);
+    }
+
+    .Dropdown-list-item {
+      all: unset;
+      height: 24px;
+      border-radius: $baseBorderRadius;
+      cursor: pointer;
+      @include flexAligment($justifyContent: space-between);
+
+      .Dropdown-list-active-item {
+        display: flex;
+        gap: $basePadding * 4;
+        svg {
+          fill: $primary;
+        }
+      }
+
+      &:hover {
+        background-color: $pale;
+      }
+
+      &[tabindex]:focus-visible {
+        outline: solid 2px;
+      }
+    }
+
+    .Dropdown-list-item-hover {
+      background-color: $pale;
+    }
+
+    .Dropdown-list-item-medium {
+      @include body-big;
+      padding: $basePadding * 4 $basePadding * 3;
+    }
+
+    .Dropdown-list-item-small {
+      @include body-normal;
+      padding: $basePadding * 3 $basePadding * 4;
+    }
+  }
+
+  .Dropdown-base {
+    gap: $baseMargin * 4;
+    @include flexAligment($justifyContent: space-between);
+  }
+
+  .Dropdown-input-icon {
+    display: flex;
+    margin-left: auto;
+    @include transition(transform);
+  }
+
+  .Dropdown-input-icon-up {
+    transform: rotate(180deg);
+  }
+
+  .Dropdown-error-text {
+    color: $redWaring;
+    padding: 0 $basePadding * 5 0 $basePadding * 5;
+  }
+
+  .Dropdown-error-text-medium {
+    @include body-small;
+  }
+
+  .Dropdown-error-text-small {
+    @include caption;
+  }
+
+  &.Dropdown-disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
