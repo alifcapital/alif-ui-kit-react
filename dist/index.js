@@ -4925,7 +4925,7 @@ const ts = ye.forwardRef((e, t) => {
                 role: "trigger",
                 onKeyDown: E,
                 children: /* @__PURE__ */ P.jsxs("div", { className: "Dropdown-base", children: [
-                  v === vt.Custom ? e.renderSeleсtedValue(g) : g == null ? void 0 : g.label,
+                  v === vt.Custom ? e.renderSelectedValue(g) : g == null ? void 0 : g.label,
                   /* @__PURE__ */ P.jsx(
                     "div",
                     {
