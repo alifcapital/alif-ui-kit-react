@@ -1,7 +1,7 @@
 import { Search } from 'alif-icon-kit-react';
 import { Dropdown, IDropdownListItem } from '../../../src';
 import { useRef, useState } from 'react';
-import { DROPDOWN_SIZE } from '../../../src/components/Dropdown/DropdownConstants';
+import { DROPDOWN_SIZE, DROPDOWN_TYPE } from '../../../src/components/Dropdown/DropdownConstants';
 
 
 export const DropdownApp: React.FC = () => {
@@ -25,10 +25,10 @@ export const DropdownApp: React.FC = () => {
 
   return (
     <div>
-      <Dropdown  type="default"  items={items} label='Текст сверху'  ref={ref} selected={selectedItem} onChange={(item) => setSeletedItem(item)}  ariaLabel='icon button' />
+      <Dropdown  type={DROPDOWN_TYPE.Default}  items={items} label='Текст сверху'  ref={ref} selected={selectedItem} onChange={(item) => setSeletedItem(item)}  ariaLabel='icon button' />
       <br /> <br />
       <Dropdown  
-        type="custom" 
+        type={DROPDOWN_TYPE.Custom} 
         size={DROPDOWN_SIZE.Small}
         customActiveIcon={ <Search color='red'/>} 
         renderItem={(item)=> <div>{item.label}</div>} 

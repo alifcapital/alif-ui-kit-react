@@ -4,7 +4,7 @@ import { Check, SelectOpenDown } from 'alif-icon-kit-react';
 
 import { IDropdownListItem, IDropdownProps } from './DropdownTypes';
 import { Popover } from '../Popover';
-import { DROPDOWN_SIZE } from './DropdownConstants';
+import { DROPDOWN_SIZE, DROPDOWN_TYPE } from './DropdownConstants';
 import './DropdownStyles.scss';
 
 export const Dropdown = React.forwardRef<HTMLInputElement, IDropdownProps>((props, ref) => {
@@ -97,8 +97,10 @@ export const Dropdown = React.forwardRef<HTMLInputElement, IDropdownProps>((prop
             ref={ref}
             className={clsx({
               ['Dropdown-root']: true,
-              ['Dropdown-root-small']: type === 'default' && size === DROPDOWN_SIZE.Small,
-              ['Dropdown-root-medium']: type === 'default' && size === DROPDOWN_SIZE.Medium,
+              ['Dropdown-root-small']:
+                type === DROPDOWN_TYPE.Default && size === DROPDOWN_SIZE.Small,
+              ['Dropdown-root-medium']:
+                type === DROPDOWN_TYPE.Default && size === DROPDOWN_SIZE.Medium,
               ['Dropdown-root-error']: !!error,
               ['Dropdown-root-active']: isOpen,
             })}
@@ -108,7 +110,9 @@ export const Dropdown = React.forwardRef<HTMLInputElement, IDropdownProps>((prop
             onKeyDown={handleEnterPress}
           >
             <div className="Dropdown-base">
-              {type === 'custom' ? props.renderSeletedValue(activeItem) : activeItem?.label}
+              {type === DROPDOWN_TYPE.Custom
+                ? props.renderSeletedValue(activeItem)
+                : activeItem?.label}
               <div
                 className={clsx({
                   ['Dropdown-input-icon']: true,
@@ -142,10 +146,10 @@ export const Dropdown = React.forwardRef<HTMLInputElement, IDropdownProps>((prop
               onClick={() => handleItemClick(item)}
               onKeyDown={(e) => handleItemKeyPress(e, item)}
             >
-              {type === 'custom' ? props.renderItem(item) : item.label}
+              {type === DROPDOWN_TYPE.Custom ? props.renderItem(item) : item.label}
               {activeItem?.value === item.value && (
                 <div className="Dropdown-list-active-item">
-                  {type === 'custom' ? (
+                  {type === DROPDOWN_TYPE.Custom ? (
                     props.customActiveIcon
                   ) : (
                     <Check color="" width="24" height="24" />
