@@ -2,7 +2,7 @@ import { DROPDOWN_SIZE, DROPDOWN_TYPE } from './DropdownConstants';
 type TDropdownSize = `${DROPDOWN_SIZE}`;
 type TDropdownRenderType = {
     type: `${DROPDOWN_TYPE.Custom}`;
-    renderSeleсtedValue: (item: IDropdownListItem | undefined) => React.ReactNode;
+    renderSelectedValue: (item: IDropdownListItem | undefined) => React.ReactNode;
     renderItem: (item: IDropdownListItem) => React.ReactNode;
     customActiveIcon?: React.ReactNode;
 } | {

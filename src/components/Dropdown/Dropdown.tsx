@@ -111,7 +111,7 @@ export const Dropdown = React.forwardRef<HTMLInputElement, IDropdownProps>((prop
           >
             <div className="Dropdown-base">
               {type === DROPDOWN_TYPE.Custom
-                ? props.renderSeleсtedValue(activeItem)
+                ? props.renderSelectedValue(activeItem)
                 : activeItem?.label}
               <div
                 className={clsx({
