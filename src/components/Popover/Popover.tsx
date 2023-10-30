@@ -8,6 +8,7 @@ export const Popover = (props: IPopoverProps) => {
   const {
     open,
     onOpenChange,
+    onTriggelClick,
     ariaLabel,
     triggerElement,
     children,
@@ -16,6 +17,7 @@ export const Popover = (props: IPopoverProps) => {
     noStyle = false,
     sideOffset = 18,
     align = 'end',
+    triggerTabindex,
     ...restProps
   } = props;
 
@@ -28,7 +30,12 @@ export const Popover = (props: IPopoverProps) => {
     >
       <Root open={open} onOpenChange={onOpenChange}>
         {triggerElement && (
-          <PopoverTrigger aria-label={ariaLabel} className="Popover-trigger">
+          <PopoverTrigger
+            aria-label={ariaLabel}
+            tabIndex={triggerTabindex}
+            className="Popover-trigger"
+            onClick={onTriggelClick}
+          >
             {triggerElement}
           </PopoverTrigger>
         )}
