@@ -32,7 +32,7 @@ export const DropdownApp: React.FC = () => {
         size={DROPDOWN_SIZE.Small}
         customActiveIcon={ <Search color='red'/>} 
         renderItem={(item)=> <div>{item.label}</div>} 
-        renderSeletedValue={(item)=>(
+        renderSeleсtedValue={(item)=>(
           <div style={{width: '100%', display:"flex", justifyContent:"space-between", alignItems:"center"}}>
             <div style={{display: 'flex', flexDirection:"column", gap:'4px'}}>
               <div>Увас есть</div>
