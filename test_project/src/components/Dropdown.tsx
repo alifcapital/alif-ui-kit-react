@@ -25,7 +25,20 @@ export const DropdownApp: React.FC = () => {
 
   return (
     <div>
-      <Dropdown  type={DROPDOWN_TYPE.Default}  items={items} label='Текст сверху'  ref={ref} selected={selectedItem} onChange={(item) => setSeletedItem(item)}  ariaLabel='icon button' />
+   
+      <div style={{
+        maxWidth: '600px',
+      }}>
+        <Dropdown  
+          type={DROPDOWN_TYPE.Default}
+          items={items}
+          label='Текст сверху'
+          ref={ref}
+          selected={selectedItem}
+          onChange={(item) => setSeletedItem(item)}
+          ariaLabel='icon button' 
+        />
+      </div>
       <br /> <br />
       <Dropdown  
         type={DROPDOWN_TYPE.Custom} 
