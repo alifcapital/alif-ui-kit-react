@@ -1,21 +1,24 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
-import { Dropdown } from '../Dropdown';
+import { Dropdown } from '..';
 import { IDropdownListItem } from '../DropdownTypes';
 
 describe('Dropdown', () => {
   const label = 'Dropdown label';
   const items: IDropdownListItem[] = [
     {
+      id: 1,
       label: 'TJS',
       value: 'tjs',
     },
     {
+      id: 2,
       label: 'USD',
       value: 'usd',
     },
     {
+      id: 3,
       label: 'RUB',
       value: 'rub',
     },
@@ -40,7 +43,7 @@ describe('Dropdown', () => {
       <Dropdown
         ariaLabel={label}
         items={items}
-        selected={{ label: 'USD', value: 'usd' }}
+        selected={{ id: 1, label: 'USD', value: 'usd' }}
         type="default"
       />,
     );

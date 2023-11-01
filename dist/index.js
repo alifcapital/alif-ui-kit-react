@@ -4850,142 +4850,144 @@ const es = (e) => {
   );
 };
 var le = /* @__PURE__ */ ((e) => (e.Small = "small", e.Medium = "medium", e))(le || {}), vt = /* @__PURE__ */ ((e) => (e.Default = "default", e.Custom = "custom", e))(vt || {});
-const ts = ye.forwardRef((e, t) => {
-  const {
-    items: n,
-    selected: r,
-    label: i,
-    ariaLabel: a,
-    size: s = le.Medium,
-    error: c,
-    isDisabled: l,
-    onChange: u,
-    type: v,
-    className: p
-  } = e, [d, m] = U(!1), [g, w] = U(), b = () => m(!d), C = (x) => {
-    w(x), u && u(x), m(!1);
-  }, y = (x) => {
-    x.target === x.currentTarget && x.preventDefault();
-  }, E = (x) => {
-    (x.key === "Enter" || x.key === " ") && m(!d);
-  }, S = (x, k) => {
-    (x.key === "Enter" || x.key === " ") && (w(k), u && u(k), m(!1));
-  };
-  return te(() => {
-    w(r);
-  }, [r]), /* @__PURE__ */ P.jsxs(
-    "div",
-    {
-      className: z({
-        Dropdown: !0,
-        "Dropdown-disabled": l,
-        [p || ""]: !!p
-      }),
-      children: [
-        i && /* @__PURE__ */ P.jsx(
-          "div",
-          {
-            className: z({
-              "Dropdown-label": !0,
-              "Dropdown-label-medium": s === le.Medium,
-              "Dropdown-label-small": s === le.Small
-            }),
-            children: i
-          }
-        ),
-        /* @__PURE__ */ P.jsx(
-          es,
-          {
-            open: d,
-            ariaLabel: a,
-            contentClassName: z({
-              "Dropdown-popover-content": !0,
-              "Dropdown-popover-content-medium": s === le.Medium,
-              "Dropdown-popover-content-small": s === le.Small
-            }),
-            popoverClassName: "Dropdown-popover",
-            sideOffset: 0,
-            onOpenChange: b,
-            onTriggelClick: y,
-            align: "start",
-            triggerTabindex: -1,
-            triggerElement: /* @__PURE__ */ P.jsx(
-              "div",
-              {
-                ref: t,
-                className: z({
-                  "Dropdown-root": !0,
-                  "Dropdown-root-small": v === vt.Default && s === le.Small,
-                  "Dropdown-root-medium": v === vt.Default && s === le.Medium,
-                  "Dropdown-root-error": !!c,
-                  "Dropdown-root-active": d
-                }),
-                tabIndex: 0,
-                "aria-label": a,
-                role: "trigger",
-                onKeyDown: E,
-                children: /* @__PURE__ */ P.jsxs("div", { className: "Dropdown-base", children: [
-                  v === vt.Custom ? e.renderSelectedValue(g) : g == null ? void 0 : g.label,
-                  /* @__PURE__ */ P.jsx(
+const ts = ye.forwardRef(
+  (e, t) => {
+    const {
+      items: n,
+      selected: r,
+      label: i,
+      ariaLabel: a,
+      size: s = le.Medium,
+      error: c,
+      isDisabled: l,
+      onChange: u,
+      type: v,
+      className: p
+    } = e, [d, m] = U(!1), [g, w] = U(), b = () => m(!d), C = (x) => {
+      w(x), u && u(x), m(!1);
+    }, y = (x) => {
+      x.target === x.currentTarget && x.preventDefault();
+    }, E = (x) => {
+      (x.key === "Enter" || x.key === " ") && m(!d);
+    }, S = (x, k) => {
+      (x.key === "Enter" || x.key === " ") && (w(k), u && u(k), m(!1));
+    };
+    return te(() => {
+      w(r);
+    }, [r]), /* @__PURE__ */ P.jsxs(
+      "div",
+      {
+        className: z({
+          Dropdown: !0,
+          "Dropdown-disabled": l,
+          [p || ""]: !!p
+        }),
+        children: [
+          i && /* @__PURE__ */ P.jsx(
+            "div",
+            {
+              className: z({
+                "Dropdown-label": !0,
+                "Dropdown-label-medium": s === le.Medium,
+                "Dropdown-label-small": s === le.Small
+              }),
+              children: i
+            }
+          ),
+          /* @__PURE__ */ P.jsx(
+            es,
+            {
+              open: d,
+              ariaLabel: a,
+              contentClassName: z({
+                "Dropdown-popover-content": !0,
+                "Dropdown-popover-content-medium": s === le.Medium,
+                "Dropdown-popover-content-small": s === le.Small
+              }),
+              popoverClassName: "Dropdown-popover",
+              sideOffset: 0,
+              onOpenChange: b,
+              onTriggelClick: y,
+              align: "start",
+              triggerTabindex: -1,
+              triggerElement: /* @__PURE__ */ P.jsx(
+                "div",
+                {
+                  ref: t,
+                  className: z({
+                    "Dropdown-root": !0,
+                    "Dropdown-root-small": v === vt.Default && s === le.Small,
+                    "Dropdown-root-medium": v === vt.Default && s === le.Medium,
+                    "Dropdown-root-error": !!c,
+                    "Dropdown-root-active": d
+                  }),
+                  tabIndex: 0,
+                  "aria-label": a,
+                  role: "trigger",
+                  onKeyDown: E,
+                  children: /* @__PURE__ */ P.jsxs("div", { className: "Dropdown-base", children: [
+                    v === vt.Custom ? e.renderSelectedValue(g) : g == null ? void 0 : g.label,
+                    /* @__PURE__ */ P.jsx(
+                      "div",
+                      {
+                        className: z({
+                          "Dropdown-input-icon": !0,
+                          "Dropdown-input-icon-up": d
+                        }),
+                        children: /* @__PURE__ */ P.jsx(Hn, {})
+                      }
+                    )
+                  ] })
+                }
+              ),
+              children: /* @__PURE__ */ P.jsx(
+                "div",
+                {
+                  className: z({
+                    "Dropdown-list": !0,
+                    "Dropdown-list-medium": s === le.Medium,
+                    "Dropdown-list-small": s === le.Small
+                  }),
+                  onClick: (x) => x.nativeEvent.stopImmediatePropagation(),
+                  children: n.map((x) => /* @__PURE__ */ P.jsxs(
                     "div",
                     {
                       className: z({
-                        "Dropdown-input-icon": !0,
-                        "Dropdown-input-icon-up": d
+                        "Dropdown-list-item": !0,
+                        "Dropdown-list-item-small": s === le.Small,
+                        "Dropdown-list-item-medium": s === le.Medium
                       }),
-                      children: /* @__PURE__ */ P.jsx(Hn, {})
-                    }
-                  )
-                ] })
-              }
-            ),
-            children: /* @__PURE__ */ P.jsx(
-              "div",
-              {
-                className: z({
-                  "Dropdown-list": !0,
-                  "Dropdown-list-medium": s === le.Medium,
-                  "Dropdown-list-small": s === le.Small
-                }),
-                onClick: (x) => x.nativeEvent.stopImmediatePropagation(),
-                children: n.map((x) => /* @__PURE__ */ P.jsxs(
-                  "div",
-                  {
-                    className: z({
-                      "Dropdown-list-item": !0,
-                      "Dropdown-list-item-small": s === le.Small,
-                      "Dropdown-list-item-medium": s === le.Medium
-                    }),
-                    tabIndex: 0,
-                    role: "button",
-                    onClick: () => C(x),
-                    onKeyDown: (k) => S(k, x),
-                    children: [
-                      v === vt.Custom ? e.renderItem(x) : x.label,
-                      (g == null ? void 0 : g.value) === x.value && /* @__PURE__ */ P.jsx("div", { className: "Dropdown-list-active-item", children: v === vt.Custom ? e.customActiveIcon : /* @__PURE__ */ P.jsx(Zn, { color: "", width: "24", height: "24" }) })
-                    ]
-                  },
-                  x.value
-                ))
-              }
-            )
-          }
-        ),
-        c && /* @__PURE__ */ P.jsx(
-          "div",
-          {
-            className: z({
-              "Dropdown-error-text": !0,
-              "Dropdown-error-text-medium": s === le.Medium,
-              "Dropdown-error-text-small": s === le.Small
-            }),
-            children: c
-          }
-        )
-      ]
-    }
-  );
-});
+                      tabIndex: 0,
+                      role: "button",
+                      onClick: () => C(x),
+                      onKeyDown: (k) => S(k, x),
+                      children: [
+                        v === vt.Custom ? e.renderItem(x) : x.label,
+                        (g == null ? void 0 : g.value) === x.value && /* @__PURE__ */ P.jsx("div", { className: "Dropdown-list-active-item", children: v === vt.Custom ? e.customActiveIcon : /* @__PURE__ */ P.jsx(Zn, { color: "", width: "24", height: "24" }) })
+                      ]
+                    },
+                    x.id
+                  ))
+                }
+              )
+            }
+          ),
+          c && /* @__PURE__ */ P.jsx(
+            "div",
+            {
+              className: z({
+                "Dropdown-error-text": !0,
+                "Dropdown-error-text-medium": s === le.Medium,
+                "Dropdown-error-text-small": s === le.Small
+              }),
+              children: c
+            }
+          )
+        ]
+      }
+    );
+  }
+);
 ts.displayName = "Dropdown";
 export {
   Do as Accordion,
