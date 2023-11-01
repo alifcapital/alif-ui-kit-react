@@ -1,3 +1,6 @@
 import React from 'react';
-import { IDropdownProps } from './DropdownTypes';
-export declare const Dropdown: React.ForwardRefExoticComponent<IDropdownProps & React.RefAttributes<HTMLInputElement>>;
+import { IDropdownListItem, IDropdownProps } from './DropdownTypes';
+declare const _default: <T extends IDropdownListItem>(props: IDropdownProps<T> & {
+    ref?: React.ForwardedRef<HTMLInputElement> | undefined;
+}) => JSX.Element;
+export default _default;
