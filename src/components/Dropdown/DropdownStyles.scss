@@ -58,9 +58,9 @@
 
   & .Dropdown-popover {
     transition: all 0.5s ease;
+    position: relative;
     & div[data-radix-popper-content-wrapper] {
-      position: initial !important;
-      transform: none !important;
+      position: absolute !important;
       width: 100%;
     }
   }

@@ -65,7 +65,7 @@ export const DropdownApp: React.FC = () => {
         size={DROPDOWN_SIZE.Small}
         selected={selectedCustomItem}
         onChange={(item) => setSeletedCustomItem(item)}
-        customActiveIcon={ <Search color='red'/>} 
+        // customActiveIcon={ <Search color='red'/>} 
         renderItem={(item)=> <div>{item.label} {item.img}</div>} 
         renderSelectedValue={(item)=>(
           <div style={{width: '100%', display:"flex", justifyContent:"space-between", alignItems:"center"}}>
