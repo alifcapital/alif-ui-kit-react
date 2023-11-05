@@ -13,11 +13,13 @@ import { IconButtonApp } from './components/IconButton';
 import { PopoverApp } from './components/PopoverApp';
 import './index.css';
 import { DropdownApp } from './components/Dropdown';
+import { BreadcrumbsApp } from './components/Breadcrumbs';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='conatainer'>
       <DropdownApp/>
+      <BreadcrumbsApp/>
       {/* <PopoverApp/> 
       <IconButtonApp/>
       <SwitchTagsApp/><br /><hr />

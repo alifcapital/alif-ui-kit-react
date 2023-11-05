@@ -17,10 +17,11 @@ export const Breadcrumbs = (props: IBreadcrumbsProps) => {
       <ol className="Breadcrumbs-list">
         {items.map((item, index) => {
           const isCurrent = items.length - 1 === index;
+
           return (
             <li className="Breadcrumbs-item" key={index}>
               <div
-                onClick={() => handleLabelClick(item)}
+                onClick={isCurrent ? undefined : () => handleLabelClick(item)}
                 aria-current={isCurrent ? 'page' : undefined}
                 className={clsx({
                   'Breadcrumbs-label': true,
