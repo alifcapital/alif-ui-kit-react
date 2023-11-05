@@ -1,0 +1,26 @@
+@import '../../styles/index.scss';
+
+.Breadcrumbs {
+  .Breadcrumbs-list {
+    display: flex;
+
+    .Breadcrumbs-item {
+      display: flex;
+
+      .Breadcrumbs-label {
+        cursor: pointer;
+      }
+
+      .Breadcrumbs-label-current {
+        cursor: default;
+        color: $black90;
+      }
+
+      .Breadcrumbs-separator {
+        margin: 0 8px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
