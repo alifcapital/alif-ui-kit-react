@@ -1,8 +1,8 @@
 import React from 'react';
 import { RightNext } from 'alif-icon-kit-react';
+import clsx from 'clsx';
 import { IBreadcrumbsItem, IBreadcrumbsProps } from './BreadcrumbsTypes';
 import './BreadcrumbsStyles.scss';
-import clsx from 'clsx';
 
 export const Breadcrumbs = (props: IBreadcrumbsProps) => {
   const { items, onLabelClick } = props;
