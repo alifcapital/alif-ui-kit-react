@@ -37,7 +37,7 @@ export const Breadcrumbs = (props: IBreadcrumbsProps) => {
                 ) : (
                   <button
                     onClick={() => handleLabelClick(item, isCurrent)}
-                    aria-label={item.label as string}
+                    aria-label={typeof item.label === 'string' ? item.label : undefined}
                     className="Breadcrumbs-button"
                   >
                     {item.label}

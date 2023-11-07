@@ -3,7 +3,7 @@ import React from 'react';
 export interface IBreadcrumbsItem {
   key: string | number;
   href: string;
-  label: React.ReactNode;
+  label: React.ReactNode | string;
 }
 
 export interface IBreadcrumbsProps {
