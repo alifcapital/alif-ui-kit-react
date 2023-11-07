@@ -9,7 +9,6 @@ export const Breadcrumbs = (props: IBreadcrumbsProps) => {
 
   const handleLabelClick = (item: IBreadcrumbsItem) => {
     onLabelClick && onLabelClick(item);
-    console.log('Вы нажали на: ', item);
   };
 
   return (
