@@ -6,21 +6,29 @@
 
     .Breadcrumbs-item {
       display: flex;
+      cursor: pointer;
+    }
 
-      .Breadcrumbs-label {
-        cursor: pointer;
-      }
+    .Breadcrumbs-item-current {
+      cursor: default;
 
-      .Breadcrumbs-label-current {
-        cursor: default;
+      :first-child {
+        pointer-events: none;
         color: $black90;
       }
+    }
 
-      .Breadcrumbs-separator {
-        margin: 0 8px;
-        display: flex;
-        align-items: center;
-      }
+    .Breadcrumbs-separator {
+      margin: 0 $baseMargin * 2;
+      @include flexAligment;
+    }
+
+    .Breadcrumbs-button {
+      cursor: pointer;
+      background-color: unset;
+      padding: unset;
+      border: none;
+      @include body-normal;
     }
   }
 }

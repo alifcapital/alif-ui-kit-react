@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { Fragment, isValidElement } from 'react';
 import { RightNext } from 'alif-icon-kit-react';
 import clsx from 'clsx';
+
 import { IBreadcrumbsItem, IBreadcrumbsProps } from './BreadcrumbsTypes';
+
 import './BreadcrumbsStyles.scss';
 
 export const Breadcrumbs = (props: IBreadcrumbsProps) => {
   const { items, onLabelClick } = props;
 
-  const handleLabelClick = (item: IBreadcrumbsItem) => {
+  const handleLabelClick = (item: IBreadcrumbsItem, isCurrent?: boolean) => {
+    if (isCurrent) {
+      return;
+    }
+
     onLabelClick && onLabelClick(item);
   };
 
@@ -18,24 +24,33 @@ export const Breadcrumbs = (props: IBreadcrumbsProps) => {
           const isCurrent = items.length - 1 === index;
 
           return (
-            <li className="Breadcrumbs-item" key={index}>
-              <div
-                onClick={isCurrent ? undefined : () => handleLabelClick(item)}
+            <Fragment key={item.key}>
+              <li
                 aria-current={isCurrent ? 'page' : undefined}
                 className={clsx({
-                  'Breadcrumbs-label': true,
-                  'Breadcrumbs-label-current': isCurrent,
+                  'Breadcrumbs-item': true,
+                  'Breadcrumbs-item-current': isCurrent,
                 })}
               >
-                {item.label}
-              </div>
+                {isValidElement(item.label) ? (
+                  item.label
+                ) : (
+                  <button
+                    onClick={() => handleLabelClick(item, isCurrent)}
+                    aria-label={item.label as string}
+                    className="Breadcrumbs-button"
+                  >
+                    {item.label}
+                  </button>
+                )}
+              </li>
 
               {!isCurrent && (
                 <div aria-hidden="true" className="Breadcrumbs-separator">
                   <RightNext height="16" width="16" />
                 </div>
               )}
-            </li>
+            </Fragment>
           );
         })}
       </ol>

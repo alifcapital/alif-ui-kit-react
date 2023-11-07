@@ -5,14 +5,17 @@ import { IBreadcrumbsItem } from '../BreadcrumbsTypes';
 
 const breadcrumbs = [
   {
+    key: 1,
     href: '/',
     label: <a href="https://alifshop.tj">Home</a>,
   },
   {
+    key: 2,
     href: '/react/components',
     label: 'Components',
   },
   {
+    key: 3,
     href: '/test',
     label: 'Breadcrumbs',
   },
@@ -49,14 +52,15 @@ describe('Breadcrumbs', () => {
         onLabelClick={handleClick}
         items={[
           {
+            key: 1,
             href: '/test',
             label: 'Breadcrumbs',
           },
         ]}
       />,
     );
-    const labelElement = container.querySelector('.Breadcrumbs-label');
+    const itemElement = container.querySelector('.Breadcrumbs-item');
 
-    expect(labelElement).toHaveAttribute('aria-current', 'page');
+    expect(itemElement).toHaveAttribute('aria-current', 'page');
   });
 });

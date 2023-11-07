@@ -12,74 +12,72 @@ exports[`Breadcrumbs should match snapshot 1`] = `
       <li
         class="Breadcrumbs-item"
       >
-        <div
-          class="Breadcrumbs-label"
+        <a
+          href="https://alifshop.tj"
         >
-          <a
-            href="https://alifshop.tj"
-          >
-            Home
-          </a>
-        </div>
-        <div
-          aria-hidden="true"
-          class="Breadcrumbs-separator"
-        >
-          <svg
-            fill="none"
-            height="16"
-            viewBox="0 0 25 25"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M10.0615 6.91846L16.0615 12.9185L10.0615 18.9185"
-              stroke="currentColor"
-              stroke-linecap="square"
-              stroke-linejoin="round"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
+          Home
+        </a>
       </li>
+      <div
+        aria-hidden="true"
+        class="Breadcrumbs-separator"
+      >
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 25 25"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M10.0615 6.91846L16.0615 12.9185L10.0615 18.9185"
+            stroke="currentColor"
+            stroke-linecap="square"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
       <li
         class="Breadcrumbs-item"
       >
-        <div
-          class="Breadcrumbs-label"
+        <button
+          aria-label="Components"
+          class="Breadcrumbs-button"
         >
           Components
-        </div>
-        <div
-          aria-hidden="true"
-          class="Breadcrumbs-separator"
-        >
-          <svg
-            fill="none"
-            height="16"
-            viewBox="0 0 25 25"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M10.0615 6.91846L16.0615 12.9185L10.0615 18.9185"
-              stroke="currentColor"
-              stroke-linecap="square"
-              stroke-linejoin="round"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
+        </button>
       </li>
-      <li
-        class="Breadcrumbs-item"
+      <div
+        aria-hidden="true"
+        class="Breadcrumbs-separator"
       >
-        <div
-          aria-current="page"
-          class="Breadcrumbs-label Breadcrumbs-label-current"
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 25 25"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M10.0615 6.91846L16.0615 12.9185L10.0615 18.9185"
+            stroke="currentColor"
+            stroke-linecap="square"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <li
+        aria-current="page"
+        class="Breadcrumbs-item Breadcrumbs-item-current"
+      >
+        <button
+          aria-label="Breadcrumbs"
+          class="Breadcrumbs-button"
         >
           Breadcrumbs
-        </div>
+        </button>
       </li>
     </ol>
   </nav>
