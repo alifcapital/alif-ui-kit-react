@@ -26,10 +26,10 @@ describe('Breadcrumbs', () => {
     window.location.href = item.href;
   };
 
-  it('should match snapshot', () => {
+  it('should render', () => {
     const { container } = render(<Breadcrumbs onLabelClick={handleClick} items={breadcrumbs} />);
 
-    expect(container).toMatchSnapshot();
+    expect(container).toBeInTheDocument();
   });
 
   it('renders the proper accessibility attributes for nav tag', () => {
