@@ -19,7 +19,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='conatainer'>
       <DropdownApp/>
-      <BreadcrumbsApp/>
+      <BreadcrumbsApp/><br/>
+      {/* <SwitchTagsApp/> */}
       {/* <PopoverApp/> 
       <IconButtonApp/>
       <SwitchTagsApp/><br /><hr />

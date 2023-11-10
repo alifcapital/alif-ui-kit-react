@@ -24,7 +24,6 @@
 
       &.Tag-medium {
         @include body-small;
-        height: 32px;
         padding: $basePadding * 2 $basePadding * 3;
 
         & .Tag-label svg {
