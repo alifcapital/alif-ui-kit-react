@@ -51,8 +51,8 @@ export const Tabs = <T,>(props: ITabsProps<T>) => {
   }, [activeTab, tabs]);
 
   useLayoutEffect(() => {
-    const width = tabRefs.current[activeIndex].offsetWidth;
-    const left = tabRefs.current[activeIndex].offsetLeft;
+    const width = tabRefs.current[activeIndex]?.offsetWidth;
+    const left = tabRefs.current[activeIndex]?.offsetLeft;
 
     setWidth(width);
     setLeft(left);
