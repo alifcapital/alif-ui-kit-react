@@ -19,10 +19,10 @@ import { ModalApp } from './components/Modal';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='conatainer'>
+      <DropdownApp/>
+      <BreadcrumbsApp/>
       <ModalApp />
-      {/* <DropdownApp/> */}
-      {/* <BreadcrumbsApp/> */}
-      {/* <PopoverApp/> 
+      <PopoverApp/> 
       <IconButtonApp/>
       <SwitchTagsApp/><br /><hr />
       <TagsApp/><br /><hr />
@@ -31,7 +31,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <CheckboxApp/><br /><hr /> 
       <InputApp/><br /><hr />
       <AccordionApp/><br /><hr />
-      <ButtonApp/><hr /> */}
+      <ButtonApp/><hr />
     </div>
   </React.StrictMode>,
 );

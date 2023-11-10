@@ -12,6 +12,7 @@ export const Modal = (props: IModalProps) => {
       if (!modalRef.current || modalRef.current.contains(event.target)) {
         return;
       }
+
       onOpenChange(false);
     };
 

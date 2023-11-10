@@ -6,7 +6,7 @@ export const ModalApp: React.FC = () => {
 
   return (
     <div>
-      <button onClick={() => setIsOpen((prev) => !prev)}>TEST BUTTON</button>
+      <button style={{padding: "200px"}} onClick={() => setIsOpen((prev) => !prev)}>TEST BUTTON</button>
       <Modal isOpen={isOpen} onOpenChange={setIsOpen} />
     </div>
   );
