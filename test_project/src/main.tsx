@@ -14,12 +14,14 @@ import { PopoverApp } from './components/PopoverApp';
 import './index.css';
 import { DropdownApp } from './components/Dropdown';
 import { BreadcrumbsApp } from './components/Breadcrumbs';
+import { ProgressBarApp } from './components/ProgressBar';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='conatainer'>
-      <DropdownApp/>
-      <BreadcrumbsApp/><br/>
+      <ProgressBarApp/>
+      {/* <DropdownApp/> */}
+      {/* <BreadcrumbsApp/><br/> */}
       {/* <SwitchTagsApp/> */}
       {/* <PopoverApp/> 
       <IconButtonApp/>
