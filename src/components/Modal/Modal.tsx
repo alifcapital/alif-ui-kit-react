@@ -6,7 +6,9 @@ const ModalContent = ({
   children,
   open,
   onOpenChange,
-}: Pick<IModalProps, 'children' | 'open' | 'onOpenChange'>) => {
+  disableBackdropClick,
+  disableEscapeKey,
+}: IModalProps) => {
   const [isLock, setIsLock] = useState(true);
 
   const modalRef = useRef<HTMLDivElement>(null);
@@ -22,6 +24,10 @@ const ModalContent = ({
   }, [isLock, open]);
 
   useEffect(() => {
+    if (disableBackdropClick) {
+      return undefined;
+    }
+
     const listener = (event: any) => {
       if (!modalRef.current || modalRef.current.contains(event.target)) {
         return;
@@ -41,6 +47,10 @@ const ModalContent = ({
   }, [onOpenChange]);
 
   useEffect(() => {
+    if (disableEscapeKey) {
+      return undefined;
+    }
+
     const keyListener = (event: globalThis.KeyboardEvent) => {
       if (event.key === 'Escape') {
         onOpenChange();
@@ -53,7 +63,7 @@ const ModalContent = ({
     return () => {
       document.removeEventListener('keydown', keyListener);
     };
-  }, [onOpenChange]);
+  }, [disableBackdropClick, onOpenChange]);
 
   return (
     <div className="Modal-backdrop">
@@ -64,14 +74,25 @@ const ModalContent = ({
   );
 };
 
-export const Modal = ({ open, onOpenChange, children }: IModalProps) => {
+export const Modal = ({
+  open,
+  onOpenChange,
+  children,
+  disableBackdropClick = false,
+  disableEscapeKey = false,
+}: IModalProps) => {
   if (!open) {
     return null;
   }
 
   return (
     <div className="Modal">
-      <ModalContent open={open} onOpenChange={onOpenChange}>
+      <ModalContent
+        open={open}
+        onOpenChange={onOpenChange}
+        disableBackdropClick={disableBackdropClick}
+        disableEscapeKey={disableEscapeKey}
+      >
         {children}
       </ModalContent>
     </div>

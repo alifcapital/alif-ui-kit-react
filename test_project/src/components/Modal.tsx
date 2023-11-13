@@ -11,6 +11,7 @@ export const ModalApp: React.FC = () => {
   return (
     <div>
       <button style={{padding: "50px"}} onClick={handleClick}>TEST MODAL</button>
+
       <Modal open={isOpen} onOpenChange={handleClick}>
         <div>
           <div style={{ fontSize: "30px", marginBottom: "30px" }}>
