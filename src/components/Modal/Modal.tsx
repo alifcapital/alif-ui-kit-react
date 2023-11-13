@@ -1,11 +1,33 @@
-import React, { useEffect, useRef } from 'react';
-import './ModalStyles.scss';
+import React, { useEffect, useRef, useState } from 'react';
 import { IModalProps } from './ModalTypes';
+import './ModalStyles.scss';
 
-export const Modal = (props: IModalProps) => {
-  const { isOpen, onOpenChange } = props;
+const ModalTrigger = ({ open, setIsOpen }: Pick<IModalProps, 'setIsOpen' | 'open'>) => {
+  return (
+    <button style={{ padding: '200px' }} onClick={() => setIsOpen(true)}>
+      TEST BUTTON
+    </button>
+  );
+};
+
+const ModalContent = ({
+  children,
+  open,
+  setIsOpen,
+}: Pick<IModalProps, 'children' | 'open' | 'setIsOpen'>) => {
+  const [isLock, setIsLock] = useState(true);
 
   const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isLock && open) {
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.body.style.overflow = 'visible';
+    };
+  }, [isLock, open]);
 
   useEffect(() => {
     const listener = (event: any) => {
@@ -13,7 +35,8 @@ export const Modal = (props: IModalProps) => {
         return;
       }
 
-      onOpenChange(false);
+      setIsOpen(false);
+      setIsLock(false);
     };
 
     document.addEventListener('mousedown', listener);
@@ -23,12 +46,13 @@ export const Modal = (props: IModalProps) => {
       document.removeEventListener('mousedown', listener);
       document.removeEventListener('touchstart', listener);
     };
-  }, [onOpenChange]);
+  }, [setIsOpen]);
 
   useEffect(() => {
     const keyListener = (event: globalThis.KeyboardEvent) => {
       if (event.key === 'Escape') {
-        onOpenChange(false);
+        setIsOpen(false);
+        setIsLock(false);
       }
     };
 
@@ -37,16 +61,26 @@ export const Modal = (props: IModalProps) => {
     return () => {
       document.removeEventListener('keydown', keyListener);
     };
-  }, [onOpenChange]);
+  }, [setIsOpen]);
 
   return (
+    <div className="Modal-backdrop">
+      <div ref={modalRef} className="Modal-content">
+        {children}
+      </div>
+    </div>
+  );
+};
+
+export const Modal = ({ open, setIsOpen, children }: IModalProps) => {
+  return (
     <div className="Modal">
-      {isOpen && (
-        <div className="Modal-backdrop">
-          <div ref={modalRef} className="Modal-content">
-            test
-          </div>
-        </div>
+      <ModalTrigger open={open} setIsOpen={setIsOpen} />
+
+      {open && (
+        <ModalContent open={open} setIsOpen={setIsOpen}>
+          {children}
+        </ModalContent>
       )}
     </div>
   );
