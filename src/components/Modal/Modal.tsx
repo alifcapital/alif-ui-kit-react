@@ -2,19 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import { IModalProps } from './ModalTypes';
 import './ModalStyles.scss';
 
-const ModalTrigger = ({ open, setIsOpen }: Pick<IModalProps, 'setIsOpen' | 'open'>) => {
-  return (
-    <button style={{ padding: '200px' }} onClick={() => setIsOpen(true)}>
-      TEST BUTTON
-    </button>
-  );
-};
-
 const ModalContent = ({
   children,
   open,
-  setIsOpen,
-}: Pick<IModalProps, 'children' | 'open' | 'setIsOpen'>) => {
+  onOpenChange,
+}: Pick<IModalProps, 'children' | 'open' | 'onOpenChange'>) => {
   const [isLock, setIsLock] = useState(true);
 
   const modalRef = useRef<HTMLDivElement>(null);
@@ -35,7 +27,7 @@ const ModalContent = ({
         return;
       }
 
-      setIsOpen(false);
+      onOpenChange();
       setIsLock(false);
     };
 
@@ -46,12 +38,12 @@ const ModalContent = ({
       document.removeEventListener('mousedown', listener);
       document.removeEventListener('touchstart', listener);
     };
-  }, [setIsOpen]);
+  }, [onOpenChange]);
 
   useEffect(() => {
     const keyListener = (event: globalThis.KeyboardEvent) => {
       if (event.key === 'Escape') {
-        setIsOpen(false);
+        onOpenChange();
         setIsLock(false);
       }
     };
@@ -61,7 +53,7 @@ const ModalContent = ({
     return () => {
       document.removeEventListener('keydown', keyListener);
     };
-  }, [setIsOpen]);
+  }, [onOpenChange]);
 
   return (
     <div className="Modal-backdrop">
@@ -72,16 +64,16 @@ const ModalContent = ({
   );
 };
 
-export const Modal = ({ open, setIsOpen, children }: IModalProps) => {
+export const Modal = ({ open, onOpenChange, children }: IModalProps) => {
+  if (!open) {
+    return null;
+  }
+
   return (
     <div className="Modal">
-      <ModalTrigger open={open} setIsOpen={setIsOpen} />
-
-      {open && (
-        <ModalContent open={open} setIsOpen={setIsOpen}>
-          {children}
-        </ModalContent>
-      )}
+      <ModalContent open={open} onOpenChange={onOpenChange}>
+        {children}
+      </ModalContent>
     </div>
   );
 };

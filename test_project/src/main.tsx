@@ -19,10 +19,10 @@ import { ModalApp } from './components/Modal';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='conatainer'>
-      <DropdownApp/>
-      <BreadcrumbsApp/>
-      <ModalApp />
-      <PopoverApp/> 
+      <DropdownApp/><br /><hr />
+      <BreadcrumbsApp/><br /><hr />
+      <ModalApp /><br /><hr />
+      <PopoverApp/><br /><hr />
       <IconButtonApp/>
       <SwitchTagsApp/><br /><hr />
       <TagsApp/><br /><hr />
