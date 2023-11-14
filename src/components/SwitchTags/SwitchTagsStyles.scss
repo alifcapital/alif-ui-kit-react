@@ -63,11 +63,12 @@
       position: absolute;
       background-color: $grey90;
       color: $grey90;
-      height: 40px;
+      padding: $basePadding * 5 $basePadding * 2.5;
+      box-sizing: border-box;
       left: 6px;
     }
     .ActiveTab-small {
-      height: 34px;
+      padding: $basePadding * 4 $basePadding * 2;
       @include body-small;
     }
   }

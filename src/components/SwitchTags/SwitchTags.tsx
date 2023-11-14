@@ -53,8 +53,8 @@ export const SwitchTags = <T,>(props: ISwitchTagsProps<T>) => {
   }, [activeTag, tags]);
 
   useLayoutEffect(() => {
-    const width = tagRefs.current[activeIndex].offsetWidth;
-    const left = tagRefs.current[activeIndex].offsetLeft;
+    const width = tagRefs.current[activeIndex]?.offsetWidth;
+    const left = tagRefs.current[activeIndex]?.offsetLeft;
 
     setWidth(width);
     setLeft(left);

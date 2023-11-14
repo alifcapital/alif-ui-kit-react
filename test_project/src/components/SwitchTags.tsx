@@ -32,7 +32,9 @@ export const SwitchTagsApp: React.FC = () => {
   return (
     <div>
       <SwitchTags activeTag={active} activeColor='black'  className='custom-class' size={ SWITCH_TAGS_SIZE.Large} tags={tags}/> <br/> 
-      <SwitchTags variant={SWITCH_TAGS_VARIANT.Square}  size={ SWITCH_TAGS_SIZE.Medium} className='custom-class' tags={tags}/>
+      <SwitchTags activeTag={active} activeColor='black'  className='custom-class' size={ SWITCH_TAGS_SIZE.Medium} tags={tags}/> <br/> 
+      <SwitchTags variant={SWITCH_TAGS_VARIANT.Square}  size={ SWITCH_TAGS_SIZE.Medium} className='custom-class' tags={tags}/><br/> 
+      <SwitchTags variant={SWITCH_TAGS_VARIANT.Square}  size={ SWITCH_TAGS_SIZE.Large} className='custom-class' tags={tags}/>
     </div>
   );
 };
