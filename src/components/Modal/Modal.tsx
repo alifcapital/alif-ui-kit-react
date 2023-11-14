@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import FocusLock from 'react-focus-lock';
 import { IModalProps } from './ModalTypes';
 import './ModalStyles.scss';
 
@@ -44,7 +45,7 @@ const ModalContent = ({
       document.removeEventListener('mousedown', listener);
       document.removeEventListener('touchstart', listener);
     };
-  }, [onOpenChange]);
+  }, [disableBackdropClick, onOpenChange]);
 
   useEffect(() => {
     if (disableEscapeKey) {
@@ -63,11 +64,11 @@ const ModalContent = ({
     return () => {
       document.removeEventListener('keydown', keyListener);
     };
-  }, [disableBackdropClick, onOpenChange]);
+  }, [disableBackdropClick, disableEscapeKey, onOpenChange]);
 
   return (
     <div className="Modal-backdrop">
-      <div ref={modalRef} className="Modal-content">
+      <div ref={modalRef} aria-modal="true" role="dialog" className="Modal-content">
         {children}
       </div>
     </div>
@@ -86,15 +87,17 @@ export const Modal = ({
   }
 
   return (
-    <div className="Modal">
-      <ModalContent
-        open={open}
-        onOpenChange={onOpenChange}
-        disableBackdropClick={disableBackdropClick}
-        disableEscapeKey={disableEscapeKey}
-      >
-        {children}
-      </ModalContent>
-    </div>
+    <FocusLock>
+      <div className="Modal">
+        <ModalContent
+          open={open}
+          onOpenChange={onOpenChange}
+          disableBackdropClick={disableBackdropClick}
+          disableEscapeKey={disableEscapeKey}
+        >
+          {children}
+        </ModalContent>
+      </div>
+    </FocusLock>
   );
 };
