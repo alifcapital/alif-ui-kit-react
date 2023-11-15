@@ -26,11 +26,11 @@ const ModalContent = ({
 
   useEffect(() => {
     if (disableBackdropClick) {
-      return undefined;
+      return;
     }
 
-    const listener = (event: any) => {
-      if (!modalRef.current || modalRef.current.contains(event.target)) {
+    const listener = (event: MouseEvent | TouchEvent) => {
+      if (!modalRef.current || modalRef.current.contains(event.target as Node)) {
         return;
       }
 
@@ -49,7 +49,7 @@ const ModalContent = ({
 
   useEffect(() => {
     if (disableEscapeKey) {
-      return undefined;
+      return;
     }
 
     const keyListener = (event: globalThis.KeyboardEvent) => {

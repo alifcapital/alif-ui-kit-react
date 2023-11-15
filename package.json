@@ -1,6 +1,6 @@
 {
   "name": "alif-react-ui-kit",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Alif UI components pack for React",
   "type": "module",
   "files": [
@@ -81,11 +81,11 @@
     "vitest": "^0.29.8"
   },
   "dependencies": {
-    "@radix-ui/react-popover": "^1.0.7",
+    "@radix-ui/react-popover": "1.0.7",
     "@vitejs/plugin-react": "^4.0.0",
     "alif-icon-kit-react": "^1.0.1",
     "clsx": "^1.2.1",
-    "react-focus-lock": "^2.9.6",
+    "react-focus-lock": "2.9.6",
     "sass": "^1.57.1",
     "vite-plugin-dts": "^2.3.0",
     "vite-tsconfig-paths": "^4.2.0"
