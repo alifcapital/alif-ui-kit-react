@@ -15,15 +15,17 @@ import './index.css';
 import { DropdownApp } from './components/Dropdown';
 import { BreadcrumbsApp } from './components/Breadcrumbs';
 import { ProgressBarApp } from './components/ProgressBar';
+import { ModalApp } from './components/Modal';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='conatainer'>
       <ProgressBarApp/>
-      {/* <DropdownApp/> */}
+      {/* <DropdownApp/> */}<br /><hr />
       {/* <BreadcrumbsApp/><br/> */}
-      {/* <SwitchTagsApp/> */}
-      {/* <PopoverApp/> 
+      {/* <SwitchTagsApp/> */}<br /><hr />
+      <ModalApp /><br /><hr />
+      <PopoverApp/><br /><hr />
       <IconButtonApp/>
       <SwitchTagsApp/><br /><hr />
       <TagsApp/><br /><hr />
@@ -32,7 +34,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <CheckboxApp/><br /><hr /> 
       <InputApp/><br /><hr />
       <AccordionApp/><br /><hr />
-      <ButtonApp/><hr /> */}
+      <ButtonApp/><hr />
     </div>
   </React.StrictMode>,
 );
