@@ -1,0 +1,23 @@
+@import '../../styles/index.scss';
+
+.ProgressBar {
+  position: relative;
+  background-color: $black70;
+  border-radius: 10px;
+  width: 100%;
+
+  & .ProgressBar-indicator {
+    position: absolute;
+    height: inherit;
+    border-radius: inherit;
+    background-color: $primary;
+  }
+
+  &.ProgressBar-medium {
+    height: 10px;
+  }
+
+  &.ProgressBar-small {
+    height: 6px;
+  }
+}

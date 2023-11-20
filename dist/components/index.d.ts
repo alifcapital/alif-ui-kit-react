@@ -10,3 +10,5 @@ export * from './IconButton';
 export * from './Popover';
 export * from './Dropdown';
 export * from './Breadcrumbs';
+export * from './ProgressBar';
+export * from './Modal';
