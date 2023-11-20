@@ -31,7 +31,8 @@
     "build": "tsc && vite build",
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
     "format": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx,css,scss}\"",
-    "test": "jest --silent --config jestconfig.json"
+    "test": "jest --silent --config jestconfig.json",
+    "prepare": "husky install"
   },
   "peerDependencies": {
     "react": ">=18"

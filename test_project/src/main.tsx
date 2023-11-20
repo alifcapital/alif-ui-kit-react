@@ -13,13 +13,14 @@ import { IconButtonApp } from './components/IconButton';
 import { PopoverApp } from './components/PopoverApp';
 import './index.css';
 import { DropdownApp } from './components/Dropdown';
-import { BreadcrumbsApp } from './components/Breadcrumbs';
+import { BreadcrumbsApp } from './components/Breadcrumbs'; 
+import { PaginationApp } from './components/Pagination';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='conatainer'>
-      <DropdownApp/>
-      <BreadcrumbsApp/><br/>
+      {/* <DropdownApp/>
+      <BreadcrumbsApp/><br/> */}
       {/* <SwitchTagsApp/> */}
       {/* <PopoverApp/> 
       <IconButtonApp/>
@@ -31,6 +32,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <InputApp/><br /><hr />
       <AccordionApp/><br /><hr />
       <ButtonApp/><hr /> */}
+      <PaginationApp/>
     </div>
   </React.StrictMode>,
 );

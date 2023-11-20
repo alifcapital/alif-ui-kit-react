@@ -1,0 +1,67 @@
+@import '../../styles/index.scss';
+
+.Pagination {
+  display: flex;
+  gap: 2px;
+  .Arrow-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: unset;
+    padding: unset;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 200ms ease-out;
+
+    &:disabled {
+      cursor: not-allowed;
+      svg {
+        color: $black80;
+      }
+    }
+    svg {
+      color: $black90;
+    }
+
+    &:hover:not(:disabled) {
+      svg {
+        color: $white;
+      }
+      background-color: $primary;
+    }
+
+    &[aria-controls='prev'] {
+      margin-right: 6px;
+    }
+    &[aria-controls='next'] {
+      margin-left: 6px;
+    }
+  }
+
+  .Number-button {
+    width: 48px;
+    height: 48px;
+    background-color: unset;
+    padding: unset;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $black90;
+    background-color: $pale;
+    border-radius: $baseBorderRadius;
+    transition: all 200ms ease-in-out;
+    @include body-big;
+    &[aria-current='true'] {
+      background-color: $primary;
+      color: $white;
+    }
+    &[aria-current='false']:hover {
+      color: $primary;
+    }
+  }
+}
