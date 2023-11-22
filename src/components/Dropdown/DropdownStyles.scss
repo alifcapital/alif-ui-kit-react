@@ -1,9 +1,12 @@
 @import '../../styles/index.scss';
 
 .Dropdown {
-  color: $black90;
   @include flexAligment($flexDirection: column, $alignment: initial);
   gap: $baseMargin;
+
+  .Dropdown-label {
+    color: $black90;
+  }
 
   .Dropdown-label-medium {
     @include body-normal;
