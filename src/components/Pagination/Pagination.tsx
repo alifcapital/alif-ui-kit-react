@@ -17,7 +17,7 @@ export const Pagination = (props: IPaginationProps) => {
     buttonAriaLabel = 'Go to page',
     nextButtonAriaLabel = 'Go to next page',
     prevButtonAriaLabel = 'Go to previous page',
-    variant = PAGINATION_VARIANTS.ROUNDED,
+    variant = PAGINATION_VARIANTS.SQUARED,
   } = props;
 
   const range = (start: number, end: number) => {
