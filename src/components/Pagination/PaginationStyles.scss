@@ -3,7 +3,7 @@
 .Pagination {
   display: flex;
   gap: 2px;
-  .Arrow-button {
+  &-arrow-button {
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -11,10 +11,8 @@
     background-color: unset;
     padding: unset;
     border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 200ms ease-out;
+    @include flexAligment;
+    @include transition(all);
 
     &:disabled {
       cursor: not-allowed;
@@ -34,27 +32,24 @@
     }
 
     &[aria-controls='prev'] {
-      margin-right: 6px;
+      margin-right: $baseMargin * 1.5;
     }
     &[aria-controls='next'] {
-      margin-left: 6px;
+      margin-left: $baseMargin * 1.5;
     }
   }
 
-  .Number-button {
+  &-number-button {
     width: 48px;
     height: 48px;
     background-color: unset;
     padding: unset;
     cursor: pointer;
     border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexAligment;
     color: $black90;
     background-color: $pale;
-    border-radius: $baseBorderRadius;
-    transition: all 200ms ease-in-out;
+    @include transition(all);
     @include body-big;
     &[aria-current='true'] {
       background-color: $primary;
@@ -63,5 +58,12 @@
     &[aria-current='false']:hover {
       color: $primary;
     }
+  }
+
+  &-number-button-squared {
+    border-radius: $baseBorderRadius;
+  }
+  &-number-button-rounded {
+    border-radius: 50%;
   }
 }
