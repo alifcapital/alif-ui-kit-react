@@ -88,11 +88,11 @@ export const Pagination = (props: IPaginationProps) => {
               ['Pagination-number-button-rounded']: variant === PAGINATION_VARIANTS.ROUNDED,
             })}
             key={index}
-            {...(item !== DOTS
+            {...(typeof item === 'number'
               ? {
                   ['aria-current']: currentPage === item,
                   ['aria-label']: `${buttonAriaLabel} ${item}`,
-                  onClick: () => onPageChange(item as number),
+                  onClick: () => onPageChange(item),
                 }
               : {})}
           >
