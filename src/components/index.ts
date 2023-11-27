@@ -12,3 +12,4 @@ export * from './Dropdown';
 export * from './Breadcrumbs';
 export * from './ProgressBar';
 export * from './Modal';
+export * from './Pagination';

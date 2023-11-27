@@ -13,19 +13,16 @@ import { IconButtonApp } from './components/IconButton';
 import { PopoverApp } from './components/PopoverApp';
 import './index.css';
 import { DropdownApp } from './components/Dropdown';
-import { BreadcrumbsApp } from './components/Breadcrumbs';
-import { ProgressBarApp } from './components/ProgressBar';
-import { ModalApp } from './components/Modal';
+import { BreadcrumbsApp } from './components/Breadcrumbs'; 
+import { PaginationApp } from './components/Pagination';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='conatainer'>
-      <ProgressBarApp/>
-      {/* <DropdownApp/> */}<br /><hr />
-      {/* <BreadcrumbsApp/><br/> */}
-      {/* <SwitchTagsApp/> */}<br /><hr />
-      <ModalApp /><br /><hr />
-      <PopoverApp/><br /><hr />
+      {/* <DropdownApp/>
+      <BreadcrumbsApp/><br/> */}
+      {/* <SwitchTagsApp/> */}
+      {/* <PopoverApp/> 
       <IconButtonApp/>
       <SwitchTagsApp/><br /><hr />
       <TagsApp/><br /><hr />
@@ -34,7 +31,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <CheckboxApp/><br /><hr /> 
       <InputApp/><br /><hr />
       <AccordionApp/><br /><hr />
-      <ButtonApp/><hr />
+      <ButtonApp/><hr /> */}
+      <PaginationApp/>
     </div>
   </React.StrictMode>,
 );
