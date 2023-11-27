@@ -2,14 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import FocusLock from 'react-focus-lock';
 import { IModalProps } from './ModalTypes';
 import './ModalStyles.scss';
+import clsx from 'clsx';
 
-const ModalContent = ({
-  children,
-  open,
-  onOpenChange,
-  disableBackdropClick,
-  disableEscapeKey,
-}: IModalProps) => {
+const ModalContent = (props: IModalProps) => {
+  const { children, open, onOpenChange, disableBackdropClick, disableEscapeKey, contentClassName } =
+    props;
+
   const [isLock, setIsLock] = useState(true);
 
   const modalRef = useRef<HTMLDivElement>(null);
@@ -68,20 +66,31 @@ const ModalContent = ({
 
   return (
     <div className="Modal-backdrop">
-      <div ref={modalRef} aria-modal="true" role="dialog" className="Modal-content">
+      <div
+        ref={modalRef}
+        aria-modal="true"
+        role="dialog"
+        className={clsx({
+          ['Modal-content']: true,
+          [contentClassName || '']: !!contentClassName,
+        })}
+      >
         {children}
       </div>
     </div>
   );
 };
 
-export const Modal = ({
-  open,
-  onOpenChange,
-  children,
-  disableBackdropClick = false,
-  disableEscapeKey = false,
-}: IModalProps) => {
+export const Modal = (props: IModalProps) => {
+  const {
+    open,
+    onOpenChange,
+    children,
+    disableBackdropClick = false,
+    disableEscapeKey = false,
+    contentClassName,
+  } = props;
+
   if (!open) {
     return null;
   }
@@ -94,6 +103,7 @@ export const Modal = ({
           onOpenChange={onOpenChange}
           disableBackdropClick={disableBackdropClick}
           disableEscapeKey={disableEscapeKey}
+          contentClassName={contentClassName}
         >
           {children}
         </ModalContent>

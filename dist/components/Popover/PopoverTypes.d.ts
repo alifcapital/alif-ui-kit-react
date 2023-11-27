@@ -4,7 +4,7 @@ export interface IPopoverProps extends PopoverContentProps, Pick<PopoverProps, '
     ariaLabel: string;
     open: boolean;
     onOpenChange?: (open: boolean) => void;
-    onTriggelClick?: (e: MouseEvent<HTMLButtonElement>) => void;
+    onTriggerClick?: (e: MouseEvent<HTMLButtonElement>) => void;
     triggerElement: JSX.Element;
     children: React.ReactNode;
     noStyle?: boolean;
