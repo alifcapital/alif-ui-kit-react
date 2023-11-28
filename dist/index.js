@@ -6678,6 +6678,7 @@ export {
   Ei as IconButton,
   yi as Input,
   dl as Modal,
+  Sn as PAGINATION_VARIANTS,
   Cn as PROGRESS_BAR_SIZE,
   vl as Pagination,
   Fs as Popover,
