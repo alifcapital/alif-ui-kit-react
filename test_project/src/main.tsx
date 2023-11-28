@@ -13,8 +13,9 @@ import { IconButtonApp } from './components/IconButton';
 import { PopoverApp } from './components/PopoverApp';
 import './index.css';
 import { DropdownApp } from './components/Dropdown';
-import { BreadcrumbsApp } from './components/Breadcrumbs'; 
+import { BreadcrumbsApp } from './components/Breadcrumbs';
 import { PaginationApp } from './components/Pagination';
+import {RadioApp} from "./components/Radio";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -22,17 +23,20 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       {/* <DropdownApp/>
       <BreadcrumbsApp/><br/> */}
       {/* <SwitchTagsApp/> */}
-      {/* <PopoverApp/> 
+      {/* <PopoverApp/>
       <IconButtonApp/>
       <SwitchTagsApp/><br /><hr />
       <TagsApp/><br /><hr />
       <TabsApp/><br /><hr />
       <SwitchApp/><br /><hr />
-      <CheckboxApp/><br /><hr /> 
+      <CheckboxApp/><br /><hr />
       <InputApp/><br /><hr />
       <AccordionApp/><br /><hr />
       <ButtonApp/><hr /> */}
-      <PaginationApp/>
+      {/*<PaginationApp/>*/}
+        <RadioApp />
+        <hr/>
+        <CheckboxApp/>
     </div>
   </React.StrictMode>,
 );

@@ -1,3 +1,3 @@
 export { ProgressBar } from './ProgressBar';
 export * from './ProgressBarTypes';
-export * from './ProgressBarConstants';
+export { PROGRESS_BAR_SIZE } from './ProgressBarConstants';
