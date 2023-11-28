@@ -3,6 +3,7 @@ import FocusLock from 'react-focus-lock';
 import { IModalProps } from './ModalTypes';
 import './ModalStyles.scss';
 import clsx from 'clsx';
+import { createPortal } from 'react-dom';
 
 const ModalContent = (props: IModalProps) => {
   const { children, open, onOpenChange, disableBackdropClick, disableEscapeKey, contentClassName } =
@@ -96,18 +97,23 @@ export const Modal = (props: IModalProps) => {
   }
 
   return (
-    <FocusLock>
-      <div className="Modal">
-        <ModalContent
-          open={open}
-          onOpenChange={onOpenChange}
-          disableBackdropClick={disableBackdropClick}
-          disableEscapeKey={disableEscapeKey}
-          contentClassName={contentClassName}
-        >
-          {children}
-        </ModalContent>
-      </div>
-    </FocusLock>
+    <>
+      {createPortal(
+        <FocusLock>
+          <div className="Modal">
+            <ModalContent
+              open={open}
+              onOpenChange={onOpenChange}
+              disableBackdropClick={disableBackdropClick}
+              disableEscapeKey={disableEscapeKey}
+              contentClassName={contentClassName}
+            >
+              {children}
+            </ModalContent>
+          </div>
+        </FocusLock>,
+        document.body,
+      )}
+    </>
   );
 };

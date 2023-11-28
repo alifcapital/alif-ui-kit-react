@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "alif-icon-kit-react": "git+https://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:x-oauth-basic@github.com/alifcapital/alif-icon-kit-react.git",
+    "alif-icon-kit-react": "1.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
