@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import './ProgressBarStyles.scss';
 import { PROGRESS_BAR_SIZE } from './ProgressBarConstants';
 
-const MAX_VALUE = 100
+const MAX_VALUE = 100;
 
 export const ProgressBar = ({
   progress,
@@ -17,7 +17,7 @@ export const ProgressBar = ({
   <div
     role="progressbar"
     aria-valuemin={0}
-    aria-valuenow={Math.min(progress,MAX_VALUE)}
+    aria-valuenow={Math.min(progress, MAX_VALUE)}
     aria-valuemax={MAX_VALUE}
     id={id}
     className={clsx({
@@ -29,7 +29,7 @@ export const ProgressBar = ({
   >
     <div
       className="ProgressBar-indicator"
-      style={{ width: `${Math.min(progress,MAX_VALUE)}%`, backgroundColor: indicatorColor }}
+      style={{ width: `${Math.min(progress, MAX_VALUE)}%`, backgroundColor: indicatorColor }}
     />
   </div>
 );

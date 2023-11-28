@@ -70,19 +70,19 @@ const Radio = React.forwardRef<HTMLInputElement, IRadioProps>((props, ref) => {
   return (
     <div className="Radio">
       <label
-          className={clsx({
-            ['Radio-checked']: isChecked,
-            ['Radio-dark-checked']: isChecked && theme === CHECKBOX_THEME.Dark,
-            ['Radio-green-checked']: isChecked && theme === CHECKBOX_THEME.Green,
-            ['Radio-unchecked']: !isChecked,
-            ['Radio-error']: isError,
-            ['Radio-disabled']: isDisabled,
-            ['Radio-green-disabled']: isDisabled && theme === CHECKBOX_THEME.Green,
-            ['Radio-dark-disabled']: isDisabled && theme === CHECKBOX_THEME.Dark,
-            ['Radio-dark']: theme === CHECKBOX_THEME.Dark,
-            ['Radio-green']: theme === CHECKBOX_THEME.Green,
-            [className || '']: !!className,
-          })}
+        className={clsx({
+          ['Radio-checked']: isChecked,
+          ['Radio-dark-checked']: isChecked && theme === CHECKBOX_THEME.Dark,
+          ['Radio-green-checked']: isChecked && theme === CHECKBOX_THEME.Green,
+          ['Radio-unchecked']: !isChecked,
+          ['Radio-error']: isError,
+          ['Radio-disabled']: isDisabled,
+          ['Radio-green-disabled']: isDisabled && theme === CHECKBOX_THEME.Green,
+          ['Radio-dark-disabled']: isDisabled && theme === CHECKBOX_THEME.Dark,
+          ['Radio-dark']: theme === CHECKBOX_THEME.Dark,
+          ['Radio-green']: theme === CHECKBOX_THEME.Green,
+          [className || '']: !!className,
+        })}
         htmlFor={id}
         onKeyDown={handleEnterPress}
       >
