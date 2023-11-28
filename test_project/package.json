@@ -9,9 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@radix-ui/colors": "^3.0.0",
-    "@radix-ui/react-dialog": "^1.0.5",
-    "@radix-ui/react-icons": "^1.3.0",
     "alif-icon-kit-react": "1.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
