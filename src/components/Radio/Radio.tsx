@@ -97,6 +97,7 @@ const Radio = React.forwardRef<HTMLInputElement, IRadioProps>((props, ref) => {
           ref={ref}
           checked={isChecked}
           disabled={disabled}
+          name={name}
           aria-label={ariaLabel}
         />
         {(label || children) && (
