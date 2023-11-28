@@ -1,4 +1,5 @@
 import React from 'react';
+// @ts-ignore
 import { PopoverContent, PopoverTrigger, Root } from '@radix-ui/react-popover';
 import clsx from 'clsx';
 import { IPopoverProps } from './PopoverTypes';
@@ -15,8 +16,8 @@ export const Popover = (props: IPopoverProps) => {
     popoverClassName,
     contentClassName,
     noStyle = false,
-    sideOffset = 18,
-    align = 'end',
+  //  sideOffset = 18,
+    //align = 'end',
     triggerTabindex,
     ...restProps
   } = props;
@@ -42,8 +43,8 @@ export const Popover = (props: IPopoverProps) => {
 
         {open && children && (
           <PopoverContent
-            align={align}
-            sideOffset={sideOffset}
+         //   align={align}
+           // sideOffset={sideOffset}
             className={clsx({
               [contentClassName || '']: !!contentClassName,
               ['Popover-content']: !!contentClassName || !noStyle,
