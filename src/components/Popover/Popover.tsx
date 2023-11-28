@@ -22,38 +22,38 @@ export const Popover = (props: IPopoverProps) => {
   } = props;
 
   return (
-      <div
-          className={clsx({
-            [popoverClassName || '']: !!popoverClassName,
-            ['Popover']: !noStyle,
-          })}
-      >
-        <Root open={open} onOpenChange={onOpenChange}>
-          {triggerElement && (
-              <PopoverTrigger
-                  aria-label={ariaLabel}
-                  tabIndex={triggerTabindex}
-                  className="Popover-trigger"
-                  onClick={onTriggerClick}
-              >
-                {triggerElement}
-              </PopoverTrigger>
-          )}
+    <div
+      className={clsx({
+        [popoverClassName || '']: !!popoverClassName,
+        ['Popover']: !noStyle,
+      })}
+    >
+      <Root open={open} onOpenChange={onOpenChange}>
+        {triggerElement && (
+          <PopoverTrigger
+            aria-label={ariaLabel}
+            tabIndex={triggerTabindex}
+            className="Popover-trigger"
+            onClick={onTriggerClick}
+          >
+            {triggerElement}
+          </PopoverTrigger>
+        )}
 
-          {open && children && (
-              <PopoverContent
-                  align={align}
-                  sideOffset={sideOffset}
-                  className={clsx({
-                    [contentClassName || '']: !!contentClassName,
-                    ['Popover-content']: !!contentClassName || !noStyle,
-                  })}
-                  {...restProps}
-              >
-                {children}
-              </PopoverContent>
-          )}
-        </Root>
-      </div>
+        {open && children && (
+          <PopoverContent
+            align={align}
+            sideOffset={sideOffset}
+            className={clsx({
+              [contentClassName || '']: !!contentClassName,
+              ['Popover-content']: !!contentClassName || !noStyle,
+            })}
+            {...restProps}
+          >
+            {children}
+          </PopoverContent>
+        )}
+      </Root>
+    </div>
   );
 };

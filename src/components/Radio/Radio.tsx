@@ -6,7 +6,6 @@ import clsx from 'clsx';
 import { IRadioProps } from './RadioTypes';
 import { RADIO_SIZE, RADIO_THEME } from './RadioConstants';
 import './RadioStyles.scss';
-import { CHECKBOX_SIZE, CHECKBOX_THEME } from '../Checkbox';
 
 const Radio = React.forwardRef<HTMLInputElement, IRadioProps>((props, ref) => {
   const {
@@ -72,15 +71,15 @@ const Radio = React.forwardRef<HTMLInputElement, IRadioProps>((props, ref) => {
       <label
         className={clsx({
           ['Radio-checked']: isChecked,
-          ['Radio-dark-checked']: isChecked && theme === CHECKBOX_THEME.Dark,
-          ['Radio-green-checked']: isChecked && theme === CHECKBOX_THEME.Green,
+          ['Radio-dark-checked']: isChecked && theme === RADIO_THEME.Dark,
+          ['Radio-green-checked']: isChecked && theme === RADIO_THEME.Green,
           ['Radio-unchecked']: !isChecked,
           ['Radio-error']: isError,
           ['Radio-disabled']: isDisabled,
-          ['Radio-green-disabled']: isDisabled && theme === CHECKBOX_THEME.Green,
-          ['Radio-dark-disabled']: isDisabled && theme === CHECKBOX_THEME.Dark,
-          ['Radio-dark']: theme === CHECKBOX_THEME.Dark,
-          ['Radio-green']: theme === CHECKBOX_THEME.Green,
+          ['Radio-green-disabled']: isDisabled && theme === RADIO_THEME.Green,
+          ['Radio-dark-disabled']: isDisabled && theme === RADIO_THEME.Dark,
+          ['Radio-dark']: theme === RADIO_THEME.Dark,
+          ['Radio-green']: theme === RADIO_THEME.Green,
           [className || '']: !!className,
         })}
         htmlFor={id}
@@ -90,9 +89,9 @@ const Radio = React.forwardRef<HTMLInputElement, IRadioProps>((props, ref) => {
           type="radio"
           className={clsx({
             ['Radio-input']: true,
-            ['Radio-large']: size === CHECKBOX_SIZE.Large,
-            ['Radio-medium']: size === CHECKBOX_SIZE.Medium,
-            ['Radio-small']: size === CHECKBOX_SIZE.Small,
+            ['Radio-large']: size === RADIO_SIZE.Large,
+            ['Radio-medium']: size === RADIO_SIZE.Medium,
+            ['Radio-small']: size === RADIO_SIZE.Small,
           })}
           onChange={handleChangeRadio}
           id={id}
@@ -105,12 +104,12 @@ const Radio = React.forwardRef<HTMLInputElement, IRadioProps>((props, ref) => {
           <div
             className={clsx({
               ['Radio-label']: true,
-              ['Radio-label-small']: size === CHECKBOX_SIZE.Small,
-              ['Radio-label-dark']: theme === CHECKBOX_THEME.Dark,
-              ['Radio-label-green']: theme === CHECKBOX_THEME.Green,
+              ['Radio-label-small']: size === RADIO_SIZE.Small,
+              ['Radio-label-dark']: theme === RADIO_THEME.Dark,
+              ['Radio-label-green']: theme === RADIO_THEME.Green,
               ['Radio-label-disabled']: isDisabled,
-              ['Radio-label-dark-disabled']: isDisabled && theme === CHECKBOX_THEME.Dark,
-              ['Radio-label-green-disabled']: isDisabled && theme === CHECKBOX_THEME.Green,
+              ['Radio-label-dark-disabled']: isDisabled && theme === RADIO_THEME.Dark,
+              ['Radio-label-green-disabled']: isDisabled && theme === RADIO_THEME.Green,
             })}
           >
             {label || children}

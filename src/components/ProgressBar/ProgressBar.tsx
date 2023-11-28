@@ -3,9 +3,7 @@ import { IProgressBarProps } from './ProgressBarTypes';
 import clsx from 'clsx';
 
 import './ProgressBarStyles.scss';
-import { PROGRESS_BAR_SIZE } from './ProgressBarConstants';
-
-const MAX_VALUE = 100;
+import { MAX_VALUE, PROGRESS_BAR_SIZE } from './ProgressBarConstants';
 
 export const ProgressBar = ({
   progress,
