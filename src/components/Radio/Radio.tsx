@@ -58,8 +58,7 @@ const Radio = React.forwardRef<HTMLInputElement, IRadioProps>((props, ref) => {
   }, [disabled]);
 
   useEffect(() => {
-    const checked = typeof value === 'boolean' ? value : false;
-    setIsChecked(checked);
+    setIsChecked(Boolean(value));
   }, [value]);
 
   useEffect(() => {

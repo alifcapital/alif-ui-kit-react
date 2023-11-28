@@ -6609,7 +6609,7 @@ const Qu = Pe.forwardRef((e, t) => {
   return ue(() => {
     S(a);
   }, [a]), ue(() => {
-    y(typeof c == "boolean" ? c : !1);
+    y(!!c);
   }, [c]), ue(() => {
     E(!!f);
   }, [f]), /* @__PURE__ */ P.jsx("div", { className: "Radio", children: /* @__PURE__ */ P.jsxs(
