@@ -9,7 +9,7 @@ interface IRadio {
     value: boolean;
     label: string;
     className: string;
-    onChange: (isChecked: boolean, event: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
     error: boolean;
     name: string;
 }

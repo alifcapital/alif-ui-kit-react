@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, DetailedHTMLProps, HTMLAttributes } from 'react';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 
 import { IRadioProps } from './RadioTypes';
@@ -13,53 +13,22 @@ const Radio = React.forwardRef<HTMLInputElement, IRadioProps>((props, ref) => {
     name,
     disabled,
     children,
-    value,
     label,
     className,
-    onChange,
     ariaLabel,
     error,
+    value,
+    onChange,
     theme = RADIO_THEME.Light,
     size = RADIO_SIZE.Medium,
   } = props;
 
-  const [isChecked, setIsChecked] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isDisabled, setIsDisabled] = useState(disabled);
-
-  const handleChangeRadio = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (isDisabled) {
-      return;
-    }
-
-    setIsChecked(!isChecked);
-    onChange && onChange(!isChecked, e);
-  };
-
-  const handleEnterPress = (
-    ev: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
-  ) => {
-    if ((ev.key === 'Enter' || ev.key === ' ') && !isDisabled) {
-      const event = {
-        target: {
-          ariaLabel,
-          name,
-        },
-      };
-      setIsChecked(!isChecked);
-      // mapping custom object as React.ChangeEvent<HTMLInputElement>
-      // @ts-ignore
-      onChange && onChange(!isChecked, event);
-    }
-  };
 
   useEffect(() => {
     setIsDisabled(disabled);
   }, [disabled]);
-
-  useEffect(() => {
-    setIsChecked(Boolean(value));
-  }, [value]);
 
   useEffect(() => {
     setIsError(!!error);
@@ -69,10 +38,10 @@ const Radio = React.forwardRef<HTMLInputElement, IRadioProps>((props, ref) => {
     <div className="Radio">
       <label
         className={clsx({
-          ['Radio-checked']: isChecked,
-          ['Radio-dark-checked']: isChecked && theme === RADIO_THEME.Dark,
-          ['Radio-green-checked']: isChecked && theme === RADIO_THEME.Green,
-          ['Radio-unchecked']: !isChecked,
+          ['Radio-checked']: value,
+          ['Radio-dark-checked']: value && theme === RADIO_THEME.Dark,
+          ['Radio-green-checked']: value && theme === RADIO_THEME.Green,
+          ['Radio-unchecked']: !value,
           ['Radio-error']: isError,
           ['Radio-disabled']: isDisabled,
           ['Radio-green-disabled']: isDisabled && theme === RADIO_THEME.Green,
@@ -82,7 +51,6 @@ const Radio = React.forwardRef<HTMLInputElement, IRadioProps>((props, ref) => {
           [className || '']: !!className,
         })}
         htmlFor={id}
-        onKeyDown={handleEnterPress}
       >
         <input
           type="radio"
@@ -92,10 +60,10 @@ const Radio = React.forwardRef<HTMLInputElement, IRadioProps>((props, ref) => {
             ['Radio-medium']: size === RADIO_SIZE.Medium,
             ['Radio-small']: size === RADIO_SIZE.Small,
           })}
-          onChange={handleChangeRadio}
+          onChange={onChange}
           id={id}
           ref={ref}
-          checked={isChecked}
+          checked={value}
           disabled={disabled}
           name={name}
           aria-label={ariaLabel}
