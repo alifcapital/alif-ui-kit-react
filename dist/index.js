@@ -6649,6 +6649,7 @@ const el = Pe.forwardRef((e, t) => {
             ref: t,
             checked: g,
             disabled: a,
+            name: r,
             "aria-label": d
           }
         ),
