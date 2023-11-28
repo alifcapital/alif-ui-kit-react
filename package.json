@@ -83,7 +83,7 @@
   "dependencies": {
     "@radix-ui/react-popover": "1.0.7",
     "@vitejs/plugin-react": "^4.0.0",
-    "alif-icon-kit-react": "^1.0.1",
+    "alif-icon-kit-react": "^1.9.0",
     "clsx": "^1.2.1",
     "react-focus-lock": "2.9.6",
     "sass": "^1.57.1",

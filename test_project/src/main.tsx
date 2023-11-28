@@ -25,7 +25,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       {/* <BreadcrumbsApp/><br/> */}
       {/* <SwitchTagsApp/> */}<br /><hr />
       <ModalApp /><br /><hr />
-      <PopoverApp/><br /><hr />
+      {/* <PopoverApp/><br /><hr />
       <IconButtonApp/>
       <SwitchTagsApp/><br /><hr />
       <TagsApp/><br /><hr />
@@ -34,7 +34,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <CheckboxApp/><br /><hr /> 
       <InputApp/><br /><hr />
       <AccordionApp/><br /><hr />
-      <ButtonApp/><hr />
+      <ButtonApp/><hr /> */}
     </div>
   </React.StrictMode>,
 );
