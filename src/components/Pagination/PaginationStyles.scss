@@ -1,0 +1,69 @@
+@import '../../styles/index.scss';
+
+.Pagination {
+  display: flex;
+  gap: 2px;
+  &-arrow-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: unset;
+    padding: unset;
+    border: none;
+    @include flexAligment;
+    @include transition(all);
+
+    &:disabled {
+      cursor: not-allowed;
+      svg {
+        color: $black80;
+      }
+    }
+    svg {
+      color: $black90;
+    }
+
+    &:hover:not(:disabled) {
+      svg {
+        color: $white;
+      }
+      background-color: $primary;
+    }
+
+    &[aria-controls='prev'] {
+      margin-right: $baseMargin * 1.5;
+    }
+    &[aria-controls='next'] {
+      margin-left: $baseMargin * 1.5;
+    }
+  }
+
+  &-number-button {
+    width: 48px;
+    height: 48px;
+    background-color: unset;
+    padding: unset;
+    cursor: pointer;
+    border: none;
+    @include flexAligment;
+    color: $black90;
+    background-color: $pale;
+    @include transition(all);
+    @include body-big;
+    &[aria-current='true'] {
+      background-color: $primary;
+      color: $white;
+    }
+    &[aria-current='false']:hover {
+      color: $primary;
+    }
+  }
+
+  &-number-button-squared {
+    border-radius: $baseBorderRadius;
+  }
+  &-number-button-rounded {
+    border-radius: 50%;
+  }
+}

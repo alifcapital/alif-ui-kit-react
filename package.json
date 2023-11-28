@@ -1,6 +1,6 @@
 {
   "name": "alif-react-ui-kit",
-  "version": "1.6.3",
+  "version": "1.8.1",
   "description": "Alif UI components pack for React",
   "type": "module",
   "files": [
@@ -31,7 +31,8 @@
     "build": "tsc && vite build",
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
     "format": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx,css,scss}\"",
-    "test": "jest --silent --config jestconfig.json"
+    "test": "jest --silent --config jestconfig.json",
+    "prepare": "husky install"
   },
   "peerDependencies": {
     "react": ">=18"

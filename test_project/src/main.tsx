@@ -14,6 +14,8 @@ import { PopoverApp } from './components/PopoverApp';
 import './index.css';
 import { DropdownApp } from './components/Dropdown';
 import { BreadcrumbsApp } from './components/Breadcrumbs';
+import { PaginationApp } from './components/Pagination';
+import {RadioApp} from "./components/Radio";
 import { ProgressBarApp } from './components/ProgressBar';
 import { ModalApp } from './components/Modal';
 
@@ -31,10 +33,14 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <TagsApp/><br /><hr />
       <TabsApp/><br /><hr />
       <SwitchApp/><br /><hr />
-      <CheckboxApp/><br /><hr /> 
+      <CheckboxApp/><br /><hr />
       <InputApp/><br /><hr />
       <AccordionApp/><br /><hr />
       <ButtonApp/><hr /> */}
+      {/*<PaginationApp/>*/}
+        <RadioApp />
+        <hr/>
+        <CheckboxApp/>
     </div>
   </React.StrictMode>,
 );

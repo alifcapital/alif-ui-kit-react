@@ -14,17 +14,17 @@ export const CheckboxApp: React.FC = () => {
     <div>
       Theme light
       <Checkbox  theme={CHECKBOX_THEME.Light}  ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} size={CHECKBOX_SIZE.Large} />
-      <br /> 
+      <br />
       Theme Dark
       <Checkbox theme={CHECKBOX_THEME.Dark}  ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} size={CHECKBOX_SIZE.Large} />
-      <br /> 
+      <br />
       Theme Green
       <Checkbox   theme={CHECKBOX_THEME.Green} ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} size={CHECKBOX_SIZE.Large} />
-      <br /> 
+      <br />
 
       Large
       <Checkbox ref={ref}  ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} size={CHECKBOX_SIZE.Large} />
-      <br /> 
+      <br />
       Medium
       <Checkbox ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked}  />
       <br />
@@ -36,6 +36,12 @@ export const CheckboxApp: React.FC = () => {
       <br />
       Error
       <Checkbox  error={!checked} ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked}  />
+
+
+        Theme Dark disabled
+        <Checkbox theme={CHECKBOX_THEME.Dark}  disabled ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} size={CHECKBOX_SIZE.Large} />
+        Theme Green disabled
+        <Checkbox disabled  theme={CHECKBOX_THEME.Green} ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} size={CHECKBOX_SIZE.Large} />
     </div>
   );
 };
