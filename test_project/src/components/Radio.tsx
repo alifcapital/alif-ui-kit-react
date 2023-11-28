@@ -12,42 +12,10 @@ export const RadioApp: React.FC = () => {
 
   return (
     <div>
-      Theme light
-      <Radio  theme={RADIO_THEME.Light}  ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} size={RADIO_SIZE.Large} />
-      <br />
-      Theme Dark
-      <Radio theme={RADIO_THEME.Dark}  ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} size={RADIO_SIZE.Medium} />
-      <br />
-      Theme Green
-      <Radio   theme={RADIO_THEME.Green} ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} size={RADIO_SIZE.Small} />
-      <br />
-
-      Large
-      <Radio ref={ref}  ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} size={RADIO_SIZE.Large} />
-      <br />
-      Medium checked
-      <Radio ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked}  />
-      <br />
-      Small
-      <Radio ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} size={RADIO_SIZE.Small} />
-      <br />
-      Disabled
-      <Radio ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} disabled />
-      <br />
-      Error
-      <Radio  error={!checked} ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked}  />
-
-
-
-        Theme light disabled
-        <Radio disabled  theme={RADIO_THEME.Light}  ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} size={RADIO_SIZE.Large} />
-        <br />
-        Theme Dark disabled
-        <Radio disabled theme={RADIO_THEME.Dark}  ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} size={RADIO_SIZE.Medium} />
-        <br />
-        Theme Green disabled
-        <Radio disabled  theme={RADIO_THEME.Green} ariaLabel='aria-label' label="Однострочный" onChange={handleChange} value={checked} size={RADIO_SIZE.Small} />
-        <br />
+        <Radio ariaLabel="radio" name="red"/>
+        <Radio ariaLabel="radio" name="red"/>
+        <Radio ariaLabel="radio" name="red"/>
+        <Radio ariaLabel="radio" name="blue"/>
 
 
 

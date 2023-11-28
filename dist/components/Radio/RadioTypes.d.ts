@@ -9,8 +9,9 @@ interface IRadio {
     value: boolean;
     label: string;
     className: string;
-    onChange: (isChecked: boolean, event: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
     error: boolean;
+    isChecked: boolean;
     name: string;
 }
 export interface IRadioProps extends Partial<IRadio> {
