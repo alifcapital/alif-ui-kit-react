@@ -11,7 +11,6 @@ interface IRadio {
     className: string;
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
     error: boolean;
-    isChecked: boolean;
     name: string;
 }
 export interface IRadioProps extends Partial<IRadio> {

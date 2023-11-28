@@ -26,11 +26,9 @@ const Radio = React.forwardRef<HTMLInputElement, IRadioProps>((props, ref) => {
   const [isError, setIsError] = useState(false);
   const [isDisabled, setIsDisabled] = useState(disabled);
 
-
   useEffect(() => {
     setIsDisabled(disabled);
   }, [disabled]);
-
 
   useEffect(() => {
     setIsError(!!error);
