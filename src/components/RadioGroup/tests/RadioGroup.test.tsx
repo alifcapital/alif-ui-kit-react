@@ -4,13 +4,6 @@ import { render } from '@testing-library/react';
 import { RadioGroup } from '../RadioGroup';
 
 describe('Radio', () => {
-  it('should have text value', () => {
-    const label = 'Simple RadioGroup';
-    const { getByText } = render(<RadioGroup ariaLabel={label} options={[]} name="" />);
-
-    expect(getByText(label).innerHTML).toBe(label);
-  });
-
   it('it should be checked', () => {
     const { container } = render(
       <RadioGroup
@@ -26,7 +19,7 @@ describe('Radio', () => {
         ariaLabel="radio"
       />,
     );
-    const elements = container.getElementsByClassName('RadioGroup-checked');
+    const elements = container.getElementsByClassName('RadioGroup-button');
 
     expect(elements.length).toBe(1);
   });

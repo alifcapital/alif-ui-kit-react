@@ -7,7 +7,7 @@ import { RADIO_GROUP_SIZE, RADIO_GROUP_THEME, RADIO_GROUP_VARIANT } from './Radi
 
 const RadioGroup: React.FC<IRadioGroupProps> = ({
   options = [],
-  value = options[0].value,
+  value = options[0]?.value,
   onChange,
   disabled = false,
   name,
