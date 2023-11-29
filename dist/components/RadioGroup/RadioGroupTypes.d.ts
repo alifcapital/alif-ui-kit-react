@@ -24,6 +24,5 @@ export interface IRadioGroupProps {
     name: string;
     ariaLabel: string;
     error?: boolean;
-    isLoading?: boolean;
 }
 export {};
