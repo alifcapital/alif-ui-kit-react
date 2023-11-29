@@ -13,6 +13,7 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
   name,
   size = RADIO_GROUP_SIZE.Medium,
   theme = RADIO_GROUP_THEME.Green,
+  error = false,
   variant = RADIO_GROUP_VARIANT.row,
   gap = 12,
 }) => {
@@ -60,7 +61,7 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
               ['RadioGroup-button-checked']: isChecked,
               ['RadioGroup-button-unchecked']: !isChecked,
               ['RadioGroup-button-disabled']: option.disabled || disabled,
-              ['RadioGroup-button-error']: option.error,
+              ['RadioGroup-button-error']: error,
             })}
             key={option.key}
           >
@@ -86,7 +87,7 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
                 tabIndex={!option.disabled ? 0 : undefined}
                 className={clsx({
                   ['RadioGroup-button-label']: true,
-                  ['RadioGroup-button-label-order-0']: option.labelOrder === "left",
+                  ['RadioGroup-button-label-order-0']: option.labelOrder === 'left',
                 })}
                 style={{ order: option.labelOrder }}
               >

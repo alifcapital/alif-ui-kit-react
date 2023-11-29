@@ -79,16 +79,13 @@
     );
   }
 
-  .RadioGroup-button-error:not(.RadioGroup-button-disabled) {
+  .RadioGroup-button-checked.RadioGroup-button-error:not(.RadioGroup-button-disabled) {
     @include radio(
-      $checkedBorderWidth: 1px,
+      $checkedBorderWidth: 7px,
       $checkedBorderColor: $redWaring,
       $colorBorder: $redWaring,
       $colorLabel: $redWaring
     );
-  }
-  .RadioGroup-button-checked.RadioGroup-button-error {
-    @include radio()
   }
 }
 
@@ -110,8 +107,5 @@
       $colorBorder: $black80,
       $colorLabel: $black80
     );
-  }
-  .RadioGroup-button-checked.RadioGroup-button-error {
-    @include radio($checkedBorderColor: $black, $colorBorder: $black, $colorLabel: $black);
   }
 }

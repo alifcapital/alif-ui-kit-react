@@ -6,7 +6,7 @@ export type TRadioGroupVariant = `${RADIO_GROUP_VARIANT}`;
 
 export type TRadioGroupValue = string | number;
 
-type TLabelOrder  = "right" | "left"
+type TLabelOrder = 'right' | 'left';
 
 export interface IRadioGroupOption {
   label?: JSX.Element | string;
@@ -15,7 +15,6 @@ export interface IRadioGroupOption {
   key: string;
   disabled?: boolean;
   ariaLabel?: string;
-  error?: boolean;
 }
 
 export interface IRadioGroupProps {
@@ -29,4 +28,6 @@ export interface IRadioGroupProps {
   options: IRadioGroupOption[];
   name: string;
   ariaLabel: string;
+  error?: boolean;
+  isLoading?: boolean;
 }

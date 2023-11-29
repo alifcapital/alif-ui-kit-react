@@ -3,14 +3,14 @@ type Size = `${RADIO_GROUP_SIZE}`;
 type Theme = `${RADIO_GROUP_THEME}`;
 export type TRadioGroupVariant = `${RADIO_GROUP_VARIANT}`;
 export type TRadioGroupValue = string | number;
+type TLabelOrder = 'right' | 'left';
 export interface IRadioGroupOption {
     label?: JSX.Element | string;
-    labelOrder?: 0 | 1;
+    labelOrder?: TLabelOrder;
     value: TRadioGroupValue;
     key: string;
     disabled?: boolean;
     ariaLabel?: string;
-    error?: boolean;
 }
 export interface IRadioGroupProps {
     variant?: TRadioGroupVariant;
@@ -23,5 +23,7 @@ export interface IRadioGroupProps {
     options: IRadioGroupOption[];
     name: string;
     ariaLabel: string;
+    error?: boolean;
+    isLoading?: boolean;
 }
 export {};

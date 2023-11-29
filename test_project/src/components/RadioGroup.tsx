@@ -1,32 +1,37 @@
 
 import {RADIO_GROUP_THEME, RadioGroup, TRadioGroupValue} from "../../../src/components/RadioGroup";
+import {useState} from "react";
 
 export const RadioGroupApp: React.FC = () => {
-
-
+    const [isError,setIsError] = useState(false);
+    const [value,setValue] = useState<TRadioGroupValue>("red")
   const handleChange = (e:TRadioGroupValue) => {
-    console.log(e)
+        setIsError(false)
+        setValue(e);
+        setTimeout(()=>{setIsError(true)},300)
   };
 
   return (
     <div>
-        <RadioGroup  ariaLabel="radio" theme={RADIO_GROUP_THEME.Dark} onChange={handleChange} options={
+        <hr/>
+        without error
+        <RadioGroup  ariaLabel="radio"  value={value} onChange={handleChange} options={
             [
                 {
-                    value: "red",
+                    value: "red1",
                     key: "1",
                     label: "red",
                 },
                 {
-                    value: "blue",
+                    value: "blue1",
                     key: "2",
                     label: "blue",
-                    error: true
                 }
             ]
         } name="name" />
         <hr/>
-        <RadioGroup  ariaLabel="radio" onChange={handleChange} options={
+        with error
+        <RadioGroup  ariaLabel="radio" error={isError} value={value} onChange={handleChange} options={
             [
                 {
                     value: "red",
@@ -37,7 +42,6 @@ export const RadioGroupApp: React.FC = () => {
                     value: "blue",
                     key: "2",
                     label: "blue",
-                    error: true
                 }
             ]
         } name="name2" />

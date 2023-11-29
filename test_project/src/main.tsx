@@ -45,6 +45,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       {/*<hr/>*/}
       {/*<CheckboxApp/>*/}
         <RadioGroupApp/>
+        <hr/>
+        <CheckboxApp/>
     </div>
   </React.StrictMode>,
 );
