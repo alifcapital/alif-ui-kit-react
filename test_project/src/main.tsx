@@ -15,10 +15,12 @@ import './index.css';
 import { DropdownApp } from './components/Dropdown';
 import { BreadcrumbsApp } from './components/Breadcrumbs'; 
 import { PaginationApp } from './components/Pagination';
+import { SliderApp } from './components/Slider';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='conatainer'>
+      <SliderApp/>
       {/* <DropdownApp/>
       <BreadcrumbsApp/><br/> */}
       {/* <SwitchTagsApp/> */}
@@ -32,7 +34,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <InputApp/><br /><hr />
       <AccordionApp/><br /><hr />
       <ButtonApp/><hr /> */}
-      <PaginationApp/>
+      {/* <PaginationApp/> */}
     </div>
   </React.StrictMode>,
 );
