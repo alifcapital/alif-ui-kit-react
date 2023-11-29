@@ -15,7 +15,7 @@ import './index.css';
 import { DropdownApp } from './components/Dropdown';
 import { BreadcrumbsApp } from './components/Breadcrumbs';
 import { PaginationApp } from './components/Pagination';
-import { RadioApp } from './components/Radio';
+import { RadioGroupApp } from './components/RadioGroup';
 import { ProgressBarApp } from './components/ProgressBar';
 import { ModalApp } from './components/Modal';
 
@@ -42,9 +42,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <AccordionApp/><br /><hr />
       <ButtonApp/><hr /> */}
       {/*<PaginationApp/>*/}
-      <RadioApp />
       {/*<hr/>*/}
       {/*<CheckboxApp/>*/}
+        <RadioGroupApp/>
     </div>
   </React.StrictMode>,
 );
