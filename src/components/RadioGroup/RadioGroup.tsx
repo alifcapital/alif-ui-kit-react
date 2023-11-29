@@ -22,7 +22,6 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
   useEffect(() => {
     if (localValue !== value) setLocalValue(value);
   }, [value]);
-
   const handleChange = (option: IRadioGroupOption) => {
     if (localValue !== option.value) {
       setLocalValue(option.value);
