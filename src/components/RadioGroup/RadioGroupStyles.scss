@@ -87,6 +87,9 @@
       $colorLabel: $redWaring
     );
   }
+  .RadioGroup-button-checked.RadioGroup-button-error {
+    @include radio()
+  }
 }
 
 .RadioGroup.RadioGroup-row {
@@ -107,5 +110,8 @@
       $colorBorder: $black80,
       $colorLabel: $black80
     );
+  }
+  .RadioGroup-button-checked.RadioGroup-button-error {
+    @include radio($checkedBorderColor: $black, $colorBorder: $black, $colorLabel: $black);
   }
 }

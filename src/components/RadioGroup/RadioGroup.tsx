@@ -40,7 +40,7 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
 
   return (
     <div
-      style={{ gap: gap + 'px' } as React.CSSProperties}
+      style={{ gap: gap + 'px' }}
       className={clsx({
         ['RadioGroup']: true,
         ['RadioGroup-disabled']: disabled,
@@ -69,7 +69,7 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
               checked={isChecked}
               className={clsx({
                 ['Radio-input']: true,
-                ['Radio-input-order-1']: option.labelOrder === 0,
+                ['Radio-input-order-1']: option.labelOrder === 'left',
                 ['Radio-input-large']: size === RADIO_GROUP_SIZE.Large,
                 ['Radio-input-medium']: size === RADIO_GROUP_SIZE.Medium,
                 ['Radio-input-small']: size === RADIO_GROUP_SIZE.Small,
@@ -86,7 +86,7 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
                 tabIndex={!option.disabled ? 0 : undefined}
                 className={clsx({
                   ['RadioGroup-button-label']: true,
-                  ['RadioGroup-button-label-order-0']: option.labelOrder === 0,
+                  ['RadioGroup-button-label-order-0']: option.labelOrder === "left",
                 })}
                 style={{ order: option.labelOrder }}
               >

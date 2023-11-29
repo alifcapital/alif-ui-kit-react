@@ -1,5 +1,5 @@
 
-import {RadioGroup, TRadioGroupValue} from "../../../src/components/RadioGroup";
+import {RADIO_GROUP_THEME, RadioGroup, TRadioGroupValue} from "../../../src/components/RadioGroup";
 
 export const RadioGroupApp: React.FC = () => {
 
@@ -10,20 +10,37 @@ export const RadioGroupApp: React.FC = () => {
 
   return (
     <div>
+        <RadioGroup  ariaLabel="radio" theme={RADIO_GROUP_THEME.Dark} onChange={handleChange} options={
+            [
+                {
+                    value: "red",
+                    key: "1",
+                    label: "red",
+                },
+                {
+                    value: "blue",
+                    key: "2",
+                    label: "blue",
+                    error: true
+                }
+            ]
+        } name="name" />
+        <hr/>
         <RadioGroup  ariaLabel="radio" onChange={handleChange} options={
             [
                 {
                     value: "red",
                     key: "1",
-                    label: "red"
+                    label: "red",
                 },
                 {
                     value: "blue",
                     key: "2",
-                    label: "blue"
+                    label: "blue",
+                    error: true
                 }
             ]
-        } name="name" />
+        } name="name2" />
     </div>
   );
 };
