@@ -15,6 +15,7 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
   theme = RADIO_GROUP_THEME.Green,
   error = false,
   variant = RADIO_GROUP_VARIANT.row,
+  className = '',
   gap = 12,
 }) => {
   const [localValue, setLocalValue] = useState(value);
@@ -49,6 +50,7 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
         ['RadioGroup-dark']: theme === RADIO_GROUP_THEME.Dark,
         ['RadioGroup-green']: theme === RADIO_GROUP_THEME.Green,
         ['RadioGroup-light']: theme === RADIO_GROUP_THEME.Light,
+        [className || '']: Boolean(className),
       })}
     >
       {options.map((option) => {
@@ -73,9 +75,9 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
                 ['Radio-input-large']: size === RADIO_GROUP_SIZE.Large,
                 ['Radio-input-medium']: size === RADIO_GROUP_SIZE.Medium,
                 ['Radio-input-small']: size === RADIO_GROUP_SIZE.Small,
+                [option.className || '']: Boolean(option.className),
               })}
               onChange={() => handleChange(option)}
-              aria-label={option?.ariaLabel || 'radio'}
               tabIndex={-1}
               name={name}
               disabled={option.disabled || disabled}
