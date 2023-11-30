@@ -15,6 +15,8 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
   theme = RADIO_GROUP_THEME.Green,
   error = false,
   variant = RADIO_GROUP_VARIANT.row,
+  className = '',
+  ariaLabel = 'RadioGroup',
   gap = 12,
 }) => {
   const [localValue, setLocalValue] = useState(value);
@@ -41,6 +43,7 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
   return (
     <div
       style={{ gap: gap + 'px' }}
+      aria-label={ariaLabel}
       className={clsx({
         ['RadioGroup']: true,
         ['RadioGroup-disabled']: disabled,
@@ -49,6 +52,7 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
         ['RadioGroup-dark']: theme === RADIO_GROUP_THEME.Dark,
         ['RadioGroup-green']: theme === RADIO_GROUP_THEME.Green,
         ['RadioGroup-light']: theme === RADIO_GROUP_THEME.Light,
+        [className || '']: Boolean(className),
       })}
     >
       {options.map((option) => {
@@ -61,6 +65,7 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
               ['RadioGroup-button-unchecked']: !isChecked,
               ['RadioGroup-button-disabled']: option.disabled || disabled,
               ['RadioGroup-button-error']: error,
+              [option.className || '']: Boolean(option.className),
             })}
             key={option.key}
           >
@@ -75,9 +80,9 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
                 ['Radio-input-small']: size === RADIO_GROUP_SIZE.Small,
               })}
               onChange={() => handleChange(option)}
-              aria-label={option?.ariaLabel || 'radio'}
               tabIndex={-1}
               name={name}
+              aria-label={option.ariaLabel || 'Radio'}
               disabled={option.disabled || disabled}
             />
             {option.label && (

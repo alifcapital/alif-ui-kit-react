@@ -14,6 +14,7 @@ export interface IRadioGroupOption {
   value: TRadioGroupValue;
   key: string;
   disabled?: boolean;
+  className?: string;
   ariaLabel?: string;
 }
 
@@ -29,4 +30,5 @@ export interface IRadioGroupProps {
   name: string;
   ariaLabel: string;
   error?: boolean;
+  className?: string;
 }
