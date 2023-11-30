@@ -6628,7 +6628,8 @@ const tl = ({
               "RadioGroup-button-checked": E,
               "RadioGroup-button-unchecked": !E,
               "RadioGroup-button-disabled": h.disabled || r,
-              "RadioGroup-button-error": s
+              "RadioGroup-button-error": s,
+              [h.className || ""]: !!h.className
             }),
             children: [
               /* @__PURE__ */ P.jsx(
@@ -6641,8 +6642,7 @@ const tl = ({
                     "Radio-input-order-1": h.labelOrder === "left",
                     "Radio-input-large": i === Jt.Large,
                     "Radio-input-medium": i === Jt.Medium,
-                    "Radio-input-small": i === Jt.Small,
-                    [h.className || ""]: !!h.className
+                    "Radio-input-small": i === Jt.Small
                   }),
                   onChange: () => y(h),
                   tabIndex: -1,

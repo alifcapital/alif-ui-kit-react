@@ -63,6 +63,7 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
               ['RadioGroup-button-unchecked']: !isChecked,
               ['RadioGroup-button-disabled']: option.disabled || disabled,
               ['RadioGroup-button-error']: error,
+              [option.className || '']: Boolean(option.className),
             })}
             key={option.key}
           >
@@ -75,7 +76,6 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
                 ['Radio-input-large']: size === RADIO_GROUP_SIZE.Large,
                 ['Radio-input-medium']: size === RADIO_GROUP_SIZE.Medium,
                 ['Radio-input-small']: size === RADIO_GROUP_SIZE.Small,
-                [option.className || '']: Boolean(option.className),
               })}
               onChange={() => handleChange(option)}
               tabIndex={-1}
