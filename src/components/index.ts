@@ -14,3 +14,4 @@ export * from './ProgressBar';
 export * from './Modal';
 export * from './Pagination';
 export * from './Slider';
+export * from './RadioGroup';

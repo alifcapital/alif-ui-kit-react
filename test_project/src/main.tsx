@@ -13,7 +13,7 @@ import { IconButtonApp } from './components/IconButton';
 import { PopoverApp } from './components/PopoverApp';
 import './index.css';
 import { DropdownApp } from './components/Dropdown';
-import { BreadcrumbsApp } from './components/Breadcrumbs'; 
+import { BreadcrumbsApp } from './components/Breadcrumbs';
 import { PaginationApp } from './components/Pagination';
 import { SliderApp } from './components/Slider';
 import { ProgressBarApp } from './components/ProgressBar';
@@ -25,13 +25,16 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       {/* <DropdownApp/>
       <BreadcrumbsApp/><br/> */}
       {/* <SwitchTagsApp/> */}
-      {/* <PopoverApp/> 
+      <br />
+      <hr />
+      {/*<ModalApp /><br /><hr />*/}
+      {/* <PopoverApp/><br /><hr />
       <IconButtonApp/>
       <SwitchTagsApp/><br /><hr />
       <TagsApp/><br /><hr />
       <TabsApp/><br /><hr />
       <SwitchApp/><br /><hr />
-      <CheckboxApp/><br /><hr /> 
+      <CheckboxApp/><br /><hr />
       <InputApp/><br /><hr />
       <AccordionApp/><br /><hr />
       <ButtonApp/><hr /> */}

@@ -3,7 +3,7 @@ import { IProgressBarProps } from './ProgressBarTypes';
 import clsx from 'clsx';
 
 import './ProgressBarStyles.scss';
-import { PROGRESS_BAR_SIZE } from './ProgressBarConstants';
+import { MAX_VALUE, PROGRESS_BAR_SIZE } from './ProgressBarConstants';
 
 export const ProgressBar = ({
   progress,
@@ -11,29 +11,23 @@ export const ProgressBar = ({
   className,
   id,
   indicatorColor,
-}: IProgressBarProps) => {
-  const keepValueInRange = (value: number) => {
-    return Math.min(100, Math.max(0, value));
-  };
-
-  return (
+}: IProgressBarProps) => (
+  <div
+    role="progressbar"
+    aria-valuemin={0}
+    aria-valuenow={Math.min(progress, MAX_VALUE)}
+    aria-valuemax={MAX_VALUE}
+    id={id}
+    className={clsx({
+      ['ProgressBar']: true,
+      ['ProgressBar-medium']: size === PROGRESS_BAR_SIZE.Medium,
+      ['ProgressBar-small']: size === PROGRESS_BAR_SIZE.Small,
+      [className || '']: !!className,
+    })}
+  >
     <div
-      role="progressbar"
-      aria-valuemin={0}
-      aria-valuenow={keepValueInRange(progress)}
-      aria-valuemax={100}
-      id={id}
-      className={clsx({
-        ['ProgressBar']: true,
-        ['ProgressBar-medium']: size === PROGRESS_BAR_SIZE.Medium,
-        ['ProgressBar-small']: size === PROGRESS_BAR_SIZE.Small,
-        [className || '']: !!className,
-      })}
-    >
-      <div
-        className="ProgressBar-indicator"
-        style={{ width: `${keepValueInRange(progress)}%`, backgroundColor: indicatorColor }}
-      />
-    </div>
-  );
-};
+      className="ProgressBar-indicator"
+      style={{ width: `${Math.min(progress, MAX_VALUE)}%`, backgroundColor: indicatorColor }}
+    />
+  </div>
+);
