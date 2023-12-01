@@ -11,23 +11,29 @@ export const ProgressBar = ({
   className,
   id,
   indicatorColor,
-}: IProgressBarProps) => (
-  <div
-    role="progressbar"
-    aria-valuemin={0}
-    aria-valuenow={progress}
-    aria-valuemax={100}
-    id={id}
-    className={clsx({
-      ['ProgressBar']: true,
-      ['ProgressBar-medium']: size === PROGRESS_BAR_SIZE.Medium,
-      ['ProgressBar-small']: size === PROGRESS_BAR_SIZE.Small,
-      [className || '']: !!className,
-    })}
-  >
+}: IProgressBarProps) => {
+  const keepValueInRange = (value: number) => {
+    return Math.min(100, Math.max(0, value));
+  };
+
+  return (
     <div
-      className="ProgressBar-indicator"
-      style={{ width: `${progress}%`, backgroundColor: indicatorColor }}
-    />
-  </div>
-);
+      role="progressbar"
+      aria-valuemin={0}
+      aria-valuenow={keepValueInRange(progress)}
+      aria-valuemax={100}
+      id={id}
+      className={clsx({
+        ['ProgressBar']: true,
+        ['ProgressBar-medium']: size === PROGRESS_BAR_SIZE.Medium,
+        ['ProgressBar-small']: size === PROGRESS_BAR_SIZE.Small,
+        [className || '']: !!className,
+      })}
+    >
+      <div
+        className="ProgressBar-indicator"
+        style={{ width: `${keepValueInRange(progress)}%`, backgroundColor: indicatorColor }}
+      />
+    </div>
+  );
+};

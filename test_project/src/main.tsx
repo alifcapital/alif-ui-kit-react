@@ -16,6 +16,7 @@ import { DropdownApp } from './components/Dropdown';
 import { BreadcrumbsApp } from './components/Breadcrumbs'; 
 import { PaginationApp } from './components/Pagination';
 import { SliderApp } from './components/Slider';
+import { ProgressBarApp } from './components/ProgressBar';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -35,6 +36,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <AccordionApp/><br /><hr />
       <ButtonApp/><hr /> */}
       {/* <PaginationApp/> */}
+      <ProgressBarApp />
     </div>
   </React.StrictMode>,
 );

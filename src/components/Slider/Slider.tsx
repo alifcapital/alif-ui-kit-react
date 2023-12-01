@@ -15,7 +15,7 @@ export const Slider = (props: ISliderProps) => {
     onChange && onChange(value);
   };
 
-  const normalize = (value: number) => {
+  const keepValueInRange = (value: number) => {
     return Math.min(100, Math.max(0, value));
   };
 
@@ -33,14 +33,14 @@ export const Slider = (props: ISliderProps) => {
       <div className="Slider-progress">
         <div
           className="Slider-track"
-          style={{ width: `${rangeValue && normalize(rangeValue)}%` }}
+          style={{ width: `${rangeValue && keepValueInRange(rangeValue)}%` }}
         />
         <input
           id={id}
           name={name}
           aria-label={ariaLabel}
           type="range"
-          value={rangeValue && normalize(rangeValue)}
+          value={rangeValue && keepValueInRange(rangeValue)}
           min={0}
           max={100}
           disabled={disabled}
