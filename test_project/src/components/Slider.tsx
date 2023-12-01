@@ -8,7 +8,7 @@ export const SliderApp = () => {
     <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
       <br/>
       <div style={{ width: '300px' }}>
-        <Slider  ariaLabel="slider range"   onChange={(value)=> setValue(value)} />
+        <Slider  value={value} ariaLabel="slider range"  onChange={(value)=> setValue(value)}  />
       </div>
     </div>
   )
