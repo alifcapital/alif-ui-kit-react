@@ -15,23 +15,21 @@ import './index.css';
 import { DropdownApp } from './components/Dropdown';
 import { BreadcrumbsApp } from './components/Breadcrumbs';
 import { PaginationApp } from './components/Pagination';
-import { RadioGroupApp } from './components/RadioGroup';
+import { SliderApp } from './components/Slider';
 import { ProgressBarApp } from './components/ProgressBar';
 import { ModalApp } from './components/Modal';
 import { TypographyApp } from './components/Typography';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <div className="conatainer">
-      {/*<ProgressBarApp/>*/}
-      {/* <DropdownApp/> */}
-      <br />
-      <hr />
-      {/* <BreadcrumbsApp/><br/> */}
+    <div className='conatainer'>
+      <SliderApp/>
+      {/* <DropdownApp/>
+      <BreadcrumbsApp/><br/> */}
       {/* <SwitchTagsApp/> */}
       <br />
       <hr />
-      <TypographyApp />
+      {/* <TypographyApp /> */}
       {/*<ModalApp /><br /><hr />*/}
       {/* <PopoverApp/><br /><hr />
       <IconButtonApp/>
@@ -48,6 +46,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       {/*<CheckboxApp/>*/}
         {/* <RadioGroupApp/> */}
         {/* <hr/> */}
+      {/* <PaginationApp/> */}
+      <ProgressBarApp />
     </div>
   </React.StrictMode>,
 );
