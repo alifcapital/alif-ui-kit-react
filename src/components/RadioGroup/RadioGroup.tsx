@@ -1,4 +1,4 @@
-import React, { DetailedHTMLProps, HTMLAttributes, useEffect, useState } from 'react';
+import React, { DetailedHTMLProps, HTMLAttributes, useState } from 'react';
 import clsx from 'clsx';
 
 import './RadioGroupStyles.scss';
@@ -21,9 +21,10 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
 }) => {
   const [localValue, setLocalValue] = useState(value);
 
-  useEffect(() => {
-    if (localValue !== value) setLocalValue(value);
-  }, [value]);
+  if (!isNaN(value as number) && localValue !== value) {
+    setLocalValue(value);
+  }
+
   const handleChange = (option: IRadioGroupOption) => {
     if (localValue !== option.value) {
       setLocalValue(option.value);
