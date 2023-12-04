@@ -8,7 +8,7 @@
 @mixin display_2 {
   font-weight: $fontWeight720;
   font-size: 40px;
-  line-height: 51.2px;
+  line-height: 52px;
 }
 
 // Heading
@@ -24,8 +24,20 @@
   line-height: 28px;
 }
 
+@mixin heading_2-medium {
+  font-weight: $fontWeight550;
+  font-size: 22px;
+  line-height: 28px;
+}
+
 @mixin heading_3 {
   font-weight: $fontWeight720;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin heading_3-medium {
+  font-weight: $fontWeight550;
   font-size: 18px;
   line-height: 24px;
 }
@@ -36,10 +48,22 @@
   line-height: 28px;
 }
 
-@mixin subtitle {
+@mixin heading-subtitle {
   font-weight: $fontWeight720;
   font-size: 16px;
   line-height: 20px;
+}
+
+@mixin heading-subtitle-medium {
+  font-weight: $fontWeight550;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@mixin heading-small {
+  font-weight: $fontWeight720;
+  font-size: 14px;
+  line-height: 18px;
 }
 
 // Body
@@ -65,6 +89,7 @@
   font-weight: $fontWeight400;
   font-size: 16px;
   line-height: 26px;
+  height: 28px;
 }
 
 // Caption

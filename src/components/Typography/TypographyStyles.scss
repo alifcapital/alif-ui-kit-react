@@ -1,0 +1,72 @@
+@import '../../styles/index.scss';
+
+.Typography {
+  &.Typography-display_1 {
+    @include display_1;
+  }
+
+  &.Typography-display_2 {
+    @include display_2;
+  }
+
+  &.Typography-heading_1 {
+    @include heading_1;
+  }
+
+  &.Typography-heading_2 {
+    @include heading_2;
+  }
+
+  &.Typography-heading_2-medium {
+    @include heading_2-medium;
+  }
+
+  &.Typography-heading_3 {
+    @include heading_3;
+  }
+
+  &.Typography-heading_3-medium {
+    @include heading_3-medium;
+  }
+
+  &.Typography-heading-regular {
+    @include heading-regular;
+  }
+
+  &.Typography-heading-subtitle {
+    @include heading-subtitle;
+  }
+
+  &.Typography-heading-subtitle-medium {
+    @include heading-subtitle-medium;
+  }
+
+  &.Typography-heading-small {
+    @include heading-small;
+  }
+
+  &.Typography-body-small {
+    @include body-small;
+  }
+
+  &.Typography-body-normal {
+    @include body-normal;
+  }
+
+  &.Typography-body-big {
+    @include body-big;
+  }
+
+  &.Typography-body-paragraph {
+    @include body-paragraph;
+  }
+
+  &.Typography-caption {
+    @include caption;
+  }
+
+  &.Typography-all-captions {
+    @include all-captions;
+    text-transform: uppercase;
+  }
+}

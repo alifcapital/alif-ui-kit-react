@@ -18,6 +18,7 @@ import { PaginationApp } from './components/Pagination';
 import { RadioGroupApp } from './components/RadioGroup';
 import { ProgressBarApp } from './components/ProgressBar';
 import { ModalApp } from './components/Modal';
+import { TypographyApp } from './components/Typography';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -30,6 +31,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       {/* <SwitchTagsApp/> */}
       <br />
       <hr />
+      <TypographyApp />
       {/*<ModalApp /><br /><hr />*/}
       {/* <PopoverApp/><br /><hr />
       <IconButtonApp/>
@@ -44,8 +46,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       {/*<PaginationApp/>*/}
       {/*<hr/>*/}
       {/*<CheckboxApp/>*/}
-        <RadioGroupApp/>
-        <hr/>
+        {/* <RadioGroupApp/> */}
+        {/* <hr/> */}
     </div>
   </React.StrictMode>,
 );
