@@ -21,10 +21,6 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
 }) => {
   const [localValue, setLocalValue] = useState(value);
 
-  if (!isNaN(value as number) && localValue !== value) {
-    setLocalValue(value);
-  }
-
   const handleChange = (option: IRadioGroupOption) => {
     if (localValue !== option.value) {
       setLocalValue(option.value);
@@ -40,6 +36,10 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
       handleChange(option);
     }
   };
+
+  if (!isNaN(value as number) && localValue !== value) {
+    setLocalValue(value);
+  }
 
   return (
     <div
