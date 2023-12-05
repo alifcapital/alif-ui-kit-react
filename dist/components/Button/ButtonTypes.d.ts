@@ -15,6 +15,7 @@ export interface IButton extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButt
     withIcon: boolean;
     color: Color;
     id: string;
+    hasFullWith: boolean;
     onClick: () => void;
 }
 export interface IButtonProps extends Partial<IButton> {
