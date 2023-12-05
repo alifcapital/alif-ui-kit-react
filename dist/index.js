@@ -6594,9 +6594,9 @@ const ml = (e) => {
     min: s = 0,
     max: u = 100,
     onChange: l
-  } = e, d = (p) => {
-    l && l(+p.target.value);
-  }, f = (p) => Math.min(100, Math.max(0, p)), v = (p) => f((p - s) / (u - s) * 100);
+  } = e, d = (v) => {
+    l && l(+v.target.value);
+  }, f = (v) => Math.min(100, Math.max(0, (v - s) / (u - s) * 100));
   return /* @__PURE__ */ O.jsx(
     "div",
     {
@@ -6609,7 +6609,7 @@ const ml = (e) => {
           "div",
           {
             className: "Slider-track",
-            style: { width: `${i && v(i)}%` }
+            style: { width: `${i && f(i)}%` }
           }
         ),
         /* @__PURE__ */ O.jsx(
@@ -6619,7 +6619,7 @@ const ml = (e) => {
             name: r,
             "aria-label": n,
             type: "range",
-            value: i && f(i),
+            value: i,
             min: s,
             max: u,
             disabled: c,
