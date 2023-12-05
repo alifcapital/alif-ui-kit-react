@@ -20,12 +20,8 @@ export const Slider = (props: ISliderProps) => {
     onChange && onChange(+e.target.value);
   };
 
-  const keepValueInRange = (value: number) => {
-    return Math.min(100, Math.max(0, value));
-  };
-
   const calculatePercentage = (value: number) => {
-    return keepValueInRange(((value - min) / (max - min)) * 100);
+    return Math.min(100, Math.max(0, ((value - min) / (max - min)) * 100));
   };
 
   return (
@@ -45,7 +41,7 @@ export const Slider = (props: ISliderProps) => {
           name={name}
           aria-label={ariaLabel}
           type="range"
-          value={value && keepValueInRange(value)}
+          value={value}
           min={min}
           max={max}
           disabled={disabled}

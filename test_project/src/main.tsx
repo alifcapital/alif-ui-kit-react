@@ -22,11 +22,13 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='conatainer'>
       <SliderApp/>
+      {/* <TabsApp/> */}
+      {/* <SliderApp/>
       <br />
       <ProgressBarApp />
       <br />
       <ButtonApp/>
-      <br />
+      <br /> */}
       {/* <DropdownApp/>
       <BreadcrumbsApp/><br/> */}
       {/* <SwitchTagsApp/> */}
