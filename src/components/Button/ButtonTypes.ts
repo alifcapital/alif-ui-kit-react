@@ -18,6 +18,7 @@ export interface IButton
   withIcon: boolean;
   color: Color;
   id: string;
+  hasFullWith: boolean;
   onClick: () => void;
 }
 

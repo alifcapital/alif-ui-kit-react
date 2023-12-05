@@ -2,11 +2,13 @@ interface ISlider {
     id: string;
     name: string;
     disabled: boolean;
-    onChange: (value: number) => void;
-    value: number;
     className: string;
+    min: number;
+    max: number;
 }
 export interface ISliderProps extends Partial<ISlider> {
     ariaLabel: string;
+    onChange: (value: number) => void;
+    value: number;
 }
 export {};

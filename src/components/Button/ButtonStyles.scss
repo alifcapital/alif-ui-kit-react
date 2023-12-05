@@ -16,6 +16,10 @@
     @include flexAligment;
   }
 
+  &.Button-fullWidth {
+    width: 100%;
+  }
+
   &.Button-primary {
     background-color: $primary;
     color: $white;

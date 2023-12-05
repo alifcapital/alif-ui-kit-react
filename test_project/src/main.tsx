@@ -22,11 +22,14 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='conatainer'>
       <SliderApp/>
+      <br />
+      <ProgressBarApp />
+      <br />
+      <ButtonApp/>
+      <br />
       {/* <DropdownApp/>
       <BreadcrumbsApp/><br/> */}
       {/* <SwitchTagsApp/> */}
-      <br />
-      <hr />
       {/*<ModalApp /><br /><hr />*/}
       {/* <PopoverApp/><br /><hr />
       <IconButtonApp/>
@@ -39,7 +42,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <AccordionApp/><br /><hr />
       <ButtonApp/><hr /> */}
       {/* <PaginationApp/> */}
-      <ProgressBarApp />
     </div>
   </React.StrictMode>,
 );
