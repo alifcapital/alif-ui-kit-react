@@ -17,11 +17,13 @@ import { BreadcrumbsApp } from './components/Breadcrumbs';
 import { PaginationApp } from './components/Pagination';
 import { SliderApp } from './components/Slider';
 import { ProgressBarApp } from './components/ProgressBar';
+import { ModalApp } from './components/Modal';
+import { TypographyApp } from './components/Typography';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <div className='conatainer'>
-      <SliderApp/>
+    <div className="conatainer">
+      <SliderApp />
       {/* <TabsApp/> */}
       {/* <SliderApp/>
       <br />
@@ -32,6 +34,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       {/* <DropdownApp/>
       <BreadcrumbsApp/><br/> */}
       {/* <SwitchTagsApp/> */}
+      <br />
+      <hr />
+      {/* <TypographyApp /> */}
       {/*<ModalApp /><br /><hr />*/}
       {/* <PopoverApp/><br /><hr />
       <IconButtonApp/>
@@ -43,6 +48,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <InputApp/><br /><hr />
       <AccordionApp/><br /><hr />
       <ButtonApp/><hr /> */}
+      {/*<PaginationApp/>*/}
+      {/*<hr/>*/}
+      {/*<CheckboxApp/>*/}
+      {/* <RadioGroupApp/> */}
+      {/* <hr/> */}
       {/* <PaginationApp/> */}
     </div>
   </React.StrictMode>,
