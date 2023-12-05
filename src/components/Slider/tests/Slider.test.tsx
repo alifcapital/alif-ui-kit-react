@@ -7,7 +7,7 @@ describe('Slider', () => {
   it('should change value on user interaction', () => {
     const handleChange = jest.fn();
     const { getByRole } = render(
-      <Slider ariaLabel="Slider label" onChange={handleChange} value={0} />,
+      <Slider value={0} ariaLabel="Slider label" onChange={handleChange} />,
     );
 
     const slider = getByRole('slider');

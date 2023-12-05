@@ -22,8 +22,15 @@ import { TypographyApp } from './components/Typography';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <div className='conatainer'>
-      <SliderApp/>
+    <div className="conatainer">
+      <SliderApp />
+      {/* <TabsApp/> */}
+      {/* <SliderApp/>
+      <br />
+      <ProgressBarApp />
+      <br />
+      <ButtonApp/>
+      <br /> */}
       {/* <DropdownApp/>
       <BreadcrumbsApp/><br/> */}
       {/* <SwitchTagsApp/> */}
@@ -44,10 +51,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       {/*<PaginationApp/>*/}
       {/*<hr/>*/}
       {/*<CheckboxApp/>*/}
-        {/* <RadioGroupApp/> */}
-        {/* <hr/> */}
+      {/* <RadioGroupApp/> */}
+      {/* <hr/> */}
       {/* <PaginationApp/> */}
-      <ProgressBarApp />
     </div>
   </React.StrictMode>,
 );

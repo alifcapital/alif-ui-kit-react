@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { TABS_SIZE, Tabs} from '../../../src';
 import { ITabsProps } from '../../../src/components/Tabs/TabsTypes';
 
@@ -7,7 +7,7 @@ export const TabsApp: React.FC = () => {
   
   type TField  = "one" | "two" | "three";
 
-  const [active, setActive] = useState<TField>("three");
+  const [active, setActive] = useState<TField>("one");
 
 
   const tabs: ITabsProps<TField>['tabs'] = [
@@ -26,10 +26,14 @@ export const TabsApp: React.FC = () => {
       label: 'Label 3',
     },
   ];
+
+  useEffect(()=> {
+    setActive("three")
+  }, [])
         
   return (
     <div>
-      <Tabs   className='custom-class' tabs={tabs}/> <br></br> 
+      <Tabs   activeTab={active} className='custom-class' tabs={tabs}/> <br></br> 
       <Tabs  activeTab={active} activeColor='black' size={ TABS_SIZE.Small} className='custom-class' tabs={tabs}/>
     </div>
   );

@@ -3,6 +3,8 @@ interface ISlider {
   name: string;
   disabled: boolean;
   className: string;
+  min: number;
+  max: number;
 }
 
 export interface ISliderProps extends Partial<ISlider> {
