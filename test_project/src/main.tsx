@@ -23,7 +23,7 @@ import { TypographyApp } from './components/Typography';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className="conatainer">
-      <SliderApp />
+      {/* <SliderApp /> */}
       {/* <TabsApp/> */}
       {/* <SliderApp/>
       <br />
@@ -31,7 +31,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <br />
       <ButtonApp/>
       <br /> */}
-      {/* <DropdownApp/>
+      <DropdownApp/>
+      {/* 
       <BreadcrumbsApp/><br/> */}
       {/* <SwitchTagsApp/> */}
       <br />

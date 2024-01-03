@@ -14,7 +14,7 @@ describe('Dropdown', () => {
     },
     {
       id: 2,
-      label: 'USD',
+      label: <div>USD</div>,
       value: 'usd',
     },
     {
