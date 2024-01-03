@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { DROPDOWN_SIZE, DROPDOWN_TYPE } from './DropdownConstants';
 type TDropdownSize = `${DROPDOWN_SIZE}`;
 type TDropdownRenderType<T> = {
@@ -12,7 +13,7 @@ type TDropdownRenderType<T> = {
 };
 export interface IDropdownListItem {
     id: string | number;
-    label: string;
+    label: string | ReactNode;
     value: string;
 }
 export interface IDropdown<T> {
