@@ -19,7 +19,7 @@ export const DropdownApp: React.FC = () => {
     },
     {
       id:'3',
-      label: 'RUB',
+      label: <span>RUB</span>,
       value: 'rub',
     },
   ];
@@ -27,7 +27,7 @@ export const DropdownApp: React.FC = () => {
   const itemsCustom: TCustomDropdown[] = [
     {
       id:'1',
-      label: 'TJS',
+      label:  <div>TJS</div>,
       value: 'tjs',
       img:<Search color='red'/>,
     },
