@@ -14,4 +14,5 @@ export interface IPopoverProps
   popoverClassName?: string;
   contentClassName?: string;
   triggerTabindex?: number;
+  triggerAsChild?: boolean;
 }
