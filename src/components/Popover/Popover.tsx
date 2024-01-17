@@ -18,6 +18,7 @@ export const Popover = (props: IPopoverProps) => {
     sideOffset = 18,
     align = 'end',
     triggerTabindex,
+    triggerAsChild = false,
     ...restProps
   } = props;
 
@@ -35,6 +36,7 @@ export const Popover = (props: IPopoverProps) => {
             tabIndex={triggerTabindex}
             className="Popover-trigger"
             onClick={onTriggerClick}
+            asChild={triggerAsChild}
           >
             {triggerElement}
           </PopoverTrigger>

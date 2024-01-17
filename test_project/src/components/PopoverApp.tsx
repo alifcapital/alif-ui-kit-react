@@ -162,7 +162,7 @@ export const PopoverApp: React.FC = () => {
       </Popover>
 
       <Popover
-        triggerElement={<User />}
+        triggerElement={<User/>}
         ariaLabel='test'
         open={open}
         onOpenChange={()=> setOpen((prev) => !prev)}

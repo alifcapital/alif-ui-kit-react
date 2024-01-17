@@ -39,16 +39,16 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <hr />
       {/* <TypographyApp /> */}
       {/*<ModalApp /><br /><hr />*/}
-      {/* <PopoverApp/><br /><hr />
-      <IconButtonApp/>
-      <SwitchTagsApp/><br /><hr />
-      <TagsApp/><br /><hr />
-      <TabsApp/><br /><hr />
-      <SwitchApp/><br /><hr />
-      <CheckboxApp/><br /><hr />
-      <InputApp/><br /><hr />
-      <AccordionApp/><br /><hr />
-      <ButtonApp/><hr /> */}
+      <PopoverApp/><br /><hr />
+      {/*<IconButtonApp/>*/}
+      {/*<SwitchTagsApp/><br /><hr />*/}
+      {/*<TagsApp/><br /><hr />*/}
+      {/*<TabsApp/><br /><hr />*/}
+      {/*<SwitchApp/><br /><hr />*/}
+      {/*<CheckboxApp/><br /><hr />*/}
+      {/*<InputApp/><br /><hr />*/}
+      {/*<AccordionApp/><br /><hr />*/}
+      {/*<ButtonApp/><hr />*/}
       {/*<PaginationApp/>*/}
       {/*<hr/>*/}
       {/*<CheckboxApp/>*/}
