@@ -11,4 +11,5 @@ export interface IPopoverProps extends PopoverContentProps, Pick<PopoverProps, '
     popoverClassName?: string;
     contentClassName?: string;
     triggerTabindex?: number;
+    triggerAsChild?: boolean;
 }
