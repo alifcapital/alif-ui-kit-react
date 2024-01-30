@@ -77,6 +77,7 @@ const Dropdown = React.forwardRef(
           </div>
         )}
         <Popover
+          isPortal={false}
           open={isOpen}
           ariaLabel={ariaLabel}
           contentClassName={clsx({

@@ -8,13 +8,13 @@
       cursor: pointer;
     }
   }
+}
 
-  .Popover-content {
-    position: relative;
-    z-index: 9999;
-    background-color: $white;
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: 0px 2px 5px 0px rgba(182, 179, 179, 0.25);
-  }
+.Popover-content {
+  position: relative;
+  z-index: 9999;
+  background-color: $white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0px 2px 5px 0px rgba(182, 179, 179, 0.25);
 }
