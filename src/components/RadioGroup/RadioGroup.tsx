@@ -58,6 +58,9 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
     >
       {options.map((option) => {
         const isChecked = localValue === option.value;
+
+        if (!option.label) return;
+
         return (
           <label
             className={clsx({

@@ -35,6 +35,10 @@ export const RadioGroupApp: React.FC = () => {
             key: '2',
             label: 'blue',
           },
+          {
+            value: 'blue2',
+            key: '3',
+          },
         ]}
         name="name"
       />

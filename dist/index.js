@@ -704,7 +704,7 @@ const wi = $e.forwardRef((e, t) => {
     size: p = Ve.Medium,
     variant: v = Ge.Contained,
     type: g = "button",
-    hasFullWith: y = !1,
+    hasFullWidth: y = !1,
     onClick: b
   } = e, x = () => {
     b && b();
@@ -6703,54 +6703,55 @@ const su = ({
       }),
       children: e.map((x) => {
         const w = v === x.value;
-        return /* @__PURE__ */ O.jsxs(
-          "label",
-          {
-            className: J({
-              "RadioGroup-button": !0,
-              "RadioGroup-button-checked": w,
-              "RadioGroup-button-unchecked": !w,
-              "RadioGroup-button-disabled": x.disabled || r,
-              "RadioGroup-button-error": s,
-              [x.className || ""]: !!x.className
-            }),
-            children: [
-              /* @__PURE__ */ O.jsx(
-                "input",
-                {
-                  type: "radio",
-                  checked: w,
-                  className: J({
-                    "Radio-input": !0,
-                    "Radio-input-order-1": x.labelOrder === "left",
-                    "Radio-input-large": i === en.Large,
-                    "Radio-input-medium": i === en.Medium,
-                    "Radio-input-small": i === en.Small
-                  }),
-                  onChange: () => y(x),
-                  tabIndex: -1,
-                  name: o,
-                  "aria-label": x.ariaLabel || "Radio",
-                  disabled: x.disabled || r
-                }
-              ),
-              x.label && /* @__PURE__ */ O.jsx(
-                "div",
-                {
-                  onKeyDown: (S) => b(S, x),
-                  tabIndex: x.disabled ? void 0 : 0,
-                  className: J({
-                    "RadioGroup-button-label": !0,
-                    "RadioGroup-button-label-order-0": x.labelOrder === "left"
-                  }),
-                  style: { order: x.labelOrder },
-                  children: x.label
-                }
-              )
-            ]
-          },
-          x.key
-        );
+        if (x.label)
+          return /* @__PURE__ */ O.jsxs(
+            "label",
+            {
+              className: J({
+                "RadioGroup-button": !0,
+                "RadioGroup-button-checked": w,
+                "RadioGroup-button-unchecked": !w,
+                "RadioGroup-button-disabled": x.disabled || r,
+                "RadioGroup-button-error": s,
+                [x.className || ""]: !!x.className
+              }),
+              children: [
+                /* @__PURE__ */ O.jsx(
+                  "input",
+                  {
+                    type: "radio",
+                    checked: w,
+                    className: J({
+                      "Radio-input": !0,
+                      "Radio-input-order-1": x.labelOrder === "left",
+                      "Radio-input-large": i === en.Large,
+                      "Radio-input-medium": i === en.Medium,
+                      "Radio-input-small": i === en.Small
+                    }),
+                    onChange: () => y(x),
+                    tabIndex: -1,
+                    name: o,
+                    "aria-label": x.ariaLabel || "Radio",
+                    disabled: x.disabled || r
+                  }
+                ),
+                x.label && /* @__PURE__ */ O.jsx(
+                  "div",
+                  {
+                    onKeyDown: (S) => b(S, x),
+                    tabIndex: x.disabled ? void 0 : 0,
+                    className: J({
+                      "RadioGroup-button-label": !0,
+                      "RadioGroup-button-label-order-0": x.labelOrder === "left"
+                    }),
+                    style: { order: x.labelOrder },
+                    children: x.label
+                  }
+                )
+              ]
+            },
+            x.key
+          );
       })
     }
   );
