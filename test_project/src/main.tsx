@@ -19,19 +19,20 @@ import { SliderApp } from './components/Slider';
 import { ProgressBarApp } from './components/ProgressBar';
 import { ModalApp } from './components/Modal';
 import { TypographyApp } from './components/Typography';
+import { RadioGroupApp } from './components/RadioGroup';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className="conatainer">
       {/* <SliderApp /> */}
       {/* <TabsApp/> */}
-      {/* <SliderApp/>
+      {/*<SliderApp/>*/}
+      {/*<br />*/}
+      {/*<ProgressBarApp />*/}
+      {/*<br />*/}
+      <ButtonApp />
       <br />
-      <ProgressBarApp />
-      <br />
-      <ButtonApp/>
-      <br /> */}
-      <DropdownApp/>
+      <DropdownApp />
       {/* 
       <BreadcrumbsApp/><br/> */}
       {/* <SwitchTagsApp/> */}
@@ -39,7 +40,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <hr />
       {/* <TypographyApp /> */}
       {/*<ModalApp /><br /><hr />*/}
-      <PopoverApp/><br /><hr />
+      <PopoverApp />
+      <br />
+      <hr />
       {/*<IconButtonApp/>*/}
       {/*<SwitchTagsApp/><br /><hr />*/}
       {/*<TagsApp/><br /><hr />*/}
@@ -52,7 +55,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       {/*<PaginationApp/>*/}
       {/*<hr/>*/}
       {/*<CheckboxApp/>*/}
-      {/* <RadioGroupApp/> */}
+      <RadioGroupApp />
       {/* <hr/> */}
       {/* <PaginationApp/> */}
     </div>

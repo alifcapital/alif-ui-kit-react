@@ -22,7 +22,7 @@ const Button = React.forwardRef<HTMLButtonElement, IButtonProps>((props, ref) =>
     size = BUTTON_SIZE.Medium,
     variant = BUTTON_VARIANT.Contained,
     type = 'button',
-    hasFullWith = false,
+    hasFullWidth = false,
     onClick,
   } = props;
 
@@ -59,7 +59,7 @@ const Button = React.forwardRef<HTMLButtonElement, IButtonProps>((props, ref) =>
         ['Button-only_icon']: !!withIcon,
         ['Button-only_icon-small']: !!withIcon && size === BUTTON_SIZE.Small,
         ['Button-only_icon-large']: !!withIcon && size === BUTTON_SIZE.Large,
-        ['Button-fullWidth']: hasFullWith,
+        ['Button-fullWidth']: hasFullWidth,
         [className || '']: !!className,
       })}
     >
