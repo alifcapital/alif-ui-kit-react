@@ -10,6 +10,7 @@ import './AccordionStyles.scss';
 const Accordion = React.forwardRef<HTMLDivElement, IAccordionProps>((props, ref) => {
   const {
     className,
+    activeHeaderClassName,
     color,
     ariaLabel,
     content,
@@ -76,7 +77,13 @@ const Accordion = React.forwardRef<HTMLDivElement, IAccordionProps>((props, ref)
         onClick={handleClick}
         onKeyDown={handleEnterPress}
       >
-        <div style={{ color: color }} className="Accordion-heading-label">
+        <div
+          style={{ color: color }}
+          className={clsx({
+            ['Accordion-heading-label']: true,
+            [activeHeaderClassName || '']: !!activeHeaderClassName && open,
+          })}
+        >
           {header}
         </div>
         <div

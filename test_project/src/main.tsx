@@ -30,32 +30,38 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       {/*<br />*/}
       {/*<ProgressBarApp />*/}
       {/*<br />*/}
-      <ButtonApp />
+      {/*<ButtonApp />*/}
       <br />
-      <DropdownApp />
+      {/*<DropdownApp />*/}
       {/* 
       <BreadcrumbsApp/><br/> */}
       {/* <SwitchTagsApp/> */}
       <br />
-      <hr />
+      {/*<hr />*/}
       {/* <TypographyApp /> */}
       {/*<ModalApp /><br /><hr />*/}
-      <PopoverApp />
+      {/*<PopoverApp />*/}
       <br />
-      <hr />
+      {/*<hr />*/}
       {/*<IconButtonApp/>*/}
       {/*<SwitchTagsApp/><br /><hr />*/}
-      {/*<TagsApp/><br /><hr />*/}
+      {/*<TagsApp />*/}
+      <br />
+      {/*<hr />*/}
       {/*<TabsApp/><br /><hr />*/}
       {/*<SwitchApp/><br /><hr />*/}
-      {/*<CheckboxApp/><br /><hr />*/}
+      {/*<CheckboxApp />*/}
+      <br />
+      {/*<hr />*/}
       {/*<InputApp/><br /><hr />*/}
-      {/*<AccordionApp/><br /><hr />*/}
+      <AccordionApp />
+      <br />
+      {/*<hr />*/}
       {/*<ButtonApp/><hr />*/}
       {/*<PaginationApp/>*/}
       {/*<hr/>*/}
       {/*<CheckboxApp/>*/}
-      <RadioGroupApp />
+      {/*<RadioGroupApp />*/}
       {/* <hr/> */}
       {/* <PaginationApp/> */}
     </div>
