@@ -5,6 +5,7 @@ export interface IAccordionProps {
     isOpen?: boolean;
     onChange?: (state: boolean) => void;
     className?: string;
+    activeHeaderClassName?: string;
     contentMarginTop?: number;
     color?: string;
 }
